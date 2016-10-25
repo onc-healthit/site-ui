@@ -1,0 +1,203 @@
+/* You can add global styles to this file, and also import other style files */
+.site-header {
+    background: url("images/site/bg-header-1920x170.png") repeat-x center top #1fdbfe;
+}
+
+.site-logo {
+    padding: 15px 15px 15px 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.site-welcome{
+    color: #fff;
+    background-color: #2e6da4;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin: 2px;
+}
+
+header .navbar .nav {
+    float: right;
+}
+
+header .navbar .nav li a {
+    color: #D1D3D4;
+}
+
+header .navbar .nav li a:hover {
+    text-decoration: underline;
+    color: #fff;
+    background-color: #00418d;
+}
+
+header .navbar .navbar-inner {
+    background-color: #00418d;
+    background-image: none;
+    color: #fff;
+}
+
+header .navbar .navbar-fixed-top {
+    overflow: hidden;
+    width: 100%;
+}
+
+.navbar-static-top .container {
+    width: auto;
+}
+
+header .navbar {
+    margin: 0;
+    min-height: 0;
+}
+
+div.nav li {
+    margin-left: 6px;
+    display: inline-block;
+}
+
+.sandbox-block {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    /*background: #337ab7 !important;
+    color: #fff*/
+}
+
+.sandbox-block span {
+    display: block;
+    font-weight: 500;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.1;
+    margin: 10px 0;
+    color: inherit;
+    font-size: 14px;
+    white-space: normal;
+}
+
+.sandbox-block .caption-head {
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-align:center;
+}
+
+.sandbox-block .caption-body {
+    font-size: 14px;
+    text-align:center;
+}
+
+.sandbox-block .glyphicon {
+    font-size: 50px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.sandbox-block h4{
+    white-space: normal;
+}
+
+.interactive-thumbnail.active {
+    background: #dddddd;
+}
+
+.col .glyphnail {
+    height: 350px;
+}
+
+footer {
+    padding-top: 1em;
+    margin-top: 40px;
+    background-color: #eee;
+}
+
+.validation-modal-dialog{
+    width: 90% !important;
+}
+
+a.ext-icon {
+    background: url(images/extlink.png) right center no-repeat;
+    padding: 0 2px 0 1px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+.embedded {
+    position: relative;
+    right: 5px;
+    z-index: 100;
+    float: right;
+    margin-top: -35px;
+}
+
+.external-page {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+}
+
+.hiddenText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.sandbox-container{
+    padding-left: 0;
+    list-style: none;
+}
+
+.sandbox-container li{
+    float: left;
+    width: 50%;
+    height: 260px;
+    border: 1px solid #fff;
+}
+
+.spacer {
+    margin-top: 40px; /* define margin as you see fit */
+}
+
+.vertical-align {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 80px;
+}
+
+div.blockMsg {
+    width:  100%;
+    text-align: center;
+    background-color: grey;
+    border: 1px solid grey;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 30%;
+    color: #fff;
+}
+
+.hljs-line-numbers {
+    text-align: right;
+    border-right: 1px solid #ccc;
+    color: #999;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
