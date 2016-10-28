@@ -7,6 +7,8 @@ import {CCDAValidatorService} from "../shared/ccda-validator.service";
 import {CCDAR2ValidatorRoutingModule} from "./ccda-r2-validator.routing";
 import {CommonModule} from "@angular/common";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
+import {Ng2PageScrollModule} from "ng2-page-scroll";
+import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
 
 @NgModule({
     imports: [
@@ -14,13 +16,15 @@ import {EscapeHtmlService} from "../shared/EscapeHtmlService";
         FormsModule,
         HttpModule,
         CCDAR2ValidatorRoutingModule,
-        CommonModule
+        CommonModule,
+        Ng2PageScrollModule
     ],
     exports: [
         CCDAR2ValidatorComponent
     ],
     declarations: [
-        CCDAR2ValidatorComponent
+        CCDAR2ValidatorComponent,
+        HyphenateStringPipe
     ],
     providers:[
         CCDAValidatorService,

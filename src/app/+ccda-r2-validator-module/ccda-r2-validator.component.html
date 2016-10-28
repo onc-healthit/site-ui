@@ -78,15 +78,6 @@
                         effectiveTime elements in Planned Medication Activity (such as one to record frequency) as long
                         as one of them is of type IVL_TS or TS
                     </li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-                    <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
                 </ul>
             </div>
         </div>
@@ -146,63 +137,70 @@
             </div>
         </div>
     </div>
+
+    <modal #resultsModal cssClass="validation-modal-dialog">
+        <modal-header>
+            <h4 class="modal-title">Validation Results</h4>
+            <ul class="nav nav-tabs" id="resultModalTabs">
+                <li><a href="#results-group-tab" data-toggle="tab">Validation Result</a></li>
+                <li><a href="#results-xml-tab" data-toggle="tab" (click)="highlightCCDAResults()">Original C-CDA</a></li>
+                <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button> </li>
+            </ul>
+        </modal-header>
+        <modal-body>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="results-group-tab" >
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="list-group">
+                                <div class="list-group-item"
+                                     *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(0, 3)">
+                                    <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                                    <a (click)="scrollInside('#'+r.type)">{{r.type}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="list-group">
+                                <div class="list-group-item"
+                                     *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(3, 6)">
+                                    <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                                    <a (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="list-group">
+                                <div class="list-group-item"
+                                     *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(6, 9)">
+                                    <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                                    <a (click)="scrollInside('#'+r.type)">{{r.type}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pre-scrollable results-group" id="groupedResults" #groupedResults>
+                        <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="'text-' + getValidationClassFotType(r.type)">
+                            <h1 *ngIf(newResultType(r.type)) id="{{r.type | hyphenateString}}">{{r.type}}</h1>
+                            <span>
+                                <ul>
+                                    <li class=""><b>Result Description:</b> {{r.description}}</li>
+                                    <li class=""><b>Document Xpath:</b> {{r.xPath}}</li>
+                                    <li class=""><b>Document Line Number:</b> {{r.documentLineNumber}}</li>
+                                </ul>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="results-xml-tab" #xmlHighlightedResults></div>
+            </div>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-primary" (click)="modal.close()">Close</button>
+        </modal-footer>
+    </modal>
 </div>
 
-<modal #resultsModal cssClass="validation-modal-dialog">
-    <modal-header>
-        <h4 class="modal-title">Validation Results</h4>
-        <ul class="nav nav-tabs" id="resultModalTabs">
-            <li><a href="#tabs-1" data-toggle="tab">Validation Result</a></li>
-            <li><a href="#tabs-2" data-toggle="tab" (click)="highlightCCDAResults()">Original C-CDA</a></li>
-            <li class="pull-right"><button type="button"  class="btn btn-primary" (click)="modal.close()">Close</button> </li>
-        </ul>
-    </modal-header>
-    <modal-body>
-        <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="tabs-1">
-        <div class="row">
-            <div class="panel panel-primary col-md-2 col-lg-3">
-                <div class="list-group">
-                    <div class="list-group-item"
-                         *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(0, 3)">
-                        <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                        <a href="#C-CDA MDHT Conformance Error">{{r.type}}</a></div>
-                </div>
-            </div>
-
-            <div class="panel panel-primary col-md-2 col-lg-3">
-                <div class="list-group">
-                    <div class="list-group-item"
-                         *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(3, 6)">
-                        <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                        <a href="#C-CDA MDHT Conformance Error">{{r.type}}</a></div>
-                </div>
-            </div>
-
-            <div class="panel panel-primary col-md-2 col-lg-3">
-                <div class="list-group">
-                    <div class="list-group-item"
-                         *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(6, 9)">
-                        <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                        <a href="#C-CDA MDHT Conformance Error">{{r.type}}</a></div>
-                </div>
-            </div>
-
-        </div>
-        <span *ngFor="let r of validationResults?.ccdaValidationResults">
-            <a href="#" name="{{r.type}}"></a>
-            <li [ngClass]="'text-' + getValidationClassFotType(r.type)">{{r.type}}<ul class="">
-                <li class="">{{r.description}}</li>
-                <li class="">{{r.xPath}}</li>
-                <li class="">{{r.documentLineNumber}}</li>
-            </ul></li>
-        </span>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="tabs-2" #xmlHighlightedResults>
-        </div>
-           </div>
-    </modal-body>
-    <modal-footer>
-        <button type="button" class="btn btn-primary" (click)="modal.close()">Close</button>
-    </modal-footer>
-</modal>
