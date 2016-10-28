@@ -140,7 +140,6 @@
 
     <modal #resultsModal cssClass="validation-modal-dialog">
         <modal-header>
-            <h4 class="modal-title">Validation Results</h4>
             <ul class="nav nav-tabs" id="resultModalTabs">
                 <li><a href="#results-group-tab" data-toggle="tab">Validation Result</a></li>
                 <li><a href="#results-xml-tab" data-toggle="tab" (click)="highlightCCDAResults()">Original C-CDA</a></li>
@@ -156,7 +155,7 @@
                                 <div class="list-group-item"
                                      *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(0, 3)">
                                     <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                                    <a (click)="scrollInside('#'+r.type)">{{r.type}}</a>
+                                    <button type="button" class="btn btn-link" (click)="scrollInside('#'+r.type)">{{r.type}}</button>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +165,7 @@
                                 <div class="list-group-item"
                                      *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(3, 6)">
                                     <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                                    <a (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</a>
+                                    <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</button>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +175,7 @@
                                 <div class="list-group-item"
                                      *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(6, 9)">
                                     <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                                    <a (click)="scrollInside('#'+r.type)">{{r.type}}</a>
+                                    <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type}}</button>
                                 </div>
                             </div>
                         </div>
