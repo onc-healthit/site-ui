@@ -42,7 +42,7 @@ export class CCDAR2ValidatorComponent implements OnInit {
         this.validationObjective = '';
         this.referenceFileName = '';
         this.errorCountMap = new Map<string, number>();
-        PageScrollConfig.defaultScrollOffset = 200;
+        PageScrollConfig.defaultScrollOffset = 210;
     }
 
     ngOnInit() {
