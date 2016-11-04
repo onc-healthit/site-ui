@@ -9,6 +9,7 @@ import {CommonModule} from "@angular/common";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
 import {Ng2PageScrollModule} from "ng2-page-scroll";
 import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
+import {EscapeHtmlPipe} from "../shared/escape-html.pipe";
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
     ],
     declarations: [
         CCDAR2ValidatorComponent,
-        HyphenateStringPipe
+        HyphenateStringPipe,
+        EscapeHtmlPipe
     ],
     providers:[
         CCDAValidatorService,

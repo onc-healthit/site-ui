@@ -102,13 +102,13 @@ export class CCDAR2ValidatorComponent implements OnInit {
         var style;
         switch(typeEnding){
             case 'Error':
-                style = "validation-error";
+                style = "alert-danger";
                 break;
             case 'Warning':
-                style = "validation-warning";
+                style = "alert-warning";
                 break
-            default:
-                style = "validation-info"
+            default: const 
+                style = "alert-info"
                 break;
         }
         return style;
@@ -119,7 +119,19 @@ export class CCDAR2ValidatorComponent implements OnInit {
     }
 
     highlightCCDAResults(){
-        this.xmlHighlightedResults.nativeElement.innerHTML = '<pre class="line-numbers"><code class="language-markup">' + this.escapeHtmlService.escapeHtml(this.validationResults.resultsMetaData.ccdaFileContents) + '</code></pre>';
+        this.xmlHighlightedResults.nativeElement.innerHTML = '<pre class="line-numbers" style="background: none"><code class="language-markup">' + this.escapeHtmlService.escapeHtml(this.validationResults.resultsMetaData.ccdaFileContents) + '</code></pre>';
+        var results = this.validationResults.ccdaValidationResults;
+        var getResultClass = this.getValidationClassFotType;
+        Prism.hooks.add('complete', function(env) {
+            var highlightedResultsArray = env.element.innerHTML.split(/\r\n|\r|\n/);
+            for (let result of results){
+                var lineNumberToHighlight = result.documentLineNumber-1;
+                var lineToHighlight =  highlightedResultsArray[lineNumberToHighlight];
+                var resultClass = getResultClass(result.type);
+                highlightedResultsArray[lineNumberToHighlight] = "<span class='" + resultClass + "' style='display: inline-block; width: 2200px ' id='" + result.type.slice(0,1)+ lineNumberToHighlight + "'>" + lineToHighlight + "</span>";
+            }
+            env.element.innerHTML = highlightedResultsArray.join("\r\n");
+        });
         Prism.highlightAll();
     }
 
@@ -145,5 +157,41 @@ export class CCDAR2ValidatorComponent implements OnInit {
 
     public createNewResultHeading(index: number, currentType: string){
         return currentType == this.validationResults.ccdaValidationResults[index-1].type;
+    }
+
+    private buildCcdaResultMap(results){
+        var ccdaValidationResultsMap = {};
+        var resultTypeMapValue = '';
+        for (let result of results){
+            if(result.expectedValueSet != null){
+                resultTypeMapValue = result.description + '<br/>Expected Valueset(s): ' + result.expectedValueSet.replace(/,/g , " or ");
+            }else{
+                resultTypeMapValue = result.description;
+            }
+            if(ccdaValidationResultsMap[result.documentLineNumber] != undefined){
+                var resultTypeMap = ccdaValidationResultsMap[result.documentLineNumber];
+                if(resultTypeMap[result.type] != undefined){
+                    resultTypeMap[result.type].push(resultTypeMapValue);
+                    ccdaValidationResultsMap[result.documentLineNumber] = resultTypeMap;
+                }else{
+                    resultTypeMap[result.type] = [resultTypeMapValue];
+                    ccdaValidationResultsMap[result.documentLineNumber] = resultTypeMap;
+                }
+            }else{
+                var ccdaTypeMap = {};
+                ccdaTypeMap[result.type] = [resultTypeMapValue];
+                ccdaValidationResultsMap[result.documentLineNumber] = ccdaTypeMap;
+            }
+        }
+        return ccdaValidationResultsMap;
+    }
+
+    private createResultListPopoverHtml(results){
+        var htmlList = '<ul>';
+        for(var i = 0; i < results.length; i++){
+            htmlList += '<li>' + results[i] + '</li>'
+        }
+        htmlList += '</ul>';
+        return htmlList;
     }
 }

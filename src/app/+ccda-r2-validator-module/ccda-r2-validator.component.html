@@ -154,7 +154,7 @@
                             <div class="list-group">
                                 <div class="list-group-item"
                                      *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(0, 3)">
-                                    <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                                    <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
                                     <button type="button" class="btn btn-link" (click)="scrollInside('#'+r.type)">{{r.type}}</button>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                             <div class="list-group">
                                 <div class="list-group-item"
                                      *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(3, 6)">
-                                    <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                                    <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
                                     <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</button>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                             <div class="list-group">
                                 <div class="list-group-item"
                                      *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(6, 9)">
-                                    <span [ngClass]="'badge background-' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                                    <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
                                     <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type}}</button>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
 
                     </div>
                     <div class="pre-scrollable results-group" id="groupedResults" #groupedResults>
-                        <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="'text-' + getValidationClassFotType(r.type)">
+                        <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="getValidationClassFotType(r.type)">
                             <h1 *ngIf(newResultType(r.type)) id="{{r.type | hyphenateString}}">{{r.type}}</h1>
                             <span>
                                 <ul>
