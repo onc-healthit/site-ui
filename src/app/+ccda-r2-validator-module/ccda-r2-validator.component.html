@@ -1,5 +1,13 @@
 <div class="container">
     <div class="row">
+        <div class="col-sm-12 sandbox-overview">
+            <div class="col-sm-12">
+                <h1>C-CDA Validator</h1>
+                <p>The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. It is a resource to validate the conformance of C-CDA documents to ONC 2014 and 2015 Certification Editions regulations and objectives, or the base HL7 C-CDA Implementation Guide.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-6" *ngIf="!isValidating">
             <form name="validationForm" #validationForm="ngForm"
                   (ngSubmit)="onSubmit(validationForm.value)"
@@ -55,15 +63,6 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="well">
-                <h3>About the SITE C-CDA Validator</h3>
-                <p> The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard
-                    in order to promote interoperability. It is a resource to validate the conformance of C-CDA
-                    documents
-                    to ONC 2014 and 2015 Certification Editions regulations and objectives, or the base HL7 C-CDA
-                    Implementation Guide.
-                </p>
-            </div>
             <div class="well pre-scrollable">
                 <h3>1.0.4 Release Notes</h3>
                 <ul class="list-group">
@@ -142,7 +141,7 @@
         <modal-header>
             <ul class="nav nav-tabs" id="resultModalTabs">
                 <li><a href="#results-group-tab" data-toggle="tab">Validation Result</a></li>
-                <li><a href="#results-xml-tab" data-toggle="tab" (click)="highlightCCDAResults()">Original C-CDA</a></li>
+                <li><a href="#results-xml-tab" data-toggle="tab">Original C-CDA</a></li>
                 <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button> </li>
             </ul>
         </modal-header>

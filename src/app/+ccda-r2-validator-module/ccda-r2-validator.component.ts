@@ -11,6 +11,7 @@ import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
 import {PageScrollService, PageScrollInstance, PageScrollConfig} from "ng2-page-scroll";
 import {DOCUMENT} from "@angular/platform-browser";
+import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
 
 const URL = 'https://devccda.sitenv.org/referenceccdaservice/';
 declare var Prism: any;
@@ -91,6 +92,7 @@ export class CCDAR2ValidatorComponent implements OnInit {
         this.ccdaValidatorService.validate(URL, this.referenceFileName, this.validationObjective, this.filesToUpload).then((result) => {
             this.validationResults = result;
             this.modal.open();
+            this.highlightCCDAResults();
             this.toggleValidating();
         }, (error) => {
             console.error(error);
@@ -107,7 +109,7 @@ export class CCDAR2ValidatorComponent implements OnInit {
             case 'Warning':
                 style = "alert-warning";
                 break
-            default: const 
+            default:
                 style = "alert-info"
                 break;
         }
@@ -122,13 +124,14 @@ export class CCDAR2ValidatorComponent implements OnInit {
         this.xmlHighlightedResults.nativeElement.innerHTML = '<pre class="line-numbers" style="background: none"><code class="language-markup">' + this.escapeHtmlService.escapeHtml(this.validationResults.resultsMetaData.ccdaFileContents) + '</code></pre>';
         var results = this.validationResults.ccdaValidationResults;
         var getResultClass = this.getValidationClassFotType;
+        var hyphenatePipe = new HyphenateStringPipe();
         Prism.hooks.add('complete', function(env) {
             var highlightedResultsArray = env.element.innerHTML.split(/\r\n|\r|\n/);
             for (let result of results){
                 var lineNumberToHighlight = result.documentLineNumber-1;
                 var lineToHighlight =  highlightedResultsArray[lineNumberToHighlight];
                 var resultClass = getResultClass(result.type);
-                highlightedResultsArray[lineNumberToHighlight] = "<span class='" + resultClass + "' style='display: inline-block; width: 2200px ' id='" + result.type.slice(0,1)+ lineNumberToHighlight + "'>" + lineToHighlight + "</span>";
+                highlightedResultsArray[lineNumberToHighlight] = "<span class='" + resultClass + "' style='display: inline-block; width: 2200px ' id='" + hyphenatePipe.transform(result.type)+ lineNumberToHighlight + "'>" + lineToHighlight + "</span>";
             }
             env.element.innerHTML = highlightedResultsArray.join("\r\n");
         });

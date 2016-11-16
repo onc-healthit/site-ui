@@ -9,12 +9,16 @@
     margin-right: 25px;
 }
 
-.site-welcome{
-    color: #fff;
-    background-color: #2e6da4;
-    border-radius: 4px;
-    padding: 6px 12px;
-    margin: 2px;
+.sandbox-overview{
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid #003366;
+    height: 200px;
+}
+
+.sandbox-overview h1{
+    color: #003366;
+    font-weight: 600;
 }
 
 header .navbar .nav {
@@ -57,11 +61,18 @@ div.nav li {
 }
 
 .sandbox-block {
+    color: #003366;
     text-align: center;
     width: 100%;
     height: 100%;
-    /*background: #337ab7 !important;
-    color: #fff*/
+    display: block;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.sandbox-block:hover {
+    text-decoration: none !important;
+    background: #dddddd;
 }
 
 .sandbox-block span {
@@ -162,11 +173,11 @@ a.ext-icon {
 }
 
 .sandbox-container li{
-    float: left;
-    width: 50%;
-    height: 260px;
-    border: 1px solid #fff;
-}
+     float: left;
+     width: 50%;
+     height: 260px;
+     border: 1px solid #e6e6e6;
+ }
 
 .spacer {
     margin-top: 40px; /* define margin as you see fit */
@@ -200,4 +211,8 @@ div.blockMsg {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+body{
+    font-family: 'Arial', sans-serif, serif;
 }
