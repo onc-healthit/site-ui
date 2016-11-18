@@ -11,7 +11,7 @@ import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
 import {PageScrollService, PageScrollInstance, PageScrollConfig} from "ng2-page-scroll";
 import {DOCUMENT} from "@angular/platform-browser";
-import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
+import {isUndefined} from "util";
 
 const URL = 'https://devccda.sitenv.org/referenceccdaservice/';
 declare var Prism: any;
@@ -122,18 +122,22 @@ export class CCDAR2ValidatorComponent implements OnInit {
 
     highlightCCDAResults(){
         this.xmlHighlightedResults.nativeElement.innerHTML = '<pre class="line-numbers" style="background: none"><code class="language-markup">' + this.escapeHtmlService.escapeHtml(this.validationResults.resultsMetaData.ccdaFileContents) + '</code></pre>';
-        var results = this.validationResults.ccdaValidationResults;
-        var getResultClass = this.getValidationClassFotType;
-        var hyphenatePipe = new HyphenateStringPipe();
-        Prism.hooks.add('complete', function(env) {
-            var highlightedResultsArray = env.element.innerHTML.split(/\r\n|\r|\n/);
-            for (let result of results){
-                var lineNumberToHighlight = result.documentLineNumber-1;
-                var lineToHighlight =  highlightedResultsArray[lineNumberToHighlight];
-                var resultClass = getResultClass(result.type);
-                highlightedResultsArray[lineNumberToHighlight] = "<span class='" + resultClass + "' style='display: inline-block; width: 2200px ' id='" + hyphenatePipe.transform(result.type)+ lineNumberToHighlight + "'>" + lineToHighlight + "</span>";
+
+        Prism.hooks.add('wrap', function(env) {
+            var highlightedDocumentLinenumberCounter = 0;
+            if (!isUndefined(env.parent[highlightedDocumentLinenumberCounter])){
+                console.log(highlightedDocumentLinenumberCounter + ' : ' + env.parent[highlightedDocumentLinenumberCounter].content);
+            }else{
+                console.log('THIS ENV IS NOT DEFINED!! ' + env);
             }
-            env.element.innerHTML = highlightedResultsArray.join("\r\n");
+
+            // if (env.parent[0].type === "prolog" && env.type != "comment") {
+            //     env.classes.push('line_number_' + (++highlightedDocumentLinenumberCounter));
+            // }
+            // if (env.type === "comment"){
+            //     highlightedDocumentLinenumberCounter += env.content.split(/\r\n|\r|\n/).length;
+            // }
+            highlightedDocumentLinenumberCounter++;
         });
         Prism.highlightAll();
     }
