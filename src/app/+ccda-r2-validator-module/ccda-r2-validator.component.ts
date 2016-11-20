@@ -11,15 +11,15 @@ import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
 import {PageScrollService, PageScrollInstance, PageScrollConfig} from "ng2-page-scroll";
 import {DOCUMENT} from "@angular/platform-browser";
-import {isUndefined} from "util";
 
 const URL = 'https://devccda.sitenv.org/referenceccdaservice/';
 declare var Prism: any;
+declare var $: any;
 
 @Component({
     selector: 'ccda-r2-validator',
-    templateUrl: 'ccda-r2-validator.component.html',
-    styleUrls: ['css/main.css']
+    templateUrl: './ccda-r2-validator.component.html',
+    styleUrls: ['./css/main.css']
 })
 export class CCDAR2ValidatorComponent implements OnInit {
     @ViewChild('resultsModal') modal: ModalComponent;
@@ -121,24 +121,82 @@ export class CCDAR2ValidatorComponent implements OnInit {
     }
 
     highlightCCDAResults(){
-        this.xmlHighlightedResults.nativeElement.innerHTML = '<pre class="line-numbers" style="background: none"><code class="language-markup">' + this.escapeHtmlService.escapeHtml(this.validationResults.resultsMetaData.ccdaFileContents) + '</code></pre>';
-
-        Prism.hooks.add('wrap', function(env) {
-            var highlightedDocumentLinenumberCounter = 0;
-            if (!isUndefined(env.parent[highlightedDocumentLinenumberCounter])){
-                console.log(highlightedDocumentLinenumberCounter + ' : ' + env.parent[highlightedDocumentLinenumberCounter].content);
-            }else{
-                console.log('THIS ENV IS NOT DEFINED!! ' + env);
-            }
-
-            // if (env.parent[0].type === "prolog" && env.type != "comment") {
-            //     env.classes.push('line_number_' + (++highlightedDocumentLinenumberCounter));
-            // }
-            // if (env.type === "comment"){
-            //     highlightedDocumentLinenumberCounter += env.content.split(/\r\n|\r|\n/).length;
-            // }
-            highlightedDocumentLinenumberCounter++;
+        this.xmlHighlightedResults.nativeElement.innerHTML = '<pre class="line-numbers" data-line="2" style="background: none"><code class="language-markup">' + this.escapeHtmlService.escapeHtml(this.validationResults.resultsMetaData.ccdaFileContents) + '</code></pre>';
+        var resultsMap = this.buildCcdaResultMap(this.validationResults.ccdaValidationResults);
+        var getResultClass = this.getValidationClassFotType;
+        Prism.hooks.add('after-highlight', function(env) {
+            env.resultmap = resultsMap;
+            console.log('in validator component ' + env);
         });
+       /* Prism.hooks.add('complete', function(env) {
+            var highlightedResultsArray = env.element.innerHTML.split(/\r\n|\r|\n/);
+            for (var resultLineNumber in resultsMap){
+                var lineNum = resultLineNumber;
+                var resultTypesMap = resultsMap[resultLineNumber];
+                for (let resultType of resultTypesMap){
+                    var type = resultType;
+                    var descriptions = resultTypesMap[resultType];
+                    var descriptionsLength = descriptions.length;
+                    var popoverTemplate = '<span class="popover resultpopover"><div class="clearfix"><span>Line Number: '+lineNum+'</span><span aria-hidden="true" class="glyphicon glyphicon-arrow-up" style="float:right !important; cursor:pointer" title="go to previous result"></span></div><span class="arrow"></span><h3 class="popover-title result-title"></h3><div class="popover-content"></div><div class="clearfix"><span aria-hidden="true" class="glyphicon glyphicon-arrow-down" style="float:right !important; cursor:pointer" title="go to next result"></span></div></span>';
+                    var popOverContent = this.createResultListPopoverHtml(descriptions);
+                    if (typeof $(".code .container .line.number" + lineNum).data('bs.popover') !== "undefined") {
+                        var title;
+                        if(type.toLowerCase().indexOf("error") >= 0){
+                            $(".code .container .line.number" + lineNum).prepend( "<span class='glyphicon glyphicon-exclamation-sign alert-danger' aria-hidden='true' style='font-size: .8em;'></span>" );
+                            title = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> " + descriptionsLength + " " + type + "(s)";
+                        }else if(type.toLowerCase().indexOf("warn") >= 0){
+                            $(".code .container .line.number" + lineNum).prepend( "<span class='glyphicon glyphicon-warning-sign alert-warning' aria-hidden='true' style='font-size: .8em;'></span>" );
+                            title = "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span> " + descriptionsLength + " " + type + "(s)";
+                        }else{
+                            $(".code .container .line.number" + lineNum).prepend( "<span class='glyphicon glyphicon-info-sign alert-info' aria-hidden='true' style='font-size: .8em;'></span>" );
+                            title = "<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> " + descriptionsLength + " " + type + "(s)";
+                        }
+                        $(".code .container .line.number" + lineNum).data('bs.popover').options.content += "<h3 class='popover-title result-title'>" + title + "</h3>" + popOverContent;
+                    }else{
+                        if(type.toLowerCase().indexOf("error") >= 0){
+                            $(".code .container .line.number" + lineNum).prepend( "<span class='glyphicon glyphicon-exclamation-sign alert-danger' aria-hidden='true' style='font-size: .8em;'></span>" );
+                            $(".code .container .line.number" + lineNum).addClass("ccdaErrorHighlight").popover(
+                                {
+                                    title: "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> " + descriptionsLength + " " + type + "(s)",
+                                    html: true,
+                                    content: popOverContent,
+                                    trigger: "focus",
+                                    placement: "auto",
+                                    template:popoverTemplate
+                                });
+                        }else if(type.toLowerCase().indexOf("warn") >= 0){
+                            $(".code .container .line.number" + lineNum).prepend( "<span class='glyphicon glyphicon-warning-sign alert-warning' aria-hidden='true' style='font-size: .8em;'></span>" );
+                            $(".code .container .line.number" + lineNum).addClass("ccdaWarningHighlight").popover(
+                                {
+                                    title: "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span> " + descriptionsLength + " " + type + "(s)",
+                                    html: true,
+                                    content: popOverContent,
+                                    trigger: "focus",
+                                    placement: "auto",
+                                    template: popoverTemplate
+                                });
+                        }else{
+                            $(".code .container .line.number" + lineNum).prepend( "<span class='glyphicon glyphicon-info-sign alert-info' aria-hidden='true' style='font-size: .8em;'></span>" );
+                            $(".code .container .line.number" + lineNum).addClass("ccdaInfoHighlight").popover(
+                                {
+                                    title: "<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> " + descriptionsLength + " " + type + "(s)",
+                                    html: true,
+                                    content:  popOverContent,
+                                    trigger: "focus",
+                                    placement: "auto",
+                                    template: popoverTemplate
+                                });
+                        }
+
+                    }
+                }
+                /!*var lineNumberToHighlight = result.documentLineNumber-1;
+                var lineToHighlight =  highlightedResultsArray[lineNumberToHighlight];
+                var resultClass = getResultClass(result.type);
+                highlightedResultsArray[lineNumberToHighlight] = "<span class='" + resultClass + "' style='display: inline-block; width: 2200px'>" + lineToHighlight + "</span>";*!/
+            }
+            env.element.innerHTML = highlightedResultsArray.join("\r\n");
+        });*/
         Prism.highlightAll();
     }
 
