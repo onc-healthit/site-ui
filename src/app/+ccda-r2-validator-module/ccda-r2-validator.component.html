@@ -141,7 +141,7 @@
         <modal-header>
             <ul class="nav nav-tabs" id="resultModalTabs">
                 <li><a href="#results-group-tab" data-toggle="tab">Validation Result</a></li>
-                <li><a href="#results-xml-tab" data-toggle="tab">Original C-CDA</a></li>
+                <li><a href="#results-xml-tab" data-toggle="tab" >Original C-CDA</a></li>
                 <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button> </li>
             </ul>
         </modal-header>
@@ -193,7 +193,8 @@
                         </span>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="results-xml-tab" #xmlHighlightedResults></div>
+                <div role="tabpanel" class="tab-pane" id="results-xml-tab" #xmlHighlightedResults>
+                </div>
             </div>
         </modal-body>
         <modal-footer>

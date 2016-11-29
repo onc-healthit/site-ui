@@ -7,9 +7,9 @@ import {CCDAValidatorService} from "../shared/ccda-validator.service";
 import {CCDAR2ValidatorRoutingModule} from "./ccda-r2-validator.routing";
 import {CommonModule} from "@angular/common";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
-import {Ng2PageScrollModule} from "ng2-page-scroll";
 import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
 import {EscapeHtmlPipe} from "../shared/escape-html.pipe";
+import {PopoverModule} from "ng2-popover";
 
 @NgModule({
     imports: [
@@ -18,7 +18,7 @@ import {EscapeHtmlPipe} from "../shared/escape-html.pipe";
         HttpModule,
         CCDAR2ValidatorRoutingModule,
         CommonModule,
-        Ng2PageScrollModule
+        PopoverModule
     ],
     exports: [
         CCDAR2ValidatorComponent

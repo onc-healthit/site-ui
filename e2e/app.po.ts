@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor';
+import {browser, element, by} from "protractor";
 
-export class SiteAngularUiPage {
+export class SiteUiPage {
   navigateTo() {
     return browser.get('/');
   }

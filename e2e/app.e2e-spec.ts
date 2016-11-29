@@ -1,10 +1,10 @@
-import { SiteAngularUiPage } from './app.po';
+import {SiteUiPage} from "./app.po";
 
-describe('site-angular-ui App', function() {
-  let page: SiteAngularUiPage;
+describe('site-ui App', function() {
+  let page: SiteUiPage;
 
   beforeEach(() => {
-    page = new SiteAngularUiPage();
+    page = new SiteUiPage();
   });
 
   it('should display message saying app works', () => {

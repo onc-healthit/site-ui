@@ -216,3 +216,21 @@ div.blockMsg {
 body{
     font-family: 'Arial', sans-serif, serif;
 }
+
+.ccdaErrorHighlight{
+    /* border: 2px solid #ebccd1 !important;  */
+    background-color: #f2dede !important;
+    cursor: pointer;
+}
+
+.ccdaWarningHighlight{
+    /* border: 2px solid #f5e79e !important;  */
+    background-color: #fcf8e3 !important;
+    cursor: pointer;
+}
+
+.ccdaInfoHighlight{
+    /* border: 2px solid #9acfea !important;  */
+    background-color: #d9edf7 !important;
+    cursor: pointer;
+}
