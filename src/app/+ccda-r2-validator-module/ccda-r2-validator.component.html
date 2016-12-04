@@ -148,52 +148,10 @@
         <modal-body>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="results-group-tab" >
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="list-group">
-                                <div class="list-group-item"
-                                     *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(0, 3)">
-                                    <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                                    <button type="button" class="btn btn-link" (click)="scrollInside('#'+r.type)">{{r.type}}</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="list-group">
-                                <div class="list-group-item"
-                                     *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(3, 6)">
-                                    <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                                    <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="list-group">
-                                <div class="list-group-item"
-                                     *ngFor="let r of validationResults?.resultsMetaData.resultMetaData.slice(6, 9)">
-                                    <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                                    <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type}}</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="pre-scrollable results-group" id="groupedResults" #groupedResults>
-                        <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="getValidationClassFotType(r.type)">
-                            <h1 *ngIf(newResultType(r.type)) id="{{r.type | hyphenateString}}">{{r.type}}</h1>
-                            <span>
-                                <ul>
-                                    <li class=""><b>Result Description:</b> {{r.description}}</li>
-                                    <li class=""><b>Document Xpath:</b> {{r.xPath}}</li>
-                                    <li class=""><b>Document Line Number:</b> {{r.documentLineNumber}}</li>
-                                </ul>
-                            </span>
-                        </span>
-                    </div>
+                    <results-list [validationResults]="validationResults"></results-list>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="results-xml-tab" #xmlHighlightedResults>
+                <div role="tabpanel" class="tab-pane" id="results-xml-tab">
+                    <xml-highlight [ccdaxml]="validationResults?.resultsMetaData.ccdaFileContents" [validationResults]="validationResults?.ccdaValidationResults"></xml-highlight>
                 </div>
             </div>
         </modal-body>

@@ -1,0 +1,5 @@
+<pre #xmlHighlightedResults *ngIf="splitXml">
+<ol id="xmlResults">
+    <li *ngFor="let line of splitXml; let i = index"  [ngClass]="'linenumber-' + (i+1)"><div *ngIf="hasResult(i+1)" [ngClass]="highlightLine(i+1)" [lineresultsmap]="getResultsForLineNumber(i+1)" [lineNumber]="i+1" tabindex="0" title="Show validation result details for this line."><span *ngIf="lineHasErrors(i+1)" class='glyphicon glyphicon-exclamation-sign alert-danger' aria-hidden='true' style='font-size: .8em;'></span><span *ngIf="lineHasWarnings(i+1)" class='glyphicon glyphicon-warning-sign alert-warning' aria-hidden='true' style='font-size: .8em;'></span><span *ngIf="lineHasInfos(i+1)" class='glyphicon glyphicon-info-sign alert-info' aria-hidden='true' style='font-size: .8em;'></span><span>{{line | appendStringNewline}}</span></div><span *ngIf="!hasResult(i+1)">{{line | appendStringNewline}}</span></li>
+</ol>
+</pre>

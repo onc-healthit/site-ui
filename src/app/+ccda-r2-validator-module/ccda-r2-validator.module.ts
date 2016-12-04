@@ -8,8 +8,12 @@ import {CCDAR2ValidatorRoutingModule} from "./ccda-r2-validator.routing";
 import {CommonModule} from "@angular/common";
 import {EscapeHtmlService} from "../shared/EscapeHtmlService";
 import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
+import {AppendStringNewlinePipe} from "../shared/append-string-newline.pipe";
 import {EscapeHtmlPipe} from "../shared/escape-html.pipe";
 import {PopoverModule} from "ng2-popover";
+import {XmlHighlightComponent} from "./xml-highlight/xml-highlight.component";
+import {ResultsListComponent} from "./results-list/results-list.component";
+import {HighlightCcdaXmlResultDirective} from "./xml-highlight/highlight-ccda-xml-result.directive";
 
 @NgModule({
     imports: [
@@ -26,7 +30,11 @@ import {PopoverModule} from "ng2-popover";
     declarations: [
         CCDAR2ValidatorComponent,
         HyphenateStringPipe,
-        EscapeHtmlPipe
+        EscapeHtmlPipe,
+        AppendStringNewlinePipe,
+        XmlHighlightComponent,
+        ResultsListComponent,
+        HighlightCcdaXmlResultDirective
     ],
     providers:[
         CCDAValidatorService,
