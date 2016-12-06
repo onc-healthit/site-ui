@@ -1,5 +1,4 @@
 import {Component, Input, OnInit, ViewChild, ElementRef} from "@angular/core";
-import {EscapeHtmlService} from "../../shared/EscapeHtmlService";
 
 declare var $:any;
 @Component({
@@ -15,7 +14,7 @@ export class XmlHighlightComponent implements OnInit {
     public lines: string;
     private resultsMap: any;
 
-    constructor(private escapeHtmlService:EscapeHtmlService) {
+    constructor() {
     }
 
     ngOnInit() {
@@ -54,10 +53,6 @@ export class XmlHighlightComponent implements OnInit {
             }
         }
         return false;
-    }
-
-    public getName(lineNumber:number): string{
-        return "#popup"+lineNumber;
     }
 
     public lineHasInfos(lineNumber:number): boolean{

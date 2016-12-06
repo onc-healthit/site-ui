@@ -6,7 +6,6 @@ import {CCDAR2ValidatorComponent} from "./ccda-r2-validator.component";
 import {CCDAValidatorService} from "../shared/ccda-validator.service";
 import {CCDAR2ValidatorRoutingModule} from "./ccda-r2-validator.routing";
 import {CommonModule} from "@angular/common";
-import {EscapeHtmlService} from "../shared/EscapeHtmlService";
 import {HyphenateStringPipe} from "../shared/hyphenate-string.pipe";
 import {AppendStringNewlinePipe} from "../shared/append-string-newline.pipe";
 import {EscapeHtmlPipe} from "../shared/escape-html.pipe";
@@ -37,8 +36,7 @@ import {HighlightCcdaXmlResultDirective} from "./xml-highlight/highlight-ccda-xm
         HighlightCcdaXmlResultDirective
     ],
     providers:[
-        CCDAValidatorService,
-        EscapeHtmlService
+        CCDAValidatorService
     ],
 })
 
