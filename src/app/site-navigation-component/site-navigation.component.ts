@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {SiteAngularUiRoutingModule} from "../app-routing.module";
+import {AppRoutingModule} from "../app-routing.module";
 
 @Component({
   selector: 'app-site-navigation',
@@ -8,7 +8,7 @@ import {SiteAngularUiRoutingModule} from "../app-routing.module";
 })
 export class SiteNavigationComponent implements OnInit {
 
-  constructor(private siteRouting: SiteAngularUiRoutingModule) { }
+  constructor(private siteRouting: AppRoutingModule) { }
 
   ngOnInit() {
   }

@@ -10,6 +10,7 @@ import {DOCUMENT} from "@angular/platform-browser";
 export class ResultsListComponent implements OnInit {
   @Input() validationResults: any;
   @ViewChild('groupedResults') groupedResults : ElementRef;
+  private currentResultType: string = "";
 
   constructor(@Inject(DOCUMENT) private document: any, private pageScrollService: PageScrollService) {
     PageScrollConfig.defaultScrollOffset = 210;
@@ -41,7 +42,7 @@ export class ResultsListComponent implements OnInit {
     return style;
   }
 
-  newResultType(resultType: string): boolean{
+  public newResultType(resultType: string): boolean{
     if (this.currentResultType == ''){
       this.currentResultType = resultType;
       return true;
