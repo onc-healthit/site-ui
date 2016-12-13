@@ -13,6 +13,7 @@ import { SiteFooterComponent } from './site-footer-component/site-footer.compone
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import { SiteReleaseNotesComponent } from './site-release-notes-component/site-release-notes.component';
 import { SiteVersionComponent } from './site-version-component/site-version.component';
+import { SiteNistToolsComponent } from './site-nist-tools-component/site-nist-tools.component';
 @NgModule({
   imports: [
     AppRoutingModule,
@@ -30,7 +31,8 @@ import { SiteVersionComponent } from './site-version-component/site-version.comp
     SiteNewsAnnouncementsComponent,
     SiteFooterComponent,
     SiteReleaseNotesComponent,
-    SiteVersionComponent
+    SiteVersionComponent,
+    SiteNistToolsComponent
   ],
   providers: [
     PageScrollService

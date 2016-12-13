@@ -3,6 +3,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {SandboxLauncherComponent} from "./sandbox-launcher-component/sandbox-launcher.component";
 import {SandboxCCDAComponent} from "./sandbox-ccda-component/sandbox-ccda.component";
 import {SandboxQrdaCqmComponentComponent} from "./sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component";
+import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
 
 const appRoutes: Routes = [
   {
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'sandbox-ccda/ccda-validator',
     loadChildren: 'app/+ccda-validator-module/ccda-validator.module#CCDAValidatorModule'
+  },
+  {
+    path: 'nist-tools',
+    component: SiteNistToolsComponent
   },
   {
     path: '',
