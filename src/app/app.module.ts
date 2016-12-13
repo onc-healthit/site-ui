@@ -7,25 +7,35 @@ import {BrowserModule} from "@angular/platform-browser";
 import {Ng2PageScrollModule, PageScrollService} from "ng2-page-scroll";
 import {SharedModule} from "./shared/shared.module";
 import { SandboxQrdaCqmComponentComponent } from './sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component';
-
-
+import {MarkdownModule} from 'angular2-markdown';
+import { SiteNewsAnnouncementsComponent } from './site-news-announcements-component/site-news-announcements.component';
+import { SiteFooterComponent } from './site-footer-component/site-footer.component';
+import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
+import { SiteReleaseNotesComponent } from './site-release-notes-component/site-release-notes.component';
+import { SiteVersionComponent } from './site-version-component/site-version.component';
 @NgModule({
   imports: [
     AppRoutingModule,
     BrowserModule,
     SharedModule,
+    MarkdownModule,
+    Ng2Bs3ModalModule,
     Ng2PageScrollModule.forRoot()
   ],
   declarations: [
     SandboxLauncherComponent,
     SandboxCCDAComponent,
     SiteNavigationComponent,
-    SandboxQrdaCqmComponentComponent
+    SandboxQrdaCqmComponentComponent,
+    SiteNewsAnnouncementsComponent,
+    SiteFooterComponent,
+    SiteReleaseNotesComponent,
+    SiteVersionComponent
   ],
   providers: [
     PageScrollService
   ],
-  bootstrap: [ SiteNavigationComponent ]
+  bootstrap: [ SiteNavigationComponent, SiteFooterComponent]
 })
 export class AppModule {
 }
