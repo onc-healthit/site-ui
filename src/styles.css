@@ -193,12 +193,10 @@ a.ext-icon {
 div.blockMsg {
     width:  100%;
     text-align: center;
-    background-color: grey;
-    border: 1px solid grey;
+    background-color: #fefefe;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    padding: 30%;
-    color: #fff;
+    margin: 15% auto;
 }
 
 body{

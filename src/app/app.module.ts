@@ -8,23 +8,24 @@ import {Ng2PageScrollModule, PageScrollService} from "ng2-page-scroll";
 import {SharedModule} from "./shared/shared.module";
 import { SandboxQrdaCqmComponentComponent } from './sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component';
 
+
 @NgModule({
-    imports: [
-      AppRoutingModule,
-        BrowserModule,
-        SharedModule,
-        Ng2PageScrollModule.forRoot()
-    ],
-    declarations: [
-        SandboxLauncherComponent,
-        SandboxCCDAComponent,
-        SiteNavigationComponent,
-        SandboxQrdaCqmComponentComponent
-    ],
-    providers: [
-        PageScrollService
-    ],
-    bootstrap: [ SiteNavigationComponent ]
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    SharedModule,
+    Ng2PageScrollModule.forRoot()
+  ],
+  declarations: [
+    SandboxLauncherComponent,
+    SandboxCCDAComponent,
+    SiteNavigationComponent,
+    SandboxQrdaCqmComponentComponent
+  ],
+  providers: [
+    PageScrollService
+  ],
+  bootstrap: [ SiteNavigationComponent ]
 })
 export class AppModule {
 }

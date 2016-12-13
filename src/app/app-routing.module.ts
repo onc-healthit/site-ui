@@ -18,8 +18,8 @@ const appRoutes: Routes = [
     component: SandboxQrdaCqmComponentComponent
   },
   {
-    path: 'sandbox-ccda/ccda-r2-validator',
-    loadChildren: 'app/+ccda-r2-validator-module/ccda-r2-validator.module#CCDAR2ValidatorModule'
+    path: 'sandbox-ccda/ccda-validator',
+    loadChildren: 'app/+ccda-validator-module/ccda-validator.module#CCDAValidatorModule'
   },
   {
     path: '',
