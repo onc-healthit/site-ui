@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild} from "@angular/core";
 import {CCDAValidatorService} from "../../shared/ccda-validator.service";
 import {Http} from "@angular/http";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
@@ -48,9 +48,18 @@ export class CcdaR1ValidatorComponent implements OnInit {
 
   private buildValidationResultsMetaData(data):any{
     var metadata :any = [];
-    var errorMetadata = new Object();
-    var warningMetaData = new Object();
-    var infoMetaData = new Object();
+    var errorMetadata = {
+      type: '',
+      count: 0
+    };
+    var warningMetaData = {
+      type: '',
+      count: 0
+  };
+    var infoMetaData = {
+      type: '',
+      count: 0
+  };
 
     errorMetadata.type = 'C-CDA MDHT Conformance Error';
     errorMetadata.count = data.errors.length;
@@ -72,7 +81,12 @@ export class CcdaR1ValidatorComponent implements OnInit {
   private buildValidationResults(data):any{
     var resultsList :any = [];
     data.errors.forEach(function (result) {
-      let ccdaValidationResults = new Object();
+      let ccdaValidationResults = {
+        type: '',
+        description: '',
+        xPath: '',
+        documentLineNumber: ''
+      };
       ccdaValidationResults.type = 'C-CDA MDHT Conformance Error';
       ccdaValidationResults.description = result.message;
       ccdaValidationResults.xPath = result.path;
@@ -81,7 +95,12 @@ export class CcdaR1ValidatorComponent implements OnInit {
     });
 
     data.warnings.forEach(function (result) {
-      let ccdaValidationResults = new Object();
+      let ccdaValidationResults = {
+        type: '',
+        description: '',
+        xPath: '',
+        documentLineNumber: ''
+      };
       ccdaValidationResults.type = 'C-CDA MDHT Conformance Warning';
       ccdaValidationResults.xPath = result.path;
       ccdaValidationResults.description = result.message;
@@ -90,7 +109,12 @@ export class CcdaR1ValidatorComponent implements OnInit {
     });
 
     data.info.forEach(function (result) {
-      let ccdaValidationResults = new Object();
+      let ccdaValidationResults = {
+        type: '',
+        description: '',
+        xPath: '',
+        documentLineNumber: ''
+      };
       ccdaValidationResults.type = 'C-CDA MDHT Conformance Info';
       ccdaValidationResults.description = result.message;
       ccdaValidationResults.xPath = result.path;
