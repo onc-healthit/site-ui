@@ -43,16 +43,14 @@
     </div>
   </modal-body>
 </modal>
-<modal #resultsModal cssClass="validation-modal-dialog">
-  <modal-header>
+<modal #r1resultsModal cssClass="validation-modal-dialog">
+  <modal-body>
     <ul class="nav nav-tabs" id="resultModalTabs">
-      <li><a href="#results-group-tab" data-toggle="tab">Validation Result</a></li>
+      <li><a href="#r1-results-group-tab" data-toggle="tab" class="nav active">Validation Result</a></li>
       <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button> </li>
     </ul>
-  </modal-header>
-  <modal-body>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="results-group-tab" >
+      <div role="tabpanel" class="tab-pane active" id="r1-results-group-tab" >
         <results-list [validationResults]="validationResults"></results-list>
       </div>
     </div>

@@ -5,7 +5,7 @@ import {EscapeHtmlPipe} from "./escape-html.pipe";
 import {HyphenateStringPipe} from "./hyphenate-string.pipe";
 import {FormsModule} from "@angular/forms";
 import {PageOverviewHeaderComponent} from "./page-overview-header-component/page-overview-header.component";
-import {MarkdownToHtmlPipe} from "markdown-to-html-pipe";
+import {MarkdownToHtmlPipe} from "./MarkdownToHtml.pipe";
 
 @NgModule({
   imports: [

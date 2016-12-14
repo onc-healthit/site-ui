@@ -14,7 +14,7 @@ const URL = 'https://devccda.sitenv.org/CCDAValidatorServices/r1.1/';
   styleUrls: ['ccda-r1-validator.component.css']
 })
 export class CcdaR1ValidatorComponent implements OnInit {
-  @ViewChild('resultsModal') modal: ModalComponent;
+  @ViewChild('r1resultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal:ModalComponent;
   public validationResults;
   CCDA1_type_val: string;

@@ -132,6 +132,15 @@ footer {
 
 .validation-modal-dialog{
     width: 90% !important;
+    overflow-y: auto !important;
+}
+
+.modal{
+    overflow-y: auto !important;
+}
+
+.validation-form-group{
+    padding: 25px;
 }
 
 a.ext-icon {

@@ -6,14 +6,15 @@ import {AppRoutingModule} from "./app-routing.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {Ng2PageScrollModule, PageScrollService} from "ng2-page-scroll";
 import {SharedModule} from "./shared/shared.module";
-import { SandboxQrdaCqmComponentComponent } from './sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component';
-import {MarkdownModule} from 'angular2-markdown';
-import { SiteNewsAnnouncementsComponent } from './site-news-announcements-component/site-news-announcements.component';
-import { SiteFooterComponent } from './site-footer-component/site-footer.component';
+import {SandboxQrdaCqmComponentComponent} from "./sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component";
+import {MarkdownModule} from "angular2-markdown";
+import {SiteNewsAnnouncementsComponent} from "./site-news-announcements-component/site-news-announcements.component";
+import {SiteFooterComponent} from "./site-footer-component/site-footer.component";
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
-import { SiteReleaseNotesComponent } from './site-release-notes-component/site-release-notes.component';
-import { SiteVersionComponent } from './site-version-component/site-version.component';
-import { SiteNistToolsComponent } from './site-nist-tools-component/site-nist-tools.component';
+import {SiteReleaseNotesComponent} from "./site-release-notes-component/site-release-notes.component";
+import {SiteVersionComponent} from "./site-version-component/site-version.component";
+import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
+import {SiteFeaturesTableComponent} from "./site-features-table-component/site-features-table.component";
 @NgModule({
   imports: [
     AppRoutingModule,
@@ -32,7 +33,8 @@ import { SiteNistToolsComponent } from './site-nist-tools-component/site-nist-to
     SiteFooterComponent,
     SiteReleaseNotesComponent,
     SiteVersionComponent,
-    SiteNistToolsComponent
+    SiteNistToolsComponent,
+    SiteFeaturesTableComponent
   ],
   providers: [
     PageScrollService

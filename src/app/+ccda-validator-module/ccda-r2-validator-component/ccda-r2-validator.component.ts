@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from "@angular/core";
 import {CCDAValidatorService} from "../../shared/ccda-validator.service";
 import {Http} from "@angular/http";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
@@ -14,7 +14,7 @@ const URL = 'https://devccda.sitenv.org/referenceccdaservice/';
   styleUrls: ['ccda-r2-validator.component.css']
 })
 export class CcdaR2ValidatorComponent implements OnInit {
-  @ViewChild('resultsModal') modal: ModalComponent;
+  @ViewChild('r2resultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal:ModalComponent;
 
   private senderGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Sender SUT Test Data';

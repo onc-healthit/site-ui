@@ -1,0 +1,16 @@
+.featurestable table{
+    border: 3px solid black;
+}
+
+.featurestable table tbody {
+    overflow: auto;
+    height: 150px;
+    float: left;
+    width: 100%;
+}
+.featurestable table td {
+    text-align:center;
+    background:gray;
+    border-bottom:5px solid black;
+    border-radius: 15px;
+}
