@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {Http} from "@angular/http";
 
-const nistToolsMarkdownURL = 'https://raw.githubusercontent.com/Plow74/markdowntest/master/nisttools.md';
+const nistToolsMarkdownURL = 'https://raw.githubusercontent.com/siteadmin/SITE-Content/master/TestingTools.md';
 
 @Component({
   selector: 'app-site-nist-tools',

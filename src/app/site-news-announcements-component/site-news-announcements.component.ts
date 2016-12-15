@@ -1,8 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from "@angular/core";
 import {Http} from "@angular/http";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 
-const newsAndAnnouncementsMarkdownURL = 'https://raw.githubusercontent.com/Plow74/markdowntest/master/announcements.md';
+const newsAndAnnouncementsMarkdownURL = 'https://raw.githubusercontent.com/siteadmin/SITE-Content/master/NewsAndAnnouncements.md';
 
 @Component({
   selector: 'site-news-announcements',
