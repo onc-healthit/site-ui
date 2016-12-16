@@ -13,7 +13,7 @@ export class ResultsListComponent implements OnInit {
   private currentResultType: string = "";
 
   constructor(@Inject(DOCUMENT) private document: any, private pageScrollService: PageScrollService) {
-    PageScrollConfig.defaultScrollOffset = 210;
+    PageScrollConfig.defaultScrollOffset = 240;
   }
 
   ngOnInit() {
