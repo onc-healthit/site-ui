@@ -5,8 +5,9 @@ import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import "rxjs/add/operator/toPromise";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/publishReplay";
+import {environment} from "../../../environments/environment";
 
-const URL = 'https://devccda.sitenv.org/referenceccdaservice/';
+const URL = environment.r2_url;
 
 @Component({
   selector: 'ccda-r2-validator-component',
