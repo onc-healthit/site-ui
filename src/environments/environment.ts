@@ -9,5 +9,5 @@ export const environment = {
   r2_url: 'https://devccda.sitenv.org/referenceccdaservice/',
   direct_url: 'https://devportal.sitenv.org/web/site/transport',
   scorecard_url: 'https://devportal.sitenv.org/scorecard/',
-  fhir_url: 'https://devportal.sitenv.org/web/site/fhir-sandbox'
+  fhir_url: 'https://devportal.sitenv.org/web/site/fhir-sandbox',
 };
