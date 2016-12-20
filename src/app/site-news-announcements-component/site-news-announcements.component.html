@@ -1,6 +1,6 @@
 <button type="button" (click)="getNewsAndAnnouncements()" class="btn btn-link footer-link-btn">News &amp; Announcements</button>
 
-<modal #newsAndAnnouncementsModal>
+<modal #newsAndAnnouncementsModal cssClass="release-notes-modal-dialog">
   <modal-body>
     <div class="col-sm-12" [innerHtml]="newsAndAnnouncementsMarkdown | markdownToHtml">
     </div>

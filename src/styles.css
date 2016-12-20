@@ -135,6 +135,11 @@ footer {
     overflow-y: auto !important;
 }
 
+.release-notes-modal-dialog {
+    width: 90% !important;
+    overflow-y: auto !important;
+}
+
 .modal{
     overflow-y: auto !important;
 }

@@ -8,7 +8,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-7">
+    <div class="col-sm-12 text-right">
+      <ccda-validator-release-notes></ccda-validator-release-notes>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
       <accordion [showArrows]="true" [closeOthers]="true" [expandAll]="false">
         <accordion-group heading="R1.1 Validator">
           <ccda-r1-validator-component></ccda-r1-validator-component>
@@ -17,24 +22,6 @@
           <ccda-r2-validator-component></ccda-r2-validator-component>
         </accordion-group>
       </accordion>
-    </div>
-    <div class="col-sm-5">
-      <div class="well pre-scrollable">
-        <h3>1.0.4 Release Notes</h3>
-        <ul class="list-group">
-          <li class="list-group-item">See ETT related errata 1017 and 1045 (implementation requested or errata
-            created via discussion in ETT forum)
-          </li>
-          <li class="list-group-item">Fixed typeCode identification issue for performers in Continuity Of Care
-            Document level validations
-          </li>
-          <li class="list-group-item">1017, 1038, 1045 ERRATA</li>
-          <li class="list-group-item">Adds multiple rules which, among other things, allows additional
-            effectiveTime elements in Planned Medication Activity (such as one to record frequency) as long
-            as one of them is of type IVL_TS or TS
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
   <div class="row">
