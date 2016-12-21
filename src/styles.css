@@ -249,7 +249,6 @@ body{
 
 .featurestable tbody {
     overflow: auto;
-    height: 150px;
     width: 100%;
 }
 
