@@ -15,6 +15,8 @@ import {SiteReleaseNotesComponent} from "./site-release-notes-component/site-rel
 import {SiteVersionComponent} from "./site-version-component/site-version.component";
 import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
 import {SiteFeaturesTableComponent} from "./site-features-table-component/site-features-table.component";
+import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
+
 @NgModule({
   imports: [
     AppRoutingModule,
@@ -22,7 +24,8 @@ import {SiteFeaturesTableComponent} from "./site-features-table-component/site-f
     SharedModule,
     MarkdownModule,
     Ng2Bs3ModalModule,
-    Ng2PageScrollModule.forRoot()
+    Ng2PageScrollModule.forRoot(),
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
   ],
   declarations: [
     SandboxLauncherComponent,

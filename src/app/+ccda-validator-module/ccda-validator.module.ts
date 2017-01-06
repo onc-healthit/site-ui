@@ -13,6 +13,7 @@ import {CcdaValidatorReleaseNotesComponent} from "./ccda-validator-release-notes
 import {CcdaR2ValidatorComponent} from "./ccda-r2-validator-component/ccda-r2-validator.component";
 import {CcdaValidatorLauncherComponent} from "./ccda-validator-launcher/ccda-validator-launcher.component";
 import {AccordionModule} from "ng2-accordion";
+import {Angulartics2Module} from "angulartics2";
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {AccordionModule} from "ng2-accordion";
     CCDAValidatorRoutingModule,
     PopoverModule,
     SharedModule,
-    AccordionModule
+    AccordionModule,
+    Angulartics2Module.forChild()
   ],
   exports: [
   ],
