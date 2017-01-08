@@ -1,4 +1,10 @@
-<div class="row">
+<div class="row" *ngIf="validationResults?.resultsMetaData?.serviceError">
+    <div class="col-sm-12 alert alert-danger text-center" role="alert">
+        {{validationResults?.resultsMetaData?.serviceErrorMessage}}
+    </div>
+</div>
+
+<div class="row" *ngIf="!validationResults?.resultsMetaData?.serviceError">
     <div class="col-sm-4">
         <div class="list-group">
             <div class="list-group-item"

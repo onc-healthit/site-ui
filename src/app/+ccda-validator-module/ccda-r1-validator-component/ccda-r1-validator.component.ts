@@ -35,16 +35,14 @@ export class CcdaR1ValidatorComponent implements OnInit {
   }
 
   onSubmit(form: any): void {
-    this.blockModal.open();
-    this.ccdaValidatorService.validateR1(URL, this.CCDA1_type_val, this.filesToUpload).then((result) => {
-      this.validationResults.ccdaValidationResults = this.buildValidationResults(result.ccdaResults);
-      this.validationResults.resultsMetaData = this.buildValidationResultsMetaData(result.ccdaResults);
-      this.blockModal.close();
-      this.modal.open();
-    }, (error) => {
-      console.error(error);
-      this.blockModal.close();
-    });
+    this.blockModal.open().then(() => {
+          this.ccdaValidatorService.validateR1(URL, this.CCDA1_type_val, this.filesToUpload).then((result) => {
+            this.validationResults.ccdaValidationResults = this.buildValidationResults(result.ccdaResults);
+            this.validationResults.resultsMetaData = this.buildValidationResultsMetaData(result.ccdaResults);
+            this.blockModal.close();
+            this.modal.open();
+          });
+        });
   }
 
   private buildValidationResultsMetaData(data):any{
@@ -56,11 +54,11 @@ export class CcdaR1ValidatorComponent implements OnInit {
     var warningMetaData = {
       type: '',
       count: 0
-  };
+    };
     var infoMetaData = {
       type: '',
       count: 0
-  };
+    };
 
     errorMetadata.type = 'C-CDA MDHT Conformance Error';
     errorMetadata.count = data.errors.length;
