@@ -1,0 +1,9 @@
+.site-header {
+    background: url("../../assets/images/site/bg-header-1920x170.png") repeat-x center top #1fdbfe;
+}
+
+.site-logo {
+    padding: 15px 15px 15px 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+}

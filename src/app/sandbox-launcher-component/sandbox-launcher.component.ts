@@ -10,6 +10,7 @@ const direct_url = environment.direct_url;
 
 @Component({
   selector: 'site-sandbox-launcher',
+  styleUrls: ['sandbox-launcher.component.css'],
   templateUrl: 'sandbox-launcher.component.html'
 })
 
