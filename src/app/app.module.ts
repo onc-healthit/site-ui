@@ -16,6 +16,7 @@ import {SiteVersionComponent} from "./site-version-component/site-version.compon
 import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
 import {SiteFeaturesTableComponent} from "./site-features-table-component/site-features-table.component";
 import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
+import {SiteHeaderComponent} from "./site-header-component/site-header-component";
 
 @NgModule({
   imports: [
@@ -37,12 +38,13 @@ import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
     SiteReleaseNotesComponent,
     SiteVersionComponent,
     SiteNistToolsComponent,
-    SiteFeaturesTableComponent
+    SiteFeaturesTableComponent,
+    SiteHeaderComponent
   ],
   providers: [
     PageScrollService
   ],
-  bootstrap: [ SiteNavigationComponent, SiteFooterComponent]
+  bootstrap: [ SiteNavigationComponent, SiteFooterComponent, SiteHeaderComponent]
 })
 export class AppModule {
 }

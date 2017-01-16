@@ -1,0 +1,11 @@
+.site-welcome-overview{
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 2px solid #003366;
+  height: 200px;
+}
+
+.site-welcome-overview h1{
+  color: #003366;
+  font-weight: 600;
+}

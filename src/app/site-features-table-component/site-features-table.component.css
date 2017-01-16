@@ -1,0 +1,29 @@
+.featurestable{
+    width:100%;
+    height:100%;
+}
+
+.featurestable /deep/table{
+    margin: 0 auto;
+    width: 100%;
+}
+.featurestable /deep/thead th{
+    text-align:center;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.featurestable /deep/tbody {
+    overflow: auto;
+    width: 100%;
+}
+
+.featurestable /deep/tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.featurestable /deep/td {
+    text-align:center;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
