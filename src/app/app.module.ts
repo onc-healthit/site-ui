@@ -17,6 +17,7 @@ import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tool
 import {SiteFeaturesTableComponent} from "./site-features-table-component/site-features-table.component";
 import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
 import {SiteHeaderComponent} from "./site-header-component/site-header-component";
+import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import {SiteHeaderComponent} from "./site-header-component/site-header-component
     SiteVersionComponent,
     SiteNistToolsComponent,
     SiteFeaturesTableComponent,
-    SiteHeaderComponent
+    SiteHeaderComponent,
+    SandboxDirectComponent
   ],
   providers: [
     PageScrollService

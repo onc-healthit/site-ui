@@ -2,6 +2,7 @@ import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {SandboxLauncherComponent} from "./sandbox-launcher-component/sandbox-launcher.component";
 import {SandboxCCDAComponent} from "./sandbox-ccda-component/sandbox-ccda.component";
+import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
 import {SandboxQrdaCqmComponentComponent} from "./sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component";
 import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
 
@@ -15,12 +16,20 @@ const appRoutes: Routes = [
     component: SandboxCCDAComponent
   },
   {
+    path: 'sandbox-direct',
+    component: SandboxDirectComponent
+  },
+  {
     path: 'sandbox-qrm-cqm',
     component: SandboxQrdaCqmComponentComponent
   },
   {
     path: 'sandbox-ccda/ccda-validator',
     loadChildren: 'app/+ccda-validator-module/ccda-validator.module#CCDAValidatorModule'
+  },
+  {
+    path: 'sandbox-direct/directtransport',
+    loadChildren: 'app/+direct-transport-module/direct-transport.module#DirectTransportModule'
   },
   {
     path: 'nist-tools',
