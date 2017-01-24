@@ -6,6 +6,7 @@ import {DirectTransportLauncherComponent} from "./direct-transport-launcher/dire
 import {DirectTransportRoutingModule} from "./direct-transport.routing";
 import {TrustAnchorExchangeComponent} from "app/+direct-transport-module/trustanchor-exchange-component/trustanchor-exchange.component";
 import {TrustanchorUploadService} from "app/shared/trustanchor-upload.service";
+import {DirectRecieveMessagesComponent} from "app/+direct-transport-module/direct-recieve-messages-component/direct-recieve-messages.component";
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {TrustanchorUploadService} from "app/shared/trustanchor-upload.service";
   ],
   declarations: [
     DirectTransportLauncherComponent,
-    TrustAnchorExchangeComponent
+    TrustAnchorExchangeComponent,
+    DirectRecieveMessagesComponent
   ],
   providers: [
     TrustanchorUploadService
