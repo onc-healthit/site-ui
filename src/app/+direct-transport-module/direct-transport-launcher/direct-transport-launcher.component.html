@@ -1,8 +1,15 @@
 <div class="container">
-  <page-overview-header title="Direct Transport Test Tool" description="The goal of the SITE Direct Transport Sandbox is to provide a mechanism for developers to test their Direct implementation."></page-overview-header>
   <div class="row">
     <div class="col-sm-12">
-      <h2>Steps to exchange Direct messages with the Sandbox:</h2>
+      <page-overview-header title="Direct Transport Test Tool" description="The goal of the SITE Direct Transport Sandbox is to provide a mechanism for developers to test their Direct implementation."></page-overview-header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <trustanchor-exchange-component>loading...</trustanchor-exchange-component>
+    </div>
+    <div class="col-sm-6">
+      <h3>Steps to exchange Direct messages with the Sandbox:</h3>
       <p> Publish your Direct certificates (Organization or Address bound) per the <a href="http://wiki.directproject.org/Applicability+Statement+for+Secure+Health+Transport+-+Call+to+Consensus+on+Requiring+DNS+and+LDAP+Certificate+Discovery" tabindex="1" target="_blank">Direct specifications</a><span class="inline-ext"><a class="ext-icon" href="http://www.hhs.gov/disclaimer.html" tabindex="1" target="_blank" title="Web Site Disclaimers"><span class="hiddenText">Web Site Disclaimers</span></a></span> .</p>
       <ol>
         <li> Download the Trust Anchor for the Sandbox(<a href="/site-portal-directtransport-portlet/Certificates/PublicKeys/direct.sitenv.org_ca.der" tabindex="1">direct.sitenv.org Certificate</a>) and import the trust anchor into your trust store.</li>
@@ -15,12 +22,40 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <trustanchor-exchange-component>loading...</trustanchor-exchange-component>
+      <direct-recieve-messages-component>loading...</direct-recieve-messages-component>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <direct-recieve-messages-component>loading...</direct-recieve-messages-component>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Site sends Direct messages</h2>
+        </div>
+        <div class="panel-body">
+          <p>Send messages from the Sandbox to your system.</p>
+          <ul>
+            <li><u>Choose your own content:</u> Developers can use their own files as the payload of the Direct message sent from the Sandbox. This provides the ability to verify the file they chosen and that the contents were decrypted appropriately.</li>
+            <li><u>Choose pre-canned content:</u> Provides a list of files that you can choose from as the payload of the Direct message.</li>
+            <li><u>Enter your end point name:</u> The name of the Direct address where you would like to receive the message. Ensure that the Trust Anchor corresponding to the end point has already been uploaded.</li>
+            <li>Once the above fields are populated, hit the send message button.<br> You will receive a message from provider1@direct.sitenv.org to your system with the content you have uploaded. </li>
+          </ul>
+
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#precanned" role="tab" data-toggle="tab" tabindex="1">Choose Precanned Content</a></li>
+            <li class=""><a href="#choosecontent" role="tab" data-toggle="tab" tabindex="1">Choose Your Own Content</a></li>
+          </ul>
+          <div class="well">
+            <div class="tab-content">
+              <div class="tab-pane active" id="precanned">
+                <direct-send-precanned-messages>loading...</direct-send-precanned-messages>
+              </div>
+              <div class="tab-pane" id="choosecontent">
+                <direct-send-uploaded-messages>laoding...</direct-send-uploaded-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

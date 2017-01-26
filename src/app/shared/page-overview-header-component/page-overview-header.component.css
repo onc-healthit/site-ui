@@ -8,4 +8,9 @@
 .sandbox-overview h1{
   color: #003366;
   font-weight: 600;
+  padding: 2px 0px 0px 10px;
+}
+
+.sandbox-overview p{
+  padding: 2px 0px 0px 10px;
 }

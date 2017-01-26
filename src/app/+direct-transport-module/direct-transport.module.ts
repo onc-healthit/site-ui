@@ -7,6 +7,9 @@ import {DirectTransportRoutingModule} from "./direct-transport.routing";
 import {TrustAnchorExchangeComponent} from "app/+direct-transport-module/trustanchor-exchange-component/trustanchor-exchange.component";
 import {TrustanchorUploadService} from "app/shared/trustanchor-upload.service";
 import {DirectRecieveMessagesComponent} from "app/+direct-transport-module/direct-recieve-messages-component/direct-recieve-messages.component";
+import {DirectSendMessageService} from "app/shared/direct-send-message.service";
+import {DirectSendPrecannedMessagesComponent} from "app/+direct-transport-module/direct-send-precanned-messages-component/direct-send-precanned-messages.component";
+import {DirectSendUploadedMessagesComponent} from "app/+direct-transport-module/direct-send-uploaded-messages-component/direct-send-uploaded-messages.component";
 
 @NgModule({
   imports: [
@@ -18,10 +21,13 @@ import {DirectRecieveMessagesComponent} from "app/+direct-transport-module/direc
   declarations: [
     DirectTransportLauncherComponent,
     TrustAnchorExchangeComponent,
-    DirectRecieveMessagesComponent
+    DirectRecieveMessagesComponent,
+    DirectSendPrecannedMessagesComponent,
+    DirectSendUploadedMessagesComponent
   ],
   providers: [
-    TrustanchorUploadService
+    TrustanchorUploadService,
+    DirectSendMessageService
   ]
 })
 export class DirectTransportModule { }
