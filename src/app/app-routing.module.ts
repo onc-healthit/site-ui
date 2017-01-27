@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     loadChildren: 'app/+direct-transport-module/direct-transport.module#DirectTransportModule'
   },
   {
-    path: 'nist-tools',
+    path: 'test-tools',
     component: SiteNistToolsComponent
   },
   {
