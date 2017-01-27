@@ -18,6 +18,7 @@ import {SiteFeaturesTableComponent} from "./site-features-table-component/site-f
 import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
 import {SiteHeaderComponent} from "./site-header-component/site-header-component";
 import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
+import {Ng2BreadcrumbModule} from "ng2-breadcrumb/ng2-breadcrumb";
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.
     Ng2Bs3ModalModule,
     Ng2PageScrollModule.forRoot(),
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
+    Ng2BreadcrumbModule.forRoot(),
   ],
   declarations: [
     SandboxLauncherComponent,
