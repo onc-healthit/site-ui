@@ -14,4 +14,8 @@ export class DirectTransportLauncherComponent implements OnInit {
   ngOnInit() {
   }
 
+  getCertificate(){
+    
+  }
+
 }

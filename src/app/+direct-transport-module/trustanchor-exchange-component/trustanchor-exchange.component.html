@@ -5,9 +5,9 @@
     <div class="panel-body">
             <span style="text-decoration: underline;"> Trust Anchor Exchange using "SITE Upload Trust Anchor": </span>
                 <ul>
-                    <li>Download the Trust Anchor for the Sandbox <a href="/site-portal-directtransport-portlet/Certificates/PublicKeys/direct.sitenv.org_ca.der" tabindex="1">(direct.sitenv.org Certificate)</a> and import the trust anchor into your trust store. </li>
+                    <li>Download the Trust Anchor for the Sandbox <a href="assets/certificates/publickeys/direct.sitenv.org_ca.der" tabindex="1">(direct.sitenv.org Certificate)</a> and import the trust anchor into your trust store. </li>
                     <li>Please upload your Trust Anchor by selecting your Trust Anchor. If you need to replace the Trust Anchor, just perform another upload and the previous one will be replaced.</li>
-                    <li>Uploading the Trust Anchor causes an update to the <a href="/trustBundle/TrustBundle.p7b" tabindex="1">Trust Bundle</a> of <a href="http://direct.sitenv.org" target="_blank" tabindex="1">direct.sitenv.org</a> which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
+                    <li>Uploading the Trust Anchor causes an update to the <a href="{{ trustbundleDownloadUrl }}" tabindex="1">Trust Bundle</a> of <a href="http://direct.sitenv.org" target="_blank" tabindex="1">direct.sitenv.org</a> which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
                 </ul>
         <div class="well">
             <form name="trustanchorexchangeform" #trustanchorexchangeform="ngForm"
