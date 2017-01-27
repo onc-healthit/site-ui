@@ -5,7 +5,6 @@ import {Component, ViewChild} from "@angular/core";
 import {TrustanchorUploadService} from "app/shared/trustanchor-upload.service";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {environment} from "../../../environments/environment";
-import {Http} from "@angular/http";
 
 const URL = environment.trustanchor_upload_url;
 const TRUSTBUNDLE_DOWNLOAD_URL = environment.trustbundle_download_url;
@@ -21,7 +20,7 @@ export class TrustAnchorExchangeComponent{
     public trustbundleDownloadUrl : string = TRUSTBUNDLE_DOWNLOAD_URL;
     public uploadResults: any = {};
     
-    constructor(private trustanchorUploadService:TrustanchorUploadService, private http: Http){
+    constructor(private trustanchorUploadService:TrustanchorUploadService){
         this.filesToUpload = [];
     }
 
@@ -46,15 +45,4 @@ export class TrustAnchorExchangeComponent{
     clearUploadResults(){
         this.uploadResults = null;
     }
-
-    downloadTrustBundle(){
-        return this.http.get(TRUSTBUNDLE_DOWNLOAD_URL).map(response => response.text()).subscribe(
-            data => {
-                this.validationObjectives = data
-            },
-            err => console.error('There was an error: ' + err),
-            () => console.log('done getting options')
-        );
-    }
-
 }
