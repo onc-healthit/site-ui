@@ -2,7 +2,6 @@
   margin-bottom: 30px;
   border-radius: 10px;
   border: 2px solid #003366;
-  height: 200px;
 }
 
 .sandbox-overview h1{
@@ -13,4 +12,8 @@
 
 .sandbox-overview p{
   padding: 2px 0px 0px 10px;
+}
+
+.header-description{
+  padding: 0px 5px 50px 5px;
 }
