@@ -180,3 +180,7 @@ body{
     background-color: #f8f8f8;
     margin: 0px 0px 5px 30px;
 }
+
+.external-info-links{
+    white-space: normal !important;
+}
