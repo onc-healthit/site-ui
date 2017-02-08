@@ -6,4 +6,7 @@
       </a>
     </div>
   </div>
+    <div class="alert alert-danger text-center" *ngIf="showMessage">
+      <p [innerHTML]="systemMessageMarkdown | markdownToHtml"></p>
+  </div>
 </header>
