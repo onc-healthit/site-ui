@@ -181,6 +181,6 @@ body{
     margin: 0px 0px 5px 30px;
 }
 
-.external-info-links{
+.link-button-nowrap {
     white-space: normal !important;
 }

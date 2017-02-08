@@ -10,7 +10,7 @@
             <div class="list-group-item"
                  *ngFor="let r of validationResults?.resultsMetaData?.resultMetaData.slice(0, 3)">
                 <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                <button type="button" class="btn btn-link" (click)="scrollInside('#'+r.type)">{{r.type}}</button>
+                <button type="button" class="btn btn-link link-button-nowrap" (click)="scrollInside('#'+r.type)">{{r.type}}</button>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             <div class="list-group-item"
                  *ngFor="let r of validationResults?.resultsMetaData?.resultMetaData.slice(3, 6)">
                 <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</button>
+                <button type="button" class="btn btn-link link-button-nowrap"  (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</button>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
             <div class="list-group-item"
                  *ngFor="let r of validationResults?.resultsMetaData?.resultMetaData.slice(6, 9)">
                 <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
-                <button type="button" class="btn btn-link"  (click)="scrollInside('#'+r.type)">{{r.type}}</button>
+                <button type="button" class="btn btn-link link-button-nowrap"  (click)="scrollInside('#'+r.type)">{{r.type}}</button>
             </div>
         </div>
     </div>
