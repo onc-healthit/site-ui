@@ -1,7 +1,5 @@
 <div class="row" *ngIf="validationResults?.resultsMetaData?.serviceError">
-    <div class="col-sm-12 alert alert-danger text-center" role="alert">
-        {{validationResults?.resultsMetaData?.serviceErrorMessage}}
-    </div>
+    <div class="col-sm-12 alert alert-danger text-center" role="alert" [innerHtml]="validationResults?.resultsMetaData?.serviceErrorMessage"></div>
 </div>
 
 <div class="row" *ngIf="!validationResults?.resultsMetaData?.serviceError">
@@ -9,7 +7,7 @@
         <div class="list-group">
             <div class="list-group-item"
                  *ngFor="let r of validationResults?.resultsMetaData?.resultMetaData.slice(0, 3)">
-                <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                <span [ngClass]="'badge ' + getValidationClassForType(r.type)">{{r.count}}</span>
                 <button type="button" class="btn btn-link link-button-nowrap" (click)="scrollInside('#'+r.type)">{{r.type}}</button>
             </div>
         </div>
@@ -19,7 +17,7 @@
         <div class="list-group">
             <div class="list-group-item"
                  *ngFor="let r of validationResults?.resultsMetaData?.resultMetaData.slice(3, 6)">
-                <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                <span [ngClass]="'badge ' + getValidationClassForType(r.type)">{{r.count}}</span>
                 <button type="button" class="btn btn-link link-button-nowrap"  (click)="scrollInside('#'+r.type)">{{r.type | hyphenateString}}</button>
             </div>
         </div>
@@ -29,15 +27,15 @@
         <div class="list-group">
             <div class="list-group-item"
                  *ngFor="let r of validationResults?.resultsMetaData?.resultMetaData.slice(6, 9)">
-                <span [ngClass]="'badge ' + getValidationClassFotType(r.type)">{{r.count}}</span>
+                <span [ngClass]="'badge ' + getValidationClassForType(r.type)">{{r.count}}</span>
                 <button type="button" class="btn btn-link link-button-nowrap"  (click)="scrollInside('#'+r.type)">{{r.type}}</button>
             </div>
         </div>
     </div>
 </div>
 <div class="pre-scrollable results-group" id="groupedResults" #groupedResults>
-    <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="getValidationClassFotType(r.type)">
-        <h1 *ngIf(newResultType(r.type)) id="{{r.type | hyphenateString}}">{{r.type}}</h1>
+    <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="getValidationClassForType(r.type)">
+        <h1 *ngIf="(newResultType(r.type))" id="{{r.type | hyphenateString}}">{{r.type}}</h1>
         <span>
             <ul>
                 <li class=""><b>Result Description:</b> {{r.description}}</li>

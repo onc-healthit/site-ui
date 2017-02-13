@@ -25,11 +25,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'sandbox-ccda/ccda-validator',
-    loadChildren: 'app/+ccda-validator-module/ccda-validator.module#CCDAValidatorModule'
+    loadChildren: './+ccda-validator-module/ccda-validator.module#CCDAValidatorModule'
   },
   {
     path: 'sandbox-direct/directtransport',
-    loadChildren: 'app/+direct-transport-module/direct-transport.module#DirectTransportModule'
+    loadChildren: './+direct-transport-module/direct-transport.module#DirectTransportModule'
   },
   {
     path: 'test-tools',
@@ -37,7 +37,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 

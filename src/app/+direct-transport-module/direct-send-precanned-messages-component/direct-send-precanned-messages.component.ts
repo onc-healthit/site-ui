@@ -3,7 +3,7 @@
  */
 import {Component, ViewChild, OnInit} from "@angular/core";
 import {Http} from "@angular/http";
-import {DirectSendMessageService} from "app/shared/direct-send-message.service";
+import {DirectSendMessageService} from "../../shared/direct-send-message.service";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {environment} from "../../../environments/environment";
 

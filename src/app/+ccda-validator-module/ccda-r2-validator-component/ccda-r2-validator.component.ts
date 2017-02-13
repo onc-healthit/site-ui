@@ -20,9 +20,9 @@ export class CcdaR2ValidatorComponent implements OnInit {
 
   private senderGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Sender SUT Test Data';
   private receiverGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Receiver SUT Test Data';
-  public validationObjectives;
-  public referenceFiles;
-  public validationResults;
+  public validationObjectives: any;
+  public referenceFiles: any;
+  public validationResults: any;
   filesToUpload: Array<File>;
   validationObjective: string;
   referenceFileName: string;
@@ -60,7 +60,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
   }
 
   getReferenceFilesForValidationObjective(objective: string) {
-    let obj = this.validationObjectives.find(x => x.name === objective);
+    let obj = this.validationObjectives.find((x: any) => x.name === objective);
     return this.http.get(obj.url).map(response => response.json()).publishReplay(1).refCount().subscribe(
         data => {
           this.referenceFiles = data
@@ -76,7 +76,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
 
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
-          this.ccdaValidatorService.validateR2(URL, this.referenceFileName, this.validationObjective, this.filesToUpload).then((result) => {
+          this.ccdaValidatorService.validateR2(URL, this.referenceFileName, this.validationObjective, this.filesToUpload).then((result: any) => {
             this.validationResults = result;
             this.blockModal.close();
             this.modal.open();

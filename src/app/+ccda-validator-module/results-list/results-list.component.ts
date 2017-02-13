@@ -19,13 +19,13 @@ export class ResultsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  public scrollInside(idToScrollTo) {
+  public scrollInside(idToScrollTo: string) {
     var hyphenatedId = idToScrollTo.replace(/\s+/g, "-");
     let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInlineInstance(this.document, hyphenatedId, this.groupedResults.nativeElement);
     this.pageScrollService.start(pageScrollInstance);
   }
 
-  public getValidationClassFotType(validationResultType:string) : string{
+  public getValidationClassForType(validationResultType:string) : string{
     var typeEnding = validationResultType.split(" ").splice(-1)[0];
     var style;
     switch(typeEnding){
@@ -34,9 +34,9 @@ export class ResultsListComponent implements OnInit {
         break;
       case 'Warning':
         style = "alert-warning";
-        break
+        break;
       default:
-        style = "alert-info"
+        style = "alert-info";
         break;
     }
     return style;

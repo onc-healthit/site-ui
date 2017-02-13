@@ -2,7 +2,7 @@
  * Created by Brian on 1/23/2017.
  */
 import {Component, ViewChild} from "@angular/core";
-import {DirectSendMessageService} from "app/shared/direct-send-message.service";
+import {DirectSendMessageService} from "../../shared/direct-send-message.service";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {environment} from "../../../environments/environment";
 

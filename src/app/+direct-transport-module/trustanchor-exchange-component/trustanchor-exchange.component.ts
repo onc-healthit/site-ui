@@ -2,7 +2,7 @@
  * Created by Brian on 1/23/2017.
  */
 import {Component, ViewChild} from "@angular/core";
-import {TrustanchorUploadService} from "app/shared/trustanchor-upload.service";
+import {TrustanchorUploadService} from "../../shared/trustanchor-upload.service";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {environment} from "../../../environments/environment";
 
@@ -30,7 +30,7 @@ export class TrustAnchorExchangeComponent{
 
     onSubmit(form: any): void {
         this.blockModal.open().then(() => {
-            this.trustanchorUploadService.uploadTrustanchor(URL, this.filesToUpload).then((result) => {
+            this.trustanchorUploadService.uploadTrustanchor(URL, this.filesToUpload).then((result: any) => {
                 this.uploadResults = result;
                 this.blockModal.close();
             }).catch((err) => {
