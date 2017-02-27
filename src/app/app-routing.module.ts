@@ -5,6 +5,7 @@ import {SandboxCCDAComponent} from "./sandbox-ccda-component/sandbox-ccda.compon
 import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
 import {SandboxQrdaCqmComponentComponent} from "./sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component";
 import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
+import {SandboxFhirComponent} from "./sandbox-fhir-component/sandbox-fhir.component";
 
 const appRoutes: Routes = [
   {
@@ -14,6 +15,10 @@ const appRoutes: Routes = [
   {
     path: 'sandbox-ccda',
     component: SandboxCCDAComponent
+  },
+  {
+    path: 'sandbox-fhir',
+    component: SandboxFhirComponent
   },
   {
     path: 'sandbox-direct',

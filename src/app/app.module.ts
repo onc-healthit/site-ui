@@ -18,7 +18,8 @@ import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
 import {SiteHeaderComponent} from "./site-header-component/site-header-component";
 import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
 import {Ng2BreadcrumbModule} from "ng2-breadcrumb/ng2-breadcrumb";
-import {HttpModule} from '@angular/http';
+import {HttpModule} from "@angular/http";
+import {SandboxFhirComponent} from "./sandbox-fhir-component/sandbox-fhir.component";
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import {HttpModule} from '@angular/http';
     SiteNistToolsComponent,
     SiteFeaturesTableComponent,
     SiteHeaderComponent,
-    SandboxDirectComponent
+    SandboxDirectComponent,
+    SandboxFhirComponent
   ],
   providers: [
     PageScrollService
