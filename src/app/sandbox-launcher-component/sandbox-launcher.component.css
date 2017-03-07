@@ -1,0 +1,14 @@
+.site-welcome-overview{
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: 2px solid #003366;
+}
+
+.site-welcome-overview h1{
+  color: #003366;
+  font-weight: 600;
+}
+
+.header-description{
+  padding: 0px 5px 50px 5px;
+}

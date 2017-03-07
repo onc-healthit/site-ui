@@ -7,7 +7,6 @@ import {BrowserModule} from "@angular/platform-browser";
 import {Ng2PageScrollModule, PageScrollService} from "ng2-page-scroll";
 import {SharedModule} from "./shared/shared.module";
 import {SandboxQrdaCqmComponentComponent} from "./sandbox-qrda-cqm-component/sandbox-qrda-cqm-component.component";
-import {MarkdownModule} from "angular2-markdown";
 import {SiteNewsAnnouncementsComponent} from "./site-news-announcements-component/site-news-announcements.component";
 import {SiteFooterComponent} from "./site-footer-component/site-footer.component";
 import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
@@ -15,14 +14,23 @@ import {SiteReleaseNotesComponent} from "./site-release-notes-component/site-rel
 import {SiteVersionComponent} from "./site-version-component/site-version.component";
 import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
 import {SiteFeaturesTableComponent} from "./site-features-table-component/site-features-table.component";
+import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
+import {SiteHeaderComponent} from "./site-header-component/site-header-component";
+import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
+import {Ng2BreadcrumbModule} from "ng2-breadcrumb/ng2-breadcrumb";
+import {HttpModule} from "@angular/http";
+import {SandboxFhirComponent} from "./sandbox-fhir-component/sandbox-fhir.component";
+
 @NgModule({
   imports: [
     AppRoutingModule,
     BrowserModule,
     SharedModule,
-    MarkdownModule,
     Ng2Bs3ModalModule,
-    Ng2PageScrollModule.forRoot()
+    HttpModule,
+    Ng2PageScrollModule.forRoot(),
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
+    Ng2BreadcrumbModule.forRoot(),
   ],
   declarations: [
     SandboxLauncherComponent,
@@ -34,12 +42,15 @@ import {SiteFeaturesTableComponent} from "./site-features-table-component/site-f
     SiteReleaseNotesComponent,
     SiteVersionComponent,
     SiteNistToolsComponent,
-    SiteFeaturesTableComponent
+    SiteFeaturesTableComponent,
+    SiteHeaderComponent,
+    SandboxDirectComponent,
+    SandboxFhirComponent
   ],
   providers: [
     PageScrollService
   ],
-  bootstrap: [ SiteNavigationComponent, SiteFooterComponent]
+  bootstrap: [ SiteNavigationComponent, SiteFooterComponent, SiteHeaderComponent]
 })
 export class AppModule {
 }

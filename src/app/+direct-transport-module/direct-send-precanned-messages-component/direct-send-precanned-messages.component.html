@@ -1,0 +1,36 @@
+<form name="precannedForm" #precannedForm="ngForm"
+      (ngSubmit)="onSubmit(precannedForm.value)"
+      class="form-horizontal">
+    <div class="form-group row">
+        <label for="precannedemail">Enter Your Endpoint Name:</label>
+        <input id="precannedemail" class="form-control" name="toAddress" [(ngModel)]="toAddress" placeholder="recipient direct email address" type="email" tabindex="1" required>
+    </div>
+    <div class="form-group row">
+        <label for="dLabel">Select a Precanned Sample C-CDA File to Send:</label>
+        <select id="dLabel" class="form-control" required [(ngModel)]="ccdaFilePath" name="ccdaFilePath">
+            <option value="">--- select one ---</option>
+            <option *ngFor="let r of precannedCcdaFilePaths" [value]="r">{{r.substring(r.lastIndexOf("/") + 1)}}</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <button id="precannedCCDAsubmit" type="submit" class="btn btn-primary start" tabindex="1">
+            <i class="glyphicon glyphicon-envelope"></i> <span>Send Message</span>
+        </button>
+    </div>
+</form>
+<div *ngIf="sendMessageResult?.message">
+    <div [ngClass]="{'alert-success': sendMessageResult?.success==true, 'alert-danger': sendMessageResult?.success==false}" class="alert alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="clearResults()">&times;</a>
+        <h4>{{ sendMessageResult?.message }}</h4>
+    </div>
+</div>
+<modal #blockModal [keyboard]="false" [backdrop]="'static'">
+    <modal-body>
+        <div class="blockMsg">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
+            <div>
+                <h1>Sending Message</h1>
+            </div>
+        </div>
+    </modal-body>
+</modal>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {AppRoutingModule} from "../app-routing.module";
+import {Angulartics2GoogleAnalytics} from "angulartics2";
 
 @Component({
   selector: 'app-site-navigation',
@@ -8,7 +9,7 @@ import {AppRoutingModule} from "../app-routing.module";
 })
 export class SiteNavigationComponent implements OnInit {
 
-  constructor(private siteRouting: AppRoutingModule) { }
+  constructor(private siteRouting: AppRoutingModule, angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) { }
 
   ngOnInit() {
   }

@@ -13,8 +13,10 @@ require("core-js/es6/date");
 require("core-js/es6/array");
 require("core-js/es6/regexp");
 require("core-js/es6/map");
+require("core-js/es6/weak-map");
 require("core-js/es6/set");
 require("core-js/es6/reflect");
 require("core-js/es7/reflect");
 require("zone.js/dist/zone");
+require("core-js/es7/array");
 //# sourceMappingURL=polyfills.js.map

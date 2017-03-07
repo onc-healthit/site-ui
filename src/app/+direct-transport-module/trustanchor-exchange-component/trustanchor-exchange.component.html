@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title"> Trust Anchor Exchange</h2>
+    </div>
+    <div class="panel-body">
+            <span style="text-decoration: underline;"> Trust Anchor Exchange using "SITE Upload Trust Anchor": </span>
+                <ul>
+                    <li>Download the Trust Anchor for the Sandbox <a href="assets/certificates/publickeys/direct.sitenv.org_ca.der" tabindex="1">(direct.sitenv.org Certificate)</a> and import the trust anchor into your trust store. </li>
+                    <li>Please upload your Trust Anchor by selecting your Trust Anchor. If you need to replace the Trust Anchor, just perform another upload and the previous one will be replaced.</li>
+                    <li>Uploading the Trust Anchor causes an update to the <a href="{{ trustbundleDownloadUrl }}" tabindex="1">Trust Bundle</a> of <a href="http://direct.sitenv.org" target="_blank" tabindex="1">direct.sitenv.org</a> which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
+                </ul>
+        <div class="well">
+            <form name="trustanchorexchangeform" #trustanchorexchangeform="ngForm"
+                  (ngSubmit)="onSubmit(trustanchorexchangeform.value)"
+                  class="form-horizontal">
+                <div class="form-group row">
+                    <label for="fileUpload">Select a Local Trust Anchor Certificate (binary or PEM encoded):</label>
+                    <input type="file" id="fileUpload" (change)="fileChangeEvent($event)" class="form-control" tabindex="1" required/>
+                </div>
+                <div class="form-group row">
+                    <label for="trustanchorUpload">Submit Anchor</label>
+                    <div id="trustanchorUpload">
+                        <button type="submit" class="btn btn-primary" [disabled]="!trustanchorexchangeform.form.valid">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div *ngIf="uploadResults?.message">
+                <div [ngClass]="{'alert-success': uploadResults?.success==true, 'alert-danger': uploadResults?.success==false}" class="alert alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="clearUploadResults()">&times;</a>
+                    <h4>{{ uploadResults?.message }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<modal #blockModal [keyboard]="false" [backdrop]="'static'">
+    <modal-body>
+        <div class="blockMsg">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
+            <div>
+                <h1>Uploading Trustanchor:</h1>
+                <h4>{{filesToUpload[0]?.name}}</h4>
+            </div>
+        </div>
+    </modal-body>
+</modal>

@@ -25,7 +25,7 @@
   <div class="form-group row">
     <label for="validationSubmit">Validate Document</label>
     <div id="validationSubmit">
-      <button type="submit" class="btn btn-primary" [disabled]="!r1ValidationForm.form.valid">
+      <button type="submit" class="btn btn-primary" [disabled]="!r1ValidationForm.form.valid" angulartics2On="click" angularticsEvent="r1 validate" angularticsCategory="ccda validator">
         Submit
       </button>
     </div>

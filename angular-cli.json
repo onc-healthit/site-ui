@@ -8,10 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico",
-        "images",
-        ".htaccess"
+        "assets"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -58,6 +55,16 @@
       "module": false,
       "pipe": true,
       "service": true
-    }
+    },
+    "lint": [
+      {
+        "files": "src/**/*.ts",
+        "project": "src/tsconfig.json"
+      },
+      {
+        "files": "e2e/**/*.ts",
+        "project": "e2e/tsconfig.json"
+      }
+    ]
   }
 }

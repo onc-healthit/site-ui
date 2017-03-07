@@ -17,7 +17,7 @@ const URL = environment.r1_url;
 export class CcdaR1ValidatorComponent implements OnInit {
   @ViewChild('r1resultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal:ModalComponent;
-  public validationResults;
+  public validationResults: any;
   CCDA1_type_val: string;
   filesToUpload: Array<File>;
 
@@ -35,19 +35,17 @@ export class CcdaR1ValidatorComponent implements OnInit {
   }
 
   onSubmit(form: any): void {
-    this.blockModal.open();
-    this.ccdaValidatorService.validateR1(URL, this.CCDA1_type_val, this.filesToUpload).then((result) => {
-      this.validationResults.ccdaValidationResults = this.buildValidationResults(result.ccdaResults);
-      this.validationResults.resultsMetaData = this.buildValidationResultsMetaData(result.ccdaResults);
-      this.blockModal.close();
-      this.modal.open();
-    }, (error) => {
-      console.error(error);
-      this.blockModal.close();
-    });
+    this.blockModal.open().then(() => {
+          this.ccdaValidatorService.validateR1(URL, this.CCDA1_type_val, this.filesToUpload).then((result: any) => {
+            this.validationResults.ccdaValidationResults = this.buildValidationResults(result.ccdaResults);
+            this.validationResults.resultsMetaData = this.buildValidationResultsMetaData(result.ccdaResults);
+            this.blockModal.close();
+            this.modal.open();
+          });
+        });
   }
 
-  private buildValidationResultsMetaData(data):any{
+  private buildValidationResultsMetaData(data: any):any{
     var metadata :any = [];
     var errorMetadata = {
       type: '',
@@ -56,72 +54,88 @@ export class CcdaR1ValidatorComponent implements OnInit {
     var warningMetaData = {
       type: '',
       count: 0
-  };
+    };
     var infoMetaData = {
       type: '',
       count: 0
-  };
+    };
+    var serviceError = {
+      serviceError: true,
+      serviceErrorMessage: ''
+    };
 
-    errorMetadata.type = 'C-CDA MDHT Conformance Error';
-    errorMetadata.count = data.errors.length;
-    metadata.push(errorMetadata);
+    if (!data.error) {
+      errorMetadata.type = 'C-CDA MDHT Conformance Error';
+      errorMetadata.count = data.errors.length;
+      metadata.push(errorMetadata);
 
-    warningMetaData.type = 'C-CDA MDHT Conformance Warning';
-    warningMetaData.count = data.warnings.length;
-    metadata.push(warningMetaData);
+      warningMetaData.type = 'C-CDA MDHT Conformance Warning';
+      warningMetaData.count = data.warnings.length;
+      metadata.push(warningMetaData);
 
-    infoMetaData.type = 'C-CDA MDHT Conformance Info';
-    infoMetaData.count = data.info.length;
-    metadata.push(infoMetaData);
+      infoMetaData.type = 'C-CDA MDHT Conformance Info';
+      infoMetaData.count = data.info.length;
+      metadata.push(infoMetaData);
+    }else{
+      serviceError.serviceErrorMessage = data.error;
+      return serviceError;
+    }
+
     var resultMetaDataString = {
       'resultMetaData': metadata
-    }
+    };
     return resultMetaDataString;
   }
 
-  private buildValidationResults(data):any{
+  private buildValidationResults(data: any):any{
     var resultsList :any = [];
-    data.errors.forEach(function (result) {
-      let ccdaValidationResults = {
-        type: '',
-        description: '',
-        xPath: '',
-        documentLineNumber: ''
-      };
-      ccdaValidationResults.type = 'C-CDA MDHT Conformance Error';
-      ccdaValidationResults.description = result.message;
-      ccdaValidationResults.xPath = result.path;
-      ccdaValidationResults.documentLineNumber = result.lineNumber;
-      resultsList.push(ccdaValidationResults);
-    });
+    if (data.errors){
+      data.errors.forEach(function (result: any) {
+        let ccdaValidationResults = {
+          type: '',
+          description: '',
+          xPath: '',
+          documentLineNumber: ''
+        };
+        ccdaValidationResults.type = 'C-CDA MDHT Conformance Error';
+        ccdaValidationResults.description = result.message;
+        ccdaValidationResults.xPath = result.path;
+        ccdaValidationResults.documentLineNumber = result.lineNumber;
+        resultsList.push(ccdaValidationResults);
+      });
+    }
 
-    data.warnings.forEach(function (result) {
-      let ccdaValidationResults = {
-        type: '',
-        description: '',
-        xPath: '',
-        documentLineNumber: ''
-      };
-      ccdaValidationResults.type = 'C-CDA MDHT Conformance Warning';
-      ccdaValidationResults.xPath = result.path;
-      ccdaValidationResults.description = result.message;
-      ccdaValidationResults.documentLineNumber = result.lineNumber;
-      resultsList.push(ccdaValidationResults);
-    });
+    if (data.warnings){
+      data.warnings.forEach(function (result: any) {
+        let ccdaValidationResults = {
+          type: '',
+          description: '',
+          xPath: '',
+          documentLineNumber: ''
+        };
+        ccdaValidationResults.type = 'C-CDA MDHT Conformance Warning';
+        ccdaValidationResults.xPath = result.path;
+        ccdaValidationResults.description = result.message;
+        ccdaValidationResults.documentLineNumber = result.lineNumber;
+        resultsList.push(ccdaValidationResults);
+      });
+    }
 
-    data.info.forEach(function (result) {
-      let ccdaValidationResults = {
-        type: '',
-        description: '',
-        xPath: '',
-        documentLineNumber: ''
-      };
-      ccdaValidationResults.type = 'C-CDA MDHT Conformance Info';
-      ccdaValidationResults.description = result.message;
-      ccdaValidationResults.xPath = result.path;
-      ccdaValidationResults.documentLineNumber = result.lineNumber;
-      resultsList.push(ccdaValidationResults);
-    });
+    if (data.info){
+      data.info.forEach(function (result: any) {
+        let ccdaValidationResults = {
+          type: '',
+          description: '',
+          xPath: '',
+          documentLineNumber: ''
+        };
+        ccdaValidationResults.type = 'C-CDA MDHT Conformance Info';
+        ccdaValidationResults.description = result.message;
+        ccdaValidationResults.xPath = result.path;
+        ccdaValidationResults.documentLineNumber = result.lineNumber;
+        resultsList.push(ccdaValidationResults);
+      });
+    }
     return resultsList;
   }
 }
