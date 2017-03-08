@@ -7,7 +7,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/publishReplay";
 import {environment} from "../../../environments/environment";
 
-const URL = environment.r2_url;
+const URL = environment.ccda_validation_url;
 
 @Component({
   selector: 'ccda-r2-validator-component',
@@ -76,7 +76,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
 
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
-          this.ccdaValidatorService.validateR2(URL, this.referenceFileName, this.validationObjective, this.filesToUpload).then((result: any) => {
+          this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective, this.filesToUpload).then((result: any) => {
             this.validationResults = result;
             this.blockModal.close();
             this.modal.open();
