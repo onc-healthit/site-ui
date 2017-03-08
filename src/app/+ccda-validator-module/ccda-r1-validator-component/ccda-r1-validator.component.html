@@ -3,8 +3,8 @@
       (ngSubmit)="onSubmit(r1ValidationForm.value)"
       class="form-horizontal">
   <div class="form-group row">
-    <label for="CCDA1_type_val">Select ONC 2014 Edition S&amp;CC objective or C-CDA R1.1 IG Conformance from the list below:</label>
-    <select id="CCDA1_type_val" name="CCDA1_type_val" class="form-control" tabindex="1" required [(ngModel)]="CCDA1_type_val">
+    <label for="validationObjective">Select ONC 2014 Edition S&amp;CC objective or C-CDA R1.1 IG Conformance from the list below:</label>
+    <select id="validationObjective" name="validationObjective" class="form-control" tabindex="1" required [(ngModel)]="validationObjective">
       <option value="">--- select one ---</option>
       <option value="ClinicalOfficeVisitSummary">Clinical Office Visit Summary - 170.314(e)(2) - Clinical Summary</option>
       <option value="TransitionsOfCareAmbulatorySummary">Transitions Of Care Ambulatory Summary - 170.314(b)(2) Transition of Care/Referral Summary - For Ambulatory Care</option>
@@ -32,6 +32,7 @@
   </div>
 </form>
 </div>
+
 <modal #blockModal [keyboard]="false" [backdrop]="'static'">
   <modal-body>
     <div class="blockMsg">
@@ -47,12 +48,16 @@
   <modal-body>
     <ul class="nav nav-tabs" id="resultModalTabs">
       <li><a href="#r1-results-group-tab" data-toggle="tab" class="nav active">Validation Result</a></li>
+      <li><a href="#r1-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a></li>
       <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button> </li>
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="r1-results-group-tab" >
         <results-list [validationResults]="validationResults"></results-list>
       </div>
+      <div role="tabpanel" class="tab-pane fade in" id="r1-results-xml-tab">
+        <xml-highlight [ccdaxml]="validationResults?.resultsMetaData.ccdaFileContents" [validationResults]="validationResults?.ccdaValidationResults"></xml-highlight>
+      </div>   
     </div>
   </modal-body>
   <modal-footer>
