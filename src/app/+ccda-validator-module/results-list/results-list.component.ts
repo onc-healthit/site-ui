@@ -2,6 +2,9 @@ import {Component, OnInit, Input, Inject, ViewChild, ElementRef} from "@angular/
 import {PageScrollService, PageScrollInstance, PageScrollConfig} from "ng2-page-scroll";
 import {DOCUMENT} from "@angular/platform-browser";
 
+const R1_OBJECTIVES = ['NonSpecificCCDA', 'TransitionsOfCareAmbulatorySummary', 'ClinicalOfficeVisitSummary',
+    'TransitionsOfCareInpatientSummary', 'VDTAmbulatorySummary', 'VDTInpatientSummary'];
+
 @Component({
   selector: 'results-list',
   templateUrl: './results-list.component.html',
@@ -55,4 +58,19 @@ export class ResultsListComponent implements OnInit {
       return true;
     }
   }
+    
+  public displayMDHTResultsOnly(): boolean{
+      if(this.validationResults) {
+          var validationObjectiveSelected = this.validationResults.resultsMetaData.ccdaDocumentType;
+          if(validationObjectiveSelected) {
+              for(var curObj of R1_OBJECTIVES) {
+                  if(curObj === validationObjectiveSelected) {
+                      return true;
+                  }
+              }
+          }
+      }
+      return false;
+  }
+
 }
