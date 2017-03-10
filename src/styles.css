@@ -69,7 +69,7 @@
 }
 
 .validation-modal-dialog{
-    width: 90% !important;
+    width: 95% !important;
     overflow-y: auto !important;
 }
 
@@ -100,6 +100,10 @@ a.ext-icon {
 .external-page {
     top: 1px;
     right: 5px;
+}
+
+.direct-message-body{
+    padding-top: 10px !important;
 }
 
 .hiddenText {

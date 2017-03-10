@@ -11,6 +11,8 @@ export const environment = {
   trustbundle_download_url: 'https://devccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
   direct_send_precanned_message_url: 'https://devccda.sitenv.org/directtransportmessagesender/sendmessagewithattachmentfilepath',
   direct_send_uploaded_message_url: 'https://devccda.sitenv.org/directtransportmessagesender/sendmessagewithattachmentfile',
+  xdr_send_precanned_message_url: 'http://localhost:8080/xdrmessagesender/sendmessagewithattachmentfilepath',
+  xdr_send_uploaded_message_url: 'http://localhost:8080/xdrmessagesender/sendmessagewithattachmentfile',
   canned_ccda_filepaths_url: 'https://devccda.sitenv.org/directtransportmessagesender/listsampleccdafiles',
   scorecard_url: 'https://devportal.sitenv.org/scorecard/',
   fhir_url: 'https://devportal.sitenv.org/web/site/fhir-sandbox',
