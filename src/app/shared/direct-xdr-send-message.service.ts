@@ -8,9 +8,9 @@ export class DirectXdrSendMessageService {
 
   public sendMessageWithAttachmentFile(url: string, endpoint: string, files: Array<File>, directFromAddress: string, directToAddress: string, messageType: string) :any{
     return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
-      for(var i = 0; i < files.length; i++) {
+      let formData: any = new FormData();
+      let xhr = new XMLHttpRequest();
+      for(let i = 0; i < files.length; i++) {
         formData.append("attachment", files[i], files[i].name);
       }
       formData.append("endpoint", endpoint);
@@ -32,8 +32,8 @@ export class DirectXdrSendMessageService {
 
   public sendMessageWithAttachmentFilePath(url: string, endpoint: string, attachmentFilePath: string, directFromAddress: string, directToAddress: string, messageType: string) :any{
     return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
+      let formData: any = new FormData();
+      let xhr = new XMLHttpRequest();
       formData.append("endpoint", endpoint);
       formData.append("messageType", messageType);
       formData.append("attachmentFilePath", attachmentFilePath);

@@ -8,9 +8,9 @@ export class DirectSendMessageService {
 
   sendMessageWithAttachmentFile(url: string, toAddress: string, files: Array<File>) :any{
     return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
-      for(var i = 0; i < files.length; i++) {
+      let formData: any = new FormData();
+      let xhr = new XMLHttpRequest();
+      for(let i = 0; i < files.length; i++) {
         formData.append("attachment", files[i], files[i].name);
       }
       formData.append("toAddress", toAddress);
@@ -30,8 +30,8 @@ export class DirectSendMessageService {
 
   sendMessageWithAttachmentFilePath(url: string, toAddress: string, attachmentFilePath: string) :any{
     return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
+      let formData: any = new FormData();
+      let xhr = new XMLHttpRequest();
       formData.append("toAddress", toAddress);
       formData.append("attachmentFilePath", attachmentFilePath);
       xhr.onreadystatechange = function () {

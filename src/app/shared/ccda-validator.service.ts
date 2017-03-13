@@ -8,9 +8,9 @@ export class CCDAValidatorService {
         
   validateCCDA(url: string, referenceFileName: string, validationObjective: string, files: Array<File>) :any{
     return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
-      for(var i = 0; i < files.length; i++) {
+      let formData: any = new FormData();
+      let xhr = new XMLHttpRequest();
+      for(let i = 0; i < files.length; i++) {
         formData.append("ccdaFile", files[i], files[i].name);
       }
       formData.append("referenceFileName", referenceFileName);

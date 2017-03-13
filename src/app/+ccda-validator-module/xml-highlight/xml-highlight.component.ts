@@ -104,7 +104,7 @@ export class XmlHighlightComponent implements OnInit {
                 resultTypeMapValue = result.description;
             }
             if(ccdaValidationResultsMap[result.documentLineNumber] != undefined){
-                var resultTypeMap = ccdaValidationResultsMap[result.documentLineNumber];
+                let resultTypeMap = ccdaValidationResultsMap[result.documentLineNumber];
                 if(resultTypeMap[result.type] != undefined){
                     resultTypeMap[result.type].push(resultTypeMapValue);
                     ccdaValidationResultsMap[result.documentLineNumber] = resultTypeMap;
@@ -113,7 +113,7 @@ export class XmlHighlightComponent implements OnInit {
                     ccdaValidationResultsMap[result.documentLineNumber] = resultTypeMap;
                 }
             }else{
-                var ccdaTypeMap = {};
+                let ccdaTypeMap = {};
                 ccdaTypeMap[result.type] = [resultTypeMapValue];
                 ccdaValidationResultsMap[result.documentLineNumber] = ccdaTypeMap;
             }

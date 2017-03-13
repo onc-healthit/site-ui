@@ -8,9 +8,9 @@ export class TrustanchorUploadService {
 
   uploadTrustanchor(url: string, files: Array<File>) :any{
     return new Promise((resolve, reject) => {
-      var formData: any = new FormData();
-      var xhr = new XMLHttpRequest();
-      for(var i = 0; i < files.length; i++) {
+      let formData: any = new FormData();
+      let xhr = new XMLHttpRequest();
+      for(let i = 0; i < files.length; i++) {
         formData.append("anchoruploadfile", files[i], files[i].name);
       }
       xhr.onreadystatechange = function () {

@@ -8,6 +8,7 @@ import {DirectXdrSendMessageService} from "../shared/direct-xdr-send-message.ser
 import {DirectXdrSendPrecannedMessagesComponent} from "./direct-xdr-send-precanned-messages-component/direct-xdr-send-precanned-messages.component";
 import {DirectXdrSendUploadedMessagesComponent} from "./direct-xdr-send-uploaded-messages-component/direct-xdr-send-uploaded-messages.component";
 import {AccordionModule} from "ngx-accordion";
+import {DirectXdrMessageLookupComponent} from "./direct-xdr-message-lookup-component/direct-xdr-message-lookup.component";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {AccordionModule} from "ngx-accordion";
   declarations: [
     DirectXdrLauncherComponent,
     DirectXdrSendPrecannedMessagesComponent,
-    DirectXdrSendUploadedMessagesComponent
+    DirectXdrSendUploadedMessagesComponent,
+    DirectXdrMessageLookupComponent
   ],
   providers: [
     DirectXdrSendMessageService
