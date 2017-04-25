@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild, ElementRef} from "@angular/core";
+import {Component, ElementRef, Input, OnInit, ViewChild} from "@angular/core";
 
 declare var $:any;
 @Component({
@@ -68,7 +68,7 @@ export class XmlHighlightComponent implements OnInit {
     }
 
     public highlightLine(lineNumber:number): string{
-        let cssClass = "";
+        let cssClass: string = "";
         let resultTypesMap = this.resultsMap[lineNumber];
         if (resultTypesMap != null) {
             for (let resultType in resultTypesMap) {
@@ -79,7 +79,7 @@ export class XmlHighlightComponent implements OnInit {
                         cssClass = "ccdaWarningHighlight";
                     }
                 } else if (resultType.toLowerCase().indexOf("info") >= 0) {
-                    if (cssClass != "ccdaWarningHighlight" || cssClass != "ccdaErrorHighlight") {
+                    if (cssClass != "ccdaWarningHighlight" && cssClass != "ccdaErrorHighlight") {
                         cssClass = "ccdaInfoHighlight";
                     }
                 } else {
