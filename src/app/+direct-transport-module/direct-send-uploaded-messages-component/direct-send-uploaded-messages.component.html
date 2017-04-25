@@ -3,14 +3,14 @@
       class="form-horizontal">
     <div class="form-group row">
         <label for="toAddress">Enter Your Endpoint Name:</label>
-        <input id="toAddress" class="form-control" name="toAddress" [(ngModel)]="toAddress" placeholder="recipient direct email address" type="email" tabindex="1" required>
+        <input id="toAddress" class="form-control" name="toAddress" [(ngModel)]="toAddress" placeholder="recipient direct email address" type="email" required>
     </div>
     <div class="form-group row">
         <label for="ccdauploadfile">Select a Local C-CDA File to Send:</label>
-        <input id="ccdauploadfile" type="file" class="form-control" (change)="fileChangeEvent($event)" tabindex="1" required>
+        <input id="ccdauploadfile" type="file" class="form-control" (change)="fileChangeEvent($event)" required>
     </div>
     <div class="form-group row">
-        <button id="ccdauploadsubmit" type="submit" class="btn btn-primary start" tabindex="1">
+        <button id="ccdauploadsubmit" type="submit" class="btn btn-primary start" angulartics2On="click" angularticsEvent="send uploaded" angularticsCategory="direct">
             <i class="glyphicon glyphicon-envelope"></i>
             <span>Send Message</span>
         </button>

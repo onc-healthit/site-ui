@@ -3,7 +3,7 @@
       class="form-horizontal">
     <div class="form-group row">
         <label for="precannedemail">Enter Your Endpoint Name:</label>
-        <input id="precannedemail" class="form-control" name="toAddress" [(ngModel)]="toAddress" placeholder="recipient direct email address" type="email" tabindex="1" required>
+        <input id="precannedemail" class="form-control" name="toAddress" [(ngModel)]="toAddress" placeholder="recipient direct email address" type="email" required>
     </div>
     <div class="form-group row">
         <label for="dLabel">Select a Precanned Sample C-CDA File to Send:</label>
@@ -13,7 +13,7 @@
         </select>
     </div>
     <div class="form-group row">
-        <button id="precannedCCDAsubmit" type="submit" class="btn btn-primary start" tabindex="1">
+        <button id="precannedCCDAsubmit" type="submit" class="btn btn-primary start" angulartics2On="click" angularticsEvent="send precanned" angularticsCategory="direct">
             <i class="glyphicon glyphicon-envelope"></i> <span>Send Message</span>
         </button>
     </div>

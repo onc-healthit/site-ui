@@ -9,6 +9,7 @@ import {DirectXdrSendPrecannedMessagesComponent} from "./direct-xdr-send-precann
 import {DirectXdrSendUploadedMessagesComponent} from "./direct-xdr-send-uploaded-messages-component/direct-xdr-send-uploaded-messages.component";
 import {AccordionModule} from "ngx-accordion";
 import {DirectXdrMessageLookupComponent} from "./direct-xdr-message-lookup-component/direct-xdr-message-lookup.component";
+import {Angulartics2Module} from "angulartics2";
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {DirectXdrMessageLookupComponent} from "./direct-xdr-message-lookup-compo
     SharedModule,
     HttpModule,
     DirectXdrRoutingModule,
-    AccordionModule
+    AccordionModule,
+    Angulartics2Module.forChild()
   ],
   declarations: [
     DirectXdrLauncherComponent,

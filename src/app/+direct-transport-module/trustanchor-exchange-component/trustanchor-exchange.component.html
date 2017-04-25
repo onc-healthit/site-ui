@@ -7,7 +7,7 @@
                 <ul>
                     <li>Download the Trust Anchor for the Sandbox <a href="assets/certificates/publickeys/direct.sitenv.org_ca.der" tabindex="1">(direct.sitenv.org Certificate)</a> and import the trust anchor into your trust store. </li>
                     <li>Please upload your Trust Anchor by selecting your Trust Anchor. If you need to replace the Trust Anchor, just perform another upload and the previous one will be replaced.</li>
-                    <li>Uploading the Trust Anchor causes an update to the <a href="{{ trustbundleDownloadUrl }}" tabindex="1">Trust Bundle</a> of <a href="http://direct.sitenv.org" target="_blank" tabindex="1">direct.sitenv.org</a> which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
+                    <li>Uploading the Trust Anchor causes an update to the <a href="{{ trustbundleDownloadUrl }}">Trust Bundle</a> of <a href="http://direct.sitenv.org" target="_blank">direct.sitenv.org</a> which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
                 </ul>
         <div class="well">
             <form name="trustanchorexchangeform" #trustanchorexchangeform="ngForm"
@@ -15,12 +15,12 @@
                   class="form-horizontal">
                 <div class="form-group row">
                     <label for="fileUpload">Select a Local Trust Anchor Certificate (binary or PEM encoded):</label>
-                    <input type="file" id="fileUpload" (change)="fileChangeEvent($event)" class="form-control" tabindex="1" required/>
+                    <input type="file" id="fileUpload" (change)="fileChangeEvent($event)" class="form-control" required/>
                 </div>
                 <div class="form-group row">
                     <label for="trustanchorUpload">Submit Anchor</label>
                     <div id="trustanchorUpload">
-                        <button type="submit" class="btn btn-primary" [disabled]="!trustanchorexchangeform.form.valid">
+                        <button type="submit" class="btn btn-primary" [disabled]="!trustanchorexchangeform.form.valid" angulartics2On="click" angularticsEvent="trust anchor exchange" angularticsCategory="direct">
                             Submit
                         </button>
                     </div>
