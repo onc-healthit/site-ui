@@ -13,9 +13,9 @@ const SITE_XDR_ENDPOINT = environment.site_xdr_wsdl_url;
 export class DirectXdrMessageLookupComponent{
     @ViewChild('resultsModal') resultsModal: ModalComponent;
     @ViewChild('blockModal') blockModal:ModalComponent;
-    private lookupKey: string;
-    private searchResults: any;
-    private siteXdrEndpoint: string;
+    public lookupKey: string;
+    public searchResults: any;
+    public siteXdrEndpoint: string;
     
     constructor(private http: Http){
         this.siteXdrEndpoint = SITE_XDR_ENDPOINT;
