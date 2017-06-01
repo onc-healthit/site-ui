@@ -125,8 +125,8 @@ a.ext-icon {
 @media (min-width: 768px) {
     .sandbox-container li{
         float: left;
-        width: 50%;
-        height: 260px;
+        width: 33%;
+        height: 357px;
         border: 1px solid #e6e6e6;
     }
 }
