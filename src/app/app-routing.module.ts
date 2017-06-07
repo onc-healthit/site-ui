@@ -37,6 +37,10 @@ const appRoutes: Routes = [
     loadChildren: './+direct-transport-module/direct-transport.module#DirectTransportModule'
   },
   {
+    path: 'sandbox-direct/xdr',
+    loadChildren: './+direct-xdr-module/direct-xdr.module#DirectXdrModule'
+  },
+  {
     path: 'test-tools',
     component: SiteNistToolsComponent
   },

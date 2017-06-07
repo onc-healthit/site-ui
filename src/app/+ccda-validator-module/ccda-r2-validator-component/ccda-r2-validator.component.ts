@@ -46,7 +46,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
       case 'sender':
         this.getValidationObjectivesForMessageType(this.senderGitHubUrl);
         break;
-    };
+    }
   }
 
   getValidationObjectivesForMessageType (objectivesUrl: string) {

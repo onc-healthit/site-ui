@@ -69,7 +69,7 @@
 }
 
 .validation-modal-dialog{
-    width: 90% !important;
+    width: 95% !important;
     overflow-y: auto !important;
 }
 
@@ -102,6 +102,10 @@ a.ext-icon {
     right: 5px;
 }
 
+.direct-message-body{
+    padding-top: 10px !important;
+}
+
 .hiddenText {
     position: absolute;
     width: 1px;
@@ -121,8 +125,8 @@ a.ext-icon {
 @media (min-width: 768px) {
     .sandbox-container li{
         float: left;
-        width: 50%;
-        height: 260px;
+        width: 33%;
+        height: 357px;
         border: 1px solid #e6e6e6;
     }
 }

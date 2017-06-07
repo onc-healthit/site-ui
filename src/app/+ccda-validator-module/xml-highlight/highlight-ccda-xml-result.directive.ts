@@ -14,11 +14,11 @@ export class HighlightCcdaXmlResultDirective implements OnInit{
 
     ngOnInit() {
         for (var resultType in this.lineresultsmap){
-            var type = resultType;
-            var descriptions = this.lineresultsmap[resultType];
-            var descriptionsLength = descriptions.length;
-            var popoverTemplate = '<span class="popover resultpopover"><div class="clearfix"><span>Line Number: '+this.lineNumber+'</span></div><span class="arrow"></span><h3 class="popover-title result-title"></h3><div class="popover-content"></div><div class="clearfix"></div></span>';
-            var popOverContent = this.createResultListPopoverHtml(descriptions);
+            let type = resultType;
+            let descriptions = this.lineresultsmap[resultType];
+            let descriptionsLength = descriptions.length;
+            let popoverTemplate = '<span class="popover resultpopover"><div class="clearfix"><span>Line Number: '+this.lineNumber+'</span></div><span class="arrow"></span><h3 class="popover-title result-title"></h3><div class="popover-content"></div><div class="clearfix"></div></span>';
+            let popOverContent = this.createResultListPopoverHtml(descriptions);
             if (typeof $('.linenumber-' + this.lineNumber).data('bs.popover') !== "undefined") {
                 var title;
                 if(type.toLowerCase().indexOf("error") >= 0){
@@ -66,8 +66,8 @@ export class HighlightCcdaXmlResultDirective implements OnInit{
     }
 
     private createResultListPopoverHtml(results){
-        var htmlList = '<ul>';
-        for(var i = 0; i < results.length; i++){
+        let htmlList = '<ul>';
+        for(let i = 0; i < results.length; i++){
             htmlList += '<li>' + results[i] + '</li>'
         }
         htmlList += '</ul>';

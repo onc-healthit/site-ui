@@ -4,16 +4,18 @@
 import {Injectable} from "@angular/core";
 
 @Injectable()
-export class DirectSendMessageService {
+export class DirectXdrSendMessageService {
 
-  sendMessageWithAttachmentFile(url: string, toAddress: string, files: Array<File>) :any{
+  public sendMessageWithAttachmentFile(url: string, endpoint: string, files: Array<File>, directFromAddress: string, directToAddress: string, messageType: string) :any{
     return new Promise((resolve, reject) => {
       let formData: any = new FormData();
       let xhr = new XMLHttpRequest();
       for(let i = 0; i < files.length; i++) {
         formData.append("attachment", files[i], files[i].name);
       }
-      formData.append("toAddress", toAddress);
+      formData.append("endpoint", endpoint);
+      formData.append("messageType", messageType);
+      this.setOptionalFormData(formData, directFromAddress, directToAddress);
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
           if (xhr.status == 200) {
@@ -28,12 +30,14 @@ export class DirectSendMessageService {
     })
   }
 
-  sendMessageWithAttachmentFilePath(url: string, toAddress: string, attachmentFilePath: string) :any{
+  public sendMessageWithAttachmentFilePath(url: string, endpoint: string, attachmentFilePath: string, directFromAddress: string, directToAddress: string, messageType: string) :any{
     return new Promise((resolve, reject) => {
       let formData: any = new FormData();
       let xhr = new XMLHttpRequest();
-      formData.append("toAddress", toAddress);
+      formData.append("endpoint", endpoint);
+      formData.append("messageType", messageType);
       formData.append("attachmentFilePath", attachmentFilePath);
+      this.setOptionalFormData(formData, directFromAddress, directToAddress);
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
           if (xhr.status == 200) {
@@ -46,5 +50,15 @@ export class DirectSendMessageService {
       xhr.open("POST", url, true);
       xhr.send(formData);
     })
+  }
+
+  private setOptionalFormData(formData: FormData, directFromAddress: string, directToAddress: string){
+    if (directFromAddress){
+      formData.append("directFromAddress", directFromAddress);
+    }
+    
+    if (directToAddress){
+      formData.append("directToAddress", directToAddress)
+    }
   }
 }

@@ -5,16 +5,15 @@
     <div class="form-group row">
       <label for="messageTypeGroup">Select whether your system is a SENDER or RECEIVER of C-CDA's:</label>
       <div id="messageTypeGroup">
-        <button class="btn btn-primary" (click)="setSelectedMessageType('sender')">Sender</button>
-        <button class="btn btn-primary" (click)="setSelectedMessageType('receiver')">Receiver</button>
+        <button class="btn btn-primary" type="button" (click)="setSelectedMessageType('sender')">Sender</button>
+        <button class="btn btn-primary" type="button" (click)="setSelectedMessageType('receiver')">Receiver</button>
       </div>
     </div>
     <div class="form-group row">
       <label for="validationObjectives">Select ONC 2015 Edition S&CC objective or other C-CDA IG
         conformance criteria:</label>
       <select id="validationObjectives" name="validationObjective" class="form-control"
-              (change)="getReferenceFilesForValidationObjective($event.target.value)" tabindex="1"
-              required [(ngModel)]="validationObjective">
+              (change)="getReferenceFilesForValidationObjective($event.target.value)" required [(ngModel)]="validationObjective">
         <option value="">--- select one ---</option>
         <option *ngFor="let p of validationObjectives" [value]="p.name">{{p.name}}</option>
       </select>
@@ -23,8 +22,7 @@
       <label for="referenceFiles">Select the scenario file that you used to generate the C-CDA, if you are
         testing a C-CDA generated without using any of the scenario files in the drop down, select "No
         scenario File":</label>
-      <select id="referenceFiles" name="referenceFileName" class="form-control"
-              tabindex="1" required [(ngModel)]="referenceFileName">
+      <select id="referenceFiles" name="referenceFileName" class="form-control" required [(ngModel)]="referenceFileName">
         <option value="">--- select one ---</option>
         <option *ngFor="let r of referenceFiles" [value]="r.name">{{r.name}}</option>
         <option value="noscenariofile">No Scenario File</option>
@@ -32,7 +30,7 @@
     </div>
     <div class="form-group row">
       <label for="fileUpload">Upload generated C-CDA file to validate:</label>
-      <input type="file" id="fileUpload" (change)="fileChangeEvent($event)" class="form-control" tabindex="1" required/>
+      <input type="file" id="fileUpload" (change)="fileChangeEvent($event)" class="form-control" required/>
     </div>
     <div class="form-group row">
       <label for="validationSubmit">Validate Document</label>

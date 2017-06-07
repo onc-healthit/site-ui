@@ -1,0 +1,72 @@
+<form name="precannedForm" #precannedForm="ngForm"
+      (ngSubmit)="onSubmit(precannedForm.value)"
+      class="form-horizontal">
+    <div class="form-group row">
+        <label for="precannedemail">Enter Your Endpoint URL:</label>
+        <input id="precannedemail" class="form-control" name="endpoint" [(ngModel)]="endpoint" placeholder="Enter your Endpoint URL here. http:// ..." required>
+    </div>
+    <accordion [showArrows]="true" [closeOthers]="true" [expandAll]="false">
+        <accordion-group heading="Optional XDR Message Properties">
+            <div class="form-group row col-lg-12">
+                <label for="directFromAddress">Enter Your From Direct Address:</label>
+                <input id="directFromAddress" class="form-control" name="endpoint" [(ngModel)]="directFromAddress">
+            </div>
+            <div class="form-group row col-lg-12">
+                <label for="directToAddress">Enter Your To Direct Address:</label>
+                <input id="directToAddress" class="form-control" name="endpoint" [(ngModel)]="directToAddress">
+            </div>
+        </accordion-group>
+    </accordion>
+    <div class="form-group row">
+        <label for="messageType">Select an XDR Message Type:</label>
+        <select id="messageType" class="form-control" required [(ngModel)]="messageType" name="messageType">
+            <option value="minimal">Minimal</option>
+            <option value="full">Full</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <label for="dLabel">Select a Precanned Sample C-CDA File to Send:</label>
+        <select id="dLabel" class="form-control" required [(ngModel)]="ccdaFilePath" name="ccdaFilePath">
+            <option value="">--- select one ---</option>
+            <option *ngFor="let r of precannedCcdaFilePaths" [value]="r">{{r.substring(r.lastIndexOf("/") + 1)}}</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <button id="precannedCCDAsubmit" type="submit" class="btn btn-primary start" angulartics2On="click" angularticsEvent="send precanned message" angularticsCategory="xdr">
+            <i class="glyphicon glyphicon-envelope"></i> <span>Send Message</span>
+        </button>
+    </div>
+</form>
+<modal #blockModal [keyboard]="false" [backdrop]="'static'">
+    <modal-body>
+        <div class="blockMsg">
+            <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
+            <div>
+                <h1>Sending Message</h1>
+            </div>
+        </div>
+    </modal-body>
+</modal>
+<modal #resultsModal cssClass="validation-modal-dialog">
+    <modal-header>
+        <h2>XDR Message Results</h2>
+    </modal-header>
+    <modal-body class="result-modal-body">
+        <div class="col-lg-6 direct-message-body">
+            <h4>Message Sent</h4>
+             <pre>
+                {{ sendMessageResult?.payload }}
+            </pre>
+        </div>
+        <div class="col-lg-6 direct-message-body">
+            <h4>Response</h4>
+            <pre>
+                {{ sendMessageResult?.message }}
+            </pre>
+        </div>
+
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-primary" (click)="resultsModal.close()">Close</button>
+    </modal-footer>
+</modal>
