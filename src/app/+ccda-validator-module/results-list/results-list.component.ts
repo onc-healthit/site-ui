@@ -61,7 +61,7 @@ export class ResultsListComponent implements OnInit {
 
     public displayMDHTResultsOnly(): boolean{
         if(this.validationResults) {
-            let validationObjectiveSelected = this.validationResults.resultsMetaData.ccdaDocumentType;
+            let validationObjectiveSelected = this.validationResults.resultsMetaData.objectiveProvided;
             if(validationObjectiveSelected) {
                 for(var curObj of R1_OBJECTIVES) {
                     if(curObj === validationObjectiveSelected) {
