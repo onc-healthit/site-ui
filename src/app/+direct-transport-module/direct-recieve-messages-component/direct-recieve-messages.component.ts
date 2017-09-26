@@ -8,8 +8,6 @@ import {environment} from "environments/environment";
 
 const SITE_MESSAGE_SEARCH_URL = environment.site_direct_message_lookup_url;
 const HHS_MESSAGE_SEARCH_URL = environment.hhs_direct_message_lookup_url;
-const TEST_ENDPOINT = 'Provider1@direct.sitenv.org';
-const PROD_ENDPOINT = 'interop@direct.hhs.gov';
 
 @Component({
     selector: 'direct-recieve-messages-component',
