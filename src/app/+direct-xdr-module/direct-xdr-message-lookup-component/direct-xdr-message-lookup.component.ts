@@ -2,6 +2,7 @@ import {Component, ViewChild} from "@angular/core";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 import {environment} from "../../../environments/environment";
 import {Http} from "@angular/http";
+
 const SEARCH_MESSAGE_LOG_URL = environment.search_message_logs_by_from_address_url;
 const SITE_XDR_ENDPOINT = environment.site_xdr_wsdl_url;
 
