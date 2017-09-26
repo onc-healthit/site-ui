@@ -10,13 +10,15 @@ import {DirectRecieveMessagesComponent} from "./direct-recieve-messages-componen
 import {DirectSendMessageService} from "../shared/direct-send-message.service";
 import {DirectSendPrecannedMessagesComponent} from "./direct-send-precanned-messages-component/direct-send-precanned-messages.component";
 import {DirectSendUploadedMessagesComponent} from "./direct-send-uploaded-messages-component/direct-send-uploaded-messages.component";
+import {AccordionModule} from "ngx-accordion";
 
 @NgModule({
   imports: [
     Ng2Bs3ModalModule,
     SharedModule,
     HttpModule,
-    DirectTransportRoutingModule
+    DirectTransportRoutingModule,
+      AccordionModule
   ],
   declarations: [
     DirectTransportLauncherComponent,

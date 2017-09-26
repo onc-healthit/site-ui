@@ -36,7 +36,8 @@ export class CcdaR2ValidatorComponent implements OnInit {
   ngOnInit() {
   }
 
-  setSelectedMessageType(messageType: string){
+  setSelectedMessageType(messageType: string, event: any){
+    event.preventDefault();
     this.validationObjectives = [];
     this.referenceFiles = [];
     switch (messageType){

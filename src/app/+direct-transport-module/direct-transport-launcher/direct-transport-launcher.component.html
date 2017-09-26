@@ -1,34 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <page-overview-header title="Direct Transport Test Tool" description="The goal of the SITE Direct Transport Sandbox is to provide a mechanism for developers to test their Direct implementation."></page-overview-header>
+      <page-overview-header title="Direct Transport Test Tool" description="The goal of the SITE Direct Transport test tool is to provide a mechanism for Health IT developers and implementers to test their Direct implementation by sending and receiving messages to and from the SITE Direct test tools."></page-overview-header>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6">
-      <trustanchor-exchange-component>loading...</trustanchor-exchange-component>
-    </div>
-    <div class="col-sm-6">
-      <h3>Steps to exchange Direct messages with the Sandbox:</h3>
+    <div class="col-sm-12">
+      <h3>Prepare to exchange Direct messages with the Sandbox:</h3>
       <ol>
         <li>Publish your Direct certificates (Organization or Address bound) per the <a href="http://wiki.directproject.org/Applicability+Statement+for+Secure+Health+Transport+-+Call+to+Consensus+on+Requiring+DNS+and+LDAP+Certificate+Discovery" tabindex="1" target="_blank">Direct specifications</a><span class="inline-ext"><a class="ext-icon" href="http://www.hhs.gov/disclaimer.html" tabindex="1" target="_blank" title="Web Site Disclaimers"><span class="hiddenText">Web Site Disclaimers</span></a></span>.</li>
-        <li>Exchange Trust Anchors following the instructions provided in Trust Anchor Exchange widget.</li>
-        <li>Use the information in the <b><i>Send Direct Message</i></b> feature below to send messages from your system to the sandbox.</li>
-        <li>Use the information in the <b><i>Receive Direct Message</i></b> feature below to receive messages from the sandbox to your system.</li>
+        <li>If you are a member of Direct Trust production bundle, you can exchange messages with interop@direct.hhs.gov using instructions provided further below.</li>
+        <li>If you are not a member of Direct Trust production bundle, exchange Trust Anchors with SITE following Trust Anchor Exchange Instructions.</li>
+        <li>Use the instructions in the "Send Direct Message using SITE Trust Anchor" or "Send Direct Message using Direct Trust Production Bundle" features below to send messages and verify.
+        <li>Use the information in the "Receive Direct Message" feature below to receive messages from the sandbox to your system.</li>
       </ol>
       <p> If you encounter any issues using the SITE Direct Transport Sandbox send an email to <a href="mailto:TestingServices@sitenv.org" tabindex="1">TestingServices@sitenv.org</a></p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <direct-recieve-messages-component>loading...</direct-recieve-messages-component>
+      <trustanchor-exchange-component>loading...</trustanchor-exchange-component>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <direct-recieve-messages-component title="Send Direct Message using SITE Trust Anchor" endpoint="provider1@direct.sitenv.org" description="When you exchanged your Trust Anchors with SITE and want to validate your Direct installation, send Direct messages to the end point listed below">loading...</direct-recieve-messages-component>
+    </div>
+    <div class="col-sm-6">
+      <direct-recieve-messages-component title="Send Direct Message using Direct Trust Production Bundle" endpoint="interop@direct.hhs.gov" description="When you are part of the Direct Trust Production Bundle and would like to validate your Direct installation, send Direct messages to the end point listed below">loading...</direct-recieve-messages-component>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h2 class="panel-title">Site sends Direct messages to your system</h2>
+          <h2 class="panel-title">Receive Direct Message from SITE</h2>
         </div>
         <div class="panel-body">
           <p>Send messages from the Sandbox to your system.</p>
