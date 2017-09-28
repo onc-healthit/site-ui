@@ -14,5 +14,5 @@ export const environment = {
     fhir_url: 'https://sitenv.org/web/site/fhir-sandbox',
     search_message_logs_by_from_address_url: 'https://prodccda.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://prodccda.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
-    site_xdr_wsdl_url: 'https://prodccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl'
+    site_xdr_wsdl_url: 'http://prodccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl'
 };
