@@ -1,3 +1,15 @@
-.results-group{
-    max-height: 900px !important;
+@media print {
+  .results-group {
+    visibility: visible !important;
+    /* Remove vertical scrollbar */
+    overflow: visible !important;
+    /* Allows Xpath to not be cut-off and removes horizontal scrollbar */
+    word-wrap: break-word !important;
+    /* Remove limit so we can see all results */
+    max-height: none !important;
+  }
+}
+
+.results-group {
+    max-height: 900px;
 }

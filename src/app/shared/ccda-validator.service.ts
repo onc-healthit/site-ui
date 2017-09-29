@@ -5,7 +5,7 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class CCDAValidatorService {
-        
+
   validateCCDA(url: string, referenceFileName: string, validationObjective: string, files: Array<File>) :any{
     return new Promise((resolve, reject) => {
       let formData: any = new FormData();
@@ -28,6 +28,10 @@ export class CCDAValidatorService {
       xhr.open("POST", url, true);
       xhr.send(formData);
     })
+  }
+
+  saveResults(): void {
+    window.print();
   }
 
 }

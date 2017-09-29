@@ -56,13 +56,25 @@
   </modal>
   <modal #r2resultsModal cssClass="validation-modal-dialog">
     <modal-body>
-      <ul class="nav nav-tabs" id="resultModalTabs">
-        <li><a href="#r2-results-group-tab" data-toggle="tab" class="nav active">Validation Result</a></li>
-        <li><a href="#r2-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a></li>
-        <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button> </li>
+      <ul class="nav nav-tabs hidden-print" id="resultModalTabs">
+        <li><a (click)="canSave=true" href="#r2-results-group-tab" data-toggle="tab" class="nav active">Validation Result</a></li>
+        <li><a (click)="canSave=false" href="#r2-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a></li>
+        <span class="pull-right">
+          <li *ngIf="canSave" class="pull-left" style="margin-right: 4px">
+            <button type="button" class="btn btn-primary" (click)="saveResults()">Save Results</button>
+          </li>
+          <li class="pull-right"><button type="button" class="btn btn-primary" (click)="modal.close()">Close</button></li>
+        </span>
       </ul>
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="r2-results-group-tab" >
+          <span class="visible-print">
+            <a class="site-logo" href="https://www.healthit.gov/" title="HealthIT.gov" rel="external"
+               style="margin-bottom: 40px">
+              <img src="assets/images/site/healthit.gov.logo.png" alt="HealthIT.gov">
+            </a>
+            <h1>SITE C-CDA R2.1 Validator Results</h1>
+          </span>
           <results-list [validationResults]="validationResults"></results-list>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="r2-results-xml-tab">
@@ -70,7 +82,7 @@
         </div>
       </div>
     </modal-body>
-    <modal-footer>
+    <modal-footer class="hidden-print">
       <button type="button" class="btn btn-primary" (click)="modal.close()">Close</button>
     </modal-footer>
   </modal>

@@ -26,6 +26,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
   filesToUpload: Array<File>;
   validationObjective: string;
   referenceFileName: string;
+  canSave = true;
 
   constructor(private http: Http, private ccdaValidatorService:CCDAValidatorService) {
     this.filesToUpload = [];
@@ -83,5 +84,9 @@ export class CcdaR2ValidatorComponent implements OnInit {
             this.modal.open();
           });
         });
+  }
+
+  saveResults(): void {
+    this.ccdaValidatorService.saveResults();
   }
 }

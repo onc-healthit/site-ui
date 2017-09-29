@@ -9,7 +9,7 @@ const scorecard_url = environment.scorecard_url;
   styleUrls: ['ccda-validator-launcher.component.css']
 })
 export class CcdaValidatorLauncherComponent implements OnInit {
-  public scorecard_url:string;
+  public scorecard_url: string;
   constructor() {
     this.scorecard_url = scorecard_url;
   }

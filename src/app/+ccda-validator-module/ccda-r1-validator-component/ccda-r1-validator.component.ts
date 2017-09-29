@@ -17,11 +17,12 @@ const REFERENCE_FILE_NAME = 'noscenariofile';
 })
 export class CcdaR1ValidatorComponent implements OnInit {
   @ViewChild('r1resultsModal') modal: ModalComponent;
-  @ViewChild('blockModal') blockModal:ModalComponent;
-  
+  @ViewChild('blockModal') blockModal: ModalComponent;
+
   public validationResults: any;
   validationObjective: string;
   filesToUpload: Array<File>;
+  canSave = true;
 
   constructor(private http: Http, private ccdaValidatorService:CCDAValidatorService) {
     this.filesToUpload = [];
@@ -45,4 +46,7 @@ export class CcdaR1ValidatorComponent implements OnInit {
         });
   }
 
+  saveResults(): void {
+    this.ccdaValidatorService.saveResults();
+  }
 }

@@ -1,8 +1,8 @@
-<div class="row" *ngIf="validationResults?.resultsMetaData?.serviceError">
+<div id="results-list-service-error" class="row" *ngIf="validationResults?.resultsMetaData?.serviceError">
     <div class="col-sm-12 alert alert-danger text-center" role="alert" [innerHtml]="validationResults?.resultsMetaData?.serviceErrorMessage"></div>
 </div>
 
-<div class="row" *ngIf="!validationResults?.resultsMetaData?.serviceError">
+<div id="results-list-overview" class="row" *ngIf="!validationResults?.resultsMetaData?.serviceError">
     <div class="col-sm-4">
         <div class="list-group">
             <div class="list-group-item"
@@ -46,3 +46,6 @@
         </span>
     </span>
 </div>
+
+<!-- Due to default browser print margin settings, without this extra margin, some results on rare occasions are cut-off -->
+<div class="visible-print" style="margin-bottom: 125px"></div>
