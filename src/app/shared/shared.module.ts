@@ -6,6 +6,7 @@ import {HyphenateStringPipe} from "./hyphenate-string.pipe";
 import {FormsModule} from "@angular/forms";
 import {PageOverviewHeaderComponent} from "./page-overview-header-component/page-overview-header.component";
 import {MarkdownToHtmlPipe} from "./MarkdownToHtml.pipe";
+import {SiteLogoComponent} from "./site-logo/site-logo.component";
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {MarkdownToHtmlPipe} from "./MarkdownToHtml.pipe";
     EscapeHtmlPipe,
     HyphenateStringPipe,
     PageOverviewHeaderComponent,
-    MarkdownToHtmlPipe
+    MarkdownToHtmlPipe,
+    SiteLogoComponent
   ],
   exports: [
     CommonModule,
@@ -25,7 +27,8 @@ import {MarkdownToHtmlPipe} from "./MarkdownToHtml.pipe";
     HyphenateStringPipe,
     FormsModule,
     PageOverviewHeaderComponent,
-    MarkdownToHtmlPipe
+    MarkdownToHtmlPipe,
+    SiteLogoComponent
   ]
 })
 export class SharedModule {
