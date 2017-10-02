@@ -38,6 +38,9 @@
         <button type="submit" class="btn btn-primary" [disabled]="!validationForm.form.valid" angulartics2On="click" angularticsEvent="r2 validate" angularticsCategory="ccda validator">
           Submit
         </button>
+        <button (click)="loadDebugResults()" type="button" class="btn btn-warning" *ngIf="inDebugMode" [disabled]="!inDebugMode">
+          Debug
+        </button>
       </div>
     </div>
   </form>

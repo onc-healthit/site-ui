@@ -11,12 +11,12 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <accordion [showArrows]="true" [closeOthers]="true" [expandAll]="false">
+      <accordion [showArrows]="true" [closeOthers]="true" [expandAll]="inDebugMode">
         <accordion-group heading="R1.1 Validator">
-          <ccda-r1-validator-component></ccda-r1-validator-component>
+          <ccda-r1-validator-component [inDebugMode]="inDebugMode"></ccda-r1-validator-component>
         </accordion-group>
         <accordion-group heading="R2.1 Validator">
-          <ccda-r2-validator-component></ccda-r2-validator-component>
+          <ccda-r2-validator-component [inDebugMode]="inDebugMode"></ccda-r2-validator-component>
         </accordion-group>
       </accordion>
     </div>

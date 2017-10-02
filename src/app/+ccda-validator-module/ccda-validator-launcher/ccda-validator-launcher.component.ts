@@ -10,6 +10,8 @@ const scorecard_url = environment.scorecard_url;
 })
 export class CcdaValidatorLauncherComponent implements OnInit {
   public scorecard_url: string;
+  inDebugMode = false; // ensure this is set to false for production
+
   constructor() {
     this.scorecard_url = scorecard_url;
   }

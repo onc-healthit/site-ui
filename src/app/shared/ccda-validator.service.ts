@@ -2,6 +2,8 @@
  * Created by Brian on 10/4/2016.
  */
 import {Injectable} from "@angular/core";
+import {Http, Response} from "@angular/http";
+import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class CCDAValidatorService {
@@ -28,6 +30,15 @@ export class CCDAValidatorService {
       xhr.open("POST", url, true);
       xhr.send(formData);
     })
+  }
+
+  getLocalJsonResults(filenameAndPath: string, http: Http): Observable<any> {
+    return http.get(filenameAndPath)
+      .map((response: Response) => {
+          console.log(response.json());
+          return response.json();
+        }
+      )
   }
 
   saveResults(): void {

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from "@angular/core";
+import {Component, OnInit, ViewChild, Input} from "@angular/core";
 import {CCDAValidatorService} from "../../shared/ccda-validator.service";
 import {Http} from "@angular/http";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
@@ -8,6 +8,7 @@ import "rxjs/add/operator/publishReplay";
 import {environment} from "../../../environments/environment";
 
 const URL = environment.ccda_validation_url;
+const DEBUG_JSON_PATH = '/assets/jsonResults/refVal/r2/NT_CCDS_Sample1_r21_v4.json';
 
 @Component({
   selector: 'ccda-r2-validator-component',
@@ -17,6 +18,7 @@ const URL = environment.ccda_validation_url;
 export class CcdaR2ValidatorComponent implements OnInit {
   @ViewChild('r2resultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal:ModalComponent;
+  @Input() inDebugMode: boolean;
 
   private senderGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Sender SUT Test Data';
   private receiverGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Receiver SUT Test Data';
@@ -84,6 +86,15 @@ export class CcdaR2ValidatorComponent implements OnInit {
             this.modal.open();
           });
         });
+  }
+
+  loadDebugResults(): void {
+    this.blockModal.open().then(() => {
+      this.ccdaValidatorService.getLocalJsonResults(DEBUG_JSON_PATH, this.http)
+        .subscribe(data => this.validationResults = data, error => console.log(error));
+      this.blockModal.close();
+      this.modal.open();
+    });
   }
 
   saveResults(): void {
