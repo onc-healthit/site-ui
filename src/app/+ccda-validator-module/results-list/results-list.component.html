@@ -35,6 +35,9 @@
 </div>
 
 <div class="pre-scrollable results-group" id="groupedResults" #groupedResults>
+    <span *ngIf="validationResults">
+      <h1>Validation Results For: <span class="ccda-filename">{{validationResults.resultsMetaData.ccdaFileName}}</span></h1>
+    </span>
     <span *ngFor="let r of validationResults?.ccdaValidationResults; let i = index" [ngClass]="getValidationClassForType(r.type)">
         <h1 *ngIf="(newResultType(r.type))" id="{{r.type | hyphenateString}}">{{r.type}}</h1>
         <span>

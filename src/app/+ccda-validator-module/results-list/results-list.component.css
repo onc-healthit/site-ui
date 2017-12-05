@@ -11,5 +11,9 @@
 }
 
 .results-group {
-    max-height: 900px;
+  max-height: 900px;
+}
+
+.ccda-filename {
+  font-size: 75%
 }
