@@ -5,7 +5,7 @@
 
 export const environment = {
     production: false,
-    ccda_validation_url: 'https://ttpds.sitenv.org:8443/referenceccdaservice/',
+    ccda_validation_url: 'https://ttpdstest.sitenv.org:8443/referenceccdaservice/',
     trustanchor_upload_url: 'https://devccda.sitenv.org/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://devccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'http://localhost:8080/directtransportmessagesender/sendmessagewithattachmentfilepath',
