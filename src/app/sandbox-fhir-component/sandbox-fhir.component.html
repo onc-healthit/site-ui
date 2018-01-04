@@ -8,21 +8,21 @@
     <div class="col-sm-12">
       <ul class="sandbox-container">
         <li>
-          <a class="sandbox-block" href="https://fhir.sitenv.org/open" tabindex="1" title="FHIR Server" target="_blank">
+          <a class="sandbox-block" [href]="fhir_server_url" tabindex="1" title="FHIR Server" target="_blank">
             <span class="caption glyphicon glyphicon-wrench"></span>
             <h4>FHIR Server</h4>
             <span>This is an implementation of the FHIR standard using the US Core Implementation guide. We expect client developers to use the server as part of their development activities to work with different data sets.</span>
           </a>
         </li>
         <li>
-          <a class="sandbox-block" href="https://fhir.sitenv.org/fhirclient/" tabindex="1" title="FHIR Query Too" target="_blank">
+          <a class="sandbox-block" [href]="fhir_query_url" tabindex="1" title="FHIR Query Too" target="_blank">
             <span class="caption glyphicon glyphicon-wrench"></span>
             <h4>FHIR Query Tool</h4>
             <span> FHIR Query Tool can be used to test a FHIR Server using various search parameter combinations. The tool makes it easy for users to query FHIR servers without knowing the specific authorization workflows and FHIR syntaxes for searches.</span>
           </a>
         </li>
         <li>
-          <a class="sandbox-block" href="https://fhir.sitenv.org/fhirconformance" tabindex="1" title="FHIR Conformance Test Tool" target="_blank">
+          <a class="sandbox-block" [href]="fhir_conformance_url" tabindex="1" title="FHIR Conformance Test Tool" target="_blank">
             <span class="caption glyphicon glyphicon-wrench"></span>
             <h4>FHIR Conformance Test Tool</h4>
             <span> The FHIR Conformance Test Tool provides an easy way for servers to test their conformance to an implementation guide using test data and test scripts.</span>

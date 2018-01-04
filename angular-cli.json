@@ -25,7 +25,10 @@
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "ahrq.test": "environments/environment.ahrq.test.ts",
+        "ahrq.dev": "environments/environment.ahrq.dev.ts",
+        "ahrq.prod": "environments/environment.ahrq.prod.ts"
       }
 
     }

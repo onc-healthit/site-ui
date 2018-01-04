@@ -11,8 +11,11 @@ export const environment = {
     xdr_send_uploaded_message_url: 'https://prodccda.sitenv.org/xdrmessagesender/sendmessagewithattachmentfile',
     canned_ccda_filepaths_url: 'https://prodccda.sitenv.org/directtransportmessagesender/listsampleccdafiles',
     scorecard_url: 'https://sitenv.org/scorecard/',
-    fhir_url: 'https://sitenv.org/web/site/fhir-sandbox',
     search_message_logs_by_from_address_url: 'https://prodccda.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://prodccda.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
-    site_xdr_wsdl_url: 'http://prodccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl'
+    site_xdr_wsdl_url: 'http://prodccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
+
+    fhir_server_url: 'https://fhir.sitenv.org/open',
+    fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
+    fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
 };
