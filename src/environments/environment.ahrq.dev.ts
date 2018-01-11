@@ -1,7 +1,7 @@
 // The file contents for the current environment will overwrite these during build.
-// The build system defaults to the (old) dev environment which uses `environment.ts`, but if you do
+// The (dev) build system defaults to the old environment which uses `environment.ts`, but if you run
 // `ng build --env=ahrq.dev` then `environment.ahrq.dev.ts` will be used instead.
-// The list of which env maps to which file can be found in `angular-cli.json`.
+// Since there is no AHRQ default, ng serve must specify the env as well.
 
 export const environment = {
     production: false,
