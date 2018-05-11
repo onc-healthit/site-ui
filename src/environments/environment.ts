@@ -23,5 +23,5 @@ export const environment = {
     fhir_server_url: 'https://fhir.dev.sitenv.org/open/',
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
-    fhir_bulk_data_url: 'https://fhirprod.sitenv.org/bulkdataclient/' //prod vs dev on purpose for now...
+    fhir_bulk_data_url: 'https://fhirtest.sitenv.org/bulkdataclient/'
 };
