@@ -19,5 +19,5 @@ export const environment = {
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
     fhir_bulk_data_url: 'https://fhirprod.sitenv.org/bulkdataclient/',
-    fhir_inferno_data_url: 'http://34.208.83.196' // temporary URL
+  fhir_inferno_data_url: 'https://infernotest.sitenv.org'
 };
