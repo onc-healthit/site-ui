@@ -12,11 +12,11 @@ const fhir_inferno_data_url = environment.fhir_inferno_data_url;
   templateUrl: './sandbox-fhir.component.html'
 })
 export class SandboxFhirComponent implements OnInit {
-  private fhir_server_url: string;
-  private fhir_query_url: string;
-  private fhir_conformance_url: string;
-  private fhir_bulk_data_url: string;
-  private fhir_inferno_data_url: string;
+  public fhir_server_url: string;
+  public fhir_query_url: string;
+  public fhir_conformance_url: string;
+  public fhir_bulk_data_url: string;
+  public fhir_inferno_data_url: string;
 
   constructor() {
     this.fhir_server_url = fhir_server_url;

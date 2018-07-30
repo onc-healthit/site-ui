@@ -11,8 +11,8 @@ const scorecard_url = environment.scorecard_url;
     templateUrl: 'sandbox-ccda.component.html'
 })
 export class SandboxCCDAComponent implements OnInit {
-  private scorecard_url: string;
-  
+  public scorecard_url: string;
+
   constructor() {
     this.scorecard_url = scorecard_url;
   }
