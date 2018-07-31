@@ -16,8 +16,8 @@ export const environment = {
     site_xdr_wsdl_url: 'http://prodccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
 
     fhir_server_url: 'https://fhir.sitenv.org/open',
-    fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
-    fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
+    fhir_query_url: 'https://fhirprod.sitenv.org/fhirclient/',
+    fhir_conformance_url: 'https://fhirprod.sitenv.org/fhirconformance/',
     fhir_bulk_data_url: 'https://fhirprod.sitenv.org/bulkdataclient/',
     fhir_inferno_data_url: 'https://infernotest.sitenv.org'
 };
