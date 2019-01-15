@@ -5,7 +5,9 @@
 
 export const environment = {
     production: false,
-    ccda_validation_url: 'https://ttpdstest.sitenv.org:8443/referenceccdaservice/',
+    // ccda_validation_url: 'https://ttpdstest.sitenv.org:8443/referenceccdaservice/',
+    ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
+    scorecard_url: 'https://34.236.48.201/scorecard/', // this is AHRQ  TEST vs DEV for now (https://ccda.test.sitenv.org/scorecard/ vs https://ccda.dev.sitenv.org/scorecard/)
     trustanchor_upload_url: 'https://devccda.sitenv.org/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://devccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'http://localhost:8080/directtransportmessagesender/sendmessagewithattachmentfilepath',
@@ -15,7 +17,6 @@ export const environment = {
     xdr_send_precanned_message_url: 'https://devccda.sitenv.org/xdrmessagesender/sendmessagewithattachmentfilepath',
     xdr_send_uploaded_message_url: 'https://devccda.sitenv.org/xdrmessagesender/sendmessagewithattachmentfile',
     canned_ccda_filepaths_url: 'https://devccda.sitenv.org/directtransportmessagesender/listsampleccdafiles',
-    scorecard_url: 'https://devportal.sitenv.org/scorecard/',
     search_message_logs_by_from_address_url: 'https://devccda.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://devccda.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'http://devccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
