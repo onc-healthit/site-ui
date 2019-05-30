@@ -21,7 +21,7 @@ export const environment = {
     ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
     scorecard_url: 'https://ccda.dev.sitenv.org/scorecard/',
 
-    fhir_server_url: 'https://fhir.dev.sitenv.org/open/',
+    fhir_server_url: 'https://fhir.sitenv.org/secure/', // temporary URL
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
     fhir_bulk_data_url: 'https://fhirtest.sitenv.org/bulkdataclient/',
