@@ -8,7 +8,8 @@ import {Observable} from 'rxjs/Rx';
 @Injectable()
 export class CCDAValidatorService {
 
-  validateCCDA(url: string, referenceFileName: string, validationObjective: string, files: Array<File>) :any{
+  validateCCDA(url: string, referenceFileName: string, validationObjective: string, files: Array<File>,
+               severityLevelSelected: string): any {
     return new Promise((resolve, reject) => {
       let formData: any = new FormData();
       let xhr = new XMLHttpRequest();
@@ -17,6 +18,7 @@ export class CCDAValidatorService {
       }
       formData.append("referenceFileName", referenceFileName);
       formData.append("validationObjective", validationObjective);
+      formData.append("severityLevel", severityLevelSelected)
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {

@@ -11,6 +11,7 @@ import {environment} from "../../../environments/environment";
 const URL = environment.ccda_validation_url;
 const REFERENCE_FILE_NAME = 'noscenariofile';
 const DEBUG_JSON_PATH = '/assets//jsonResults/refVal/r1/NT_Bad_AllergyConcernElements_r11_v3.json';
+const DEFAULT_SEVERITY_LEVEL = 'INFO';
 
 @Component({
   selector: 'ccda-r1-validator-component',
@@ -41,7 +42,8 @@ export class CcdaR1ValidatorComponent implements OnInit {
 
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
-      this.ccdaValidatorService.validateCCDA(URL, REFERENCE_FILE_NAME, this.validationObjective, this.filesToUpload).then((result: any) => {
+      this.ccdaValidatorService.validateCCDA(URL, REFERENCE_FILE_NAME, this.validationObjective, this.filesToUpload,
+        DEFAULT_SEVERITY_LEVEL).then((result: any) => {
         this.validationResults = result;
         this.blockModal.close();
         this.modal.open();
