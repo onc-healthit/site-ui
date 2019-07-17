@@ -4,6 +4,8 @@ import {DOCUMENT} from "@angular/platform-browser";
 
 const R1_OBJECTIVES = ['NonSpecificCCDA', 'TransitionsOfCareAmbulatorySummary', 'ClinicalOfficeVisitSummary',
     'TransitionsOfCareInpatientSummary', 'VDTAmbulatorySummary', 'VDTInpatientSummary'];
+const LIMIT_RESULTS_MESSAGE = '0: *Limited to ';
+const LIMIT_RESULTS_MESSAGE_ENDING = 'by user request';
 
 @Component({
     selector: 'results-list',
@@ -24,7 +26,8 @@ export class ResultsListComponent implements OnInit {
 
     public scrollInside(idToScrollTo: string) {
         let hyphenatedId = idToScrollTo.replace(/\s+/g, "-");
-        let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInlineInstance(this.document, hyphenatedId, this.groupedResults.nativeElement);
+        let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInlineInstance(this.document, hyphenatedId,
+          this.groupedResults.nativeElement);
         this.pageScrollService.start(pageScrollInstance);
     }
 
@@ -43,6 +46,31 @@ export class ResultsListComponent implements OnInit {
                 break;
         }
         return style;
+    }
+
+    public calculateCurrentResultTypeCount(curResultMetaData: any): any {
+      if (curResultMetaData) {
+        if (curResultMetaData.count === 0) {
+          if (this.validationResults) {
+            let resultTypeSeverity = curResultMetaData.type.split(" ").splice(-1)[0].toUpperCase();
+            let severityLevelSet = this.validationResults.resultsMetaData.severityLevel;
+            if (severityLevelSet) {
+              if (severityLevelSet === 'ERROR') {
+                if (resultTypeSeverity === 'WARNING' || resultTypeSeverity === 'INFO') {
+                  return LIMIT_RESULTS_MESSAGE + 'Errors only ' + LIMIT_RESULTS_MESSAGE_ENDING;
+                }
+              } else if (severityLevelSet === 'WARNING') {
+                if (resultTypeSeverity === 'INFO') {
+                  return LIMIT_RESULTS_MESSAGE + 'Warnings and Errors only ' + LIMIT_RESULTS_MESSAGE_ENDING;
+                }
+              } else {
+                return 0;
+              }
+            }
+          }
+        }
+      }
+      return curResultMetaData.count;
     }
 
     public newResultType(resultType: string): boolean{
