@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from "@angular/core";
 import {Http} from "@angular/http";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 
-const releaseNotesMarkdownURL = 'https://raw.githubusercontent.com/siteadmin/SITE-Content/master/ReleaseNotes.md';
+const releaseNotesMarkdownURL = 'https://raw.githubusercontent.com/onc-healthit/site-content/master/ReleaseNotes.md';
 @Component({
   selector: 'site-release-notes',
   templateUrl: './site-release-notes.component.html',

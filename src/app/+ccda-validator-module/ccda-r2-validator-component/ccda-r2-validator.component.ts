@@ -21,8 +21,8 @@ export class CcdaR2ValidatorComponent implements OnInit {
   @ViewChild('blockModal') blockModal:ModalComponent;
   @Input() inDebugMode: boolean;
 
-  private senderGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Sender SUT Test Data';
-  private receiverGitHubUrl = 'https://api.github.com/repos/siteadmin/2015-Certification-C-CDA-Test-Data/contents/Receiver SUT Test Data';
+  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-certification-ccda-testdata/contents/Sender SUT Test Data';
+  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-certification-ccda-testdata/contents/Receiver SUT Test Data';
   public validationObjectives: any;
   public referenceFiles: any;
   public severityLevels: Array<any> =

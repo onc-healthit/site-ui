@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Http} from "@angular/http";
 
-const versionMarkdownURL = 'https://raw.githubusercontent.com/siteadmin/SITE-Content/master/Version.md';
+const versionMarkdownURL = 'https://raw.githubusercontent.com/onc-healthit/site-content/master/Version.md';
 @Component({
   selector: 'site-version',
   templateUrl: './site-version.component.html',

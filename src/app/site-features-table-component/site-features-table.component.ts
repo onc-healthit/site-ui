@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Http} from "@angular/http";
 
-const featureTableMarkdownURL = 'https://raw.githubusercontent.com/siteadmin/SITE-Content/master/FeatureTable.md';
+const featureTableMarkdownURL = 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTable.md';
 @Component({
   selector: 'site-features-table',
   templateUrl: './site-features-table.component.html',

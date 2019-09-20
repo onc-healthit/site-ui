@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Http} from "@angular/http";
-const systemMessageMarkdownURL = 'https://raw.githubusercontent.com/siteadmin/SITE-Content/master/SITESystemMessage.md';
+const systemMessageMarkdownURL = 'https://raw.githubusercontent.com/onc-healthit/site-content/master/SITESystemMessage.md';
 const COMMENT_PSEUDO_COMMENT_OR_LT_BANG = new RegExp(
     '<!--[\\s\\S]*?(?:-->)?'
     + '<!---+>?'  // A comment with no body
