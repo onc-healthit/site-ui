@@ -60,17 +60,27 @@
   </form>
 </div>
 
-<modal #blockModal [keyboard]="false" [backdrop]="'static'">
-  <modal-body>
-    <div class="blockMsg">
-      <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
-      <div>
-        <h1>Validating file:</h1>
-        <h3>{{filesToUpload[0]?.name}}</h3>
+
+  <modal #blockModal [keyboard]="false" [backdrop]="'static'">
+    <modal-body>
+      <div class="blockMsg" *ngIf="isServerUp">
+        <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
+        <div>
+          <h1>Validating file:</h1>
+          <h3>{{filesToUpload[0]?.name}}</h3>
+        </div>
       </div>
+      <div class="blockMsg" *ngIf="!isServerUp">
+        <div>
+          <h1>The backend service may be down. Please try later</h1>
+        </div>
+      </div>
+    </modal-body>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
-  </modal-body>
-</modal>
+  </modal>
+
 <modal #r2resultsModal cssClass="validation-modal-dialog">
   <modal-body>
     <ul class="nav nav-tabs hidden-print" id="resultModalTabs">

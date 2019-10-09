@@ -25,6 +25,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
   private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-certification-ccda-testdata/contents/Receiver SUT Test Data';
   public validationObjectives: any;
   public referenceFiles: any;
+  public isServerUp: boolean = true;
   public severityLevels: Array<any> =
     [ {value: 'INFO', displayName: 'Errors, Warnings, and Info'},
       {value: 'WARNING', displayName: 'Errors and Warnings only'},
@@ -88,14 +89,19 @@ export class CcdaR2ValidatorComponent implements OnInit {
   }
 
   onSubmit(form: any): void {
-    this.blockModal.open().then(() => {
-          this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective,
-            this.filesToUpload, this.severityLevelSelected).then((result: any) => {
+      this.blockModal.open().then(() => {
+        this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective,
+          this.filesToUpload, this.severityLevelSelected).then((result: any) => {
             this.validationResults = result;
             this.blockModal.close();
             this.modal.open();
+            console.log(result);
+          })
+          .catch((err) => {
+            console.log(err);
+            this.isServerUp = false;
           });
-        });
+      });
   }
 
   loadDebugResults(): void {
