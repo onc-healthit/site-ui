@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    ccda_validation_url: 'https://ttpds.sitenv.org:8443/referenceccdaservice/',
+    ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
     trustanchor_upload_url: 'https://prodccda.sitenv.org/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://prodccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'https://prodccda.sitenv.org/directtransportmessagesender/sendmessagewithattachmentfilepath',
