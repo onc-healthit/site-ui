@@ -32,7 +32,7 @@ export class DirectRecieveMessagesComponent{
         let _lookup = this.lookupKey;
         let _endpoint = this.endpoint;
         let _url = '';
-        if (_endpoint === 'provider1@direct.sitenv.org'){
+        if (_endpoint === 'provider1@direct.healthit.gov'){
             _url = SITE_MESSAGE_SEARCH_URL;
         }else{
             _url = HHS_MESSAGE_SEARCH_URL;
