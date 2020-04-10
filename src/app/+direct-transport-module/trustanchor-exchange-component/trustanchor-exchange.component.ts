@@ -8,6 +8,7 @@ import {environment} from "../../../environments/environment";
 
 const URL = environment.trustanchor_upload_url;
 const TRUSTBUNDLE_DOWNLOAD_URL = environment.trustbundle_download_url;
+const host_url = environment.host_url;
 
 @Component({
     selector: 'trustanchor-exchange-component',
@@ -19,9 +20,11 @@ export class TrustAnchorExchangeComponent{
     filesToUpload: Array<File>;
     public trustbundleDownloadUrl : string = TRUSTBUNDLE_DOWNLOAD_URL;
     public uploadResults: any = {};
+    public host_url: string;
     
     constructor(private trustanchorUploadService:TrustanchorUploadService){
         this.filesToUpload = [];
+        this.host_url = host_url;
     }
 
     fileChangeEvent(fileInput: any){

@@ -17,7 +17,10 @@ export const environment = {
     search_message_logs_by_from_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'https://site.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
-
+    featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTable.md',
+    ett_url: 'https://ttpedge.sitenv.org/ttp',
+    host_url: 'sitenv.org',
+    
     ccda_validation_url: 'https://james.site.healthit.gov/referenceccdaservice/',
     scorecard_url: 'https://ccda.site.healthit.gov/scorecard/',
 

@@ -4,9 +4,9 @@
     </div>
     <div class="panel-body">
                 <ul>
-                    <li>Download the Trust Anchor for the Sandbox <a href="assets/certificates/PublicKeys/direct.healthit.gov.der" tabindex="1">(direct.healthit.gov Certificate)</a> and import the trust anchor into your trust store. </li>
+                    <li>Download the Trust Anchor for the Sandbox <a href="assets/certificates/PublicKeys/direct.{{host_url}}.der" tabindex="1">(direct.{{host_url}} Certificate)</a> and import the trust anchor into your trust store. </li>
                     <li>Please upload your Trust Anchor by selecting your Trust Anchor. If you need to replace the Trust Anchor, just perform another upload and the previous one will be replaced.</li>
-                    <li>Uploading the Trust Anchor causes an update to the <a href="{{ trustbundleDownloadUrl }}">Trust Bundle</a> of direct.healthit.gov which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
+                    <li>Uploading the Trust Anchor causes an update to the <a href="{{ trustbundleDownloadUrl }}">Trust Bundle</a> of direct.{{host_url}} which is refreshed every five minutes and is only used for testing purposes. Once a Trust Anchor is uploaded, users can test with the Direct sandbox after five minutes. </li>
                 </ul>
         <div class="well">
             <form name="trustanchorexchangeform" #trustanchorexchangeform="ngForm"

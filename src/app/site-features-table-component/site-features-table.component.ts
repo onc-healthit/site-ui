@@ -1,7 +1,8 @@
 import {Component, OnInit} from "@angular/core";
+import {environment} from "../../environments/environment";
 import {Http} from "@angular/http";
 
-const featureTableMarkdownURL = 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGov.md';
+const featureTableMarkdownURL = environment.featureTableMarkdownURL;
 @Component({
   selector: 'site-features-table',
   templateUrl: './site-features-table.component.html',

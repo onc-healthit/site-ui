@@ -8,7 +8,7 @@ import {environment} from "environments/environment";
 
 const SITE_MESSAGE_SEARCH_URL = environment.site_direct_message_lookup_url;
 const HHS_MESSAGE_SEARCH_URL = environment.hhs_direct_message_lookup_url;
-
+const HOST_URL = environment.host_url;
 @Component({
     selector: 'direct-recieve-messages-component',
     templateUrl: 'direct-recieve-messages.component.html',
@@ -32,7 +32,7 @@ export class DirectRecieveMessagesComponent{
         let _lookup = this.lookupKey;
         let _endpoint = this.endpoint;
         let _url = '';
-        if (_endpoint === 'provider1@direct.healthit.gov'){
+        if (_endpoint === 'provider1@direct.'+HOST_URL){
             _url = SITE_MESSAGE_SEARCH_URL;
         }else{
             _url = HHS_MESSAGE_SEARCH_URL;

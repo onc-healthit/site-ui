@@ -28,6 +28,7 @@
         "prod": "environments/environment.prod.ts",
         "ahrq.test": "environments/environment.ahrq.test.ts",
         "ahrq.dev": "environments/environment.ahrq.dev.ts",
+        "gov.prod": "environments/environment.gov.prod.ts",
         "ahrq.prod": "environments/environment.ahrq.prod.ts"
       }
 

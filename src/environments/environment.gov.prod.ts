@@ -10,17 +10,17 @@ export const environment = {
     xdr_send_precanned_message_url: 'https://site.healthit.gov/xdrmessagesender/sendmessagewithattachmentfilepath',
     xdr_send_uploaded_message_url: 'https://site.healthit.gov/xdrmessagesender/sendmessagewithattachmentfile',
     canned_ccda_filepaths_url: 'https://site.healthit.gov/directtransportmessagesender/listsampleccdafiles',
-    scorecard_url: 'https://site.healthit.gov/scorecard/',
+    scorecard_url: 'https://healthit.gov/scorecard/',
     search_message_logs_by_from_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'http://site.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
-    featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTable.md',
-    ett_url: 'https://ttpedge.healthit.gov/ttp/#/home',
+    featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGOV.md',
+    ett_url: 'https://ett.healthit.gov/ett',
     host_url: 'healthit.gov',
-
-    fhir_server_url: 'https://fhir.sitenv.org/secure/',
-    fhir_query_url: 'https://fhirprod.sitenv.org/fhirclient/',
-    fhir_conformance_url: 'https://fhirprod.sitenv.org/fhirconformance/',
-    fhir_bulk_data_url: 'https://fhirprod.sitenv.org/bulkdataclient/',
+    
+    fhir_server_url: 'https://fhir.healthit.gov/secure/',
+    fhir_query_url: 'https://fhir.healthit.gov/fhirclient/',
+    fhir_conformance_url: 'https://fhir.healthit.gov/fhirconformance/',
+    fhir_bulk_data_url: 'https://fhir.healthit.gov/bulkdataclient/',
     fhir_inferno_data_url: 'https://inferno.healthit.gov/'
 };
