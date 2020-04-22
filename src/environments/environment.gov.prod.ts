@@ -18,9 +18,9 @@ export const environment = {
     ett_url: 'https://ett.healthit.gov/ett',
     host_url: 'healthit.gov',
     
-    fhir_server_url: 'https://fhir.healthit.gov/secure/',
-    fhir_query_url: 'https://fhir.healthit.gov/fhirclient/',
-    fhir_conformance_url: 'https://fhir.healthit.gov/fhirconformance/',
-    fhir_bulk_data_url: 'https://fhir.healthit.gov/bulkdataclient/',
+    fhir_server_url: 'https://dcdt31.healthit.gov/secure/',
+    fhir_query_url: 'https://dcdt31.healthit.gov/fhirclient/',
+    fhir_conformance_url: 'https://dcdt31.healthit.gov/fhirconformance/',
+    fhir_bulk_data_url: 'https://dcdt31.healthit.gov/bulkdataclient/',
     fhir_inferno_data_url: 'https://inferno.healthit.gov/'
 };
