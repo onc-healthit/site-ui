@@ -16,7 +16,7 @@ export const environment = {
     site_xdr_wsdl_url: 'http://ccda.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGOV.md',
     ett_url: 'https://ett.healthit.gov/ett',
-    host_url: 'healthit.gov',
+    host_url: 'site.healthit.gov',
     
     fhir_server_url: 'https://dcdt31.healthit.gov/secure/',
     fhir_query_url: 'https://dcdt31.healthit.gov/fhirclient/',
