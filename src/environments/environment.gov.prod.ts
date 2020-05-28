@@ -13,7 +13,7 @@ export const environment = {
     scorecard_url: 'https://site.healthit.gov/scorecard/',
     search_message_logs_by_from_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
-    site_xdr_wsdl_url: 'http://site.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
+    site_xdr_wsdl_url: 'http://ccda.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGOV.md',
     ett_url: 'https://ett.healthit.gov/ett',
     host_url: 'healthit.gov',
