@@ -1,6 +1,7 @@
 export const environment = {
     production: true,
     ccda_validation_url: 'https://ttpds.sitenv.org:8443/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://prodccda.sitenv.org/referenceccdaservice/',
     trustanchor_upload_url: 'https://prodccda.sitenv.org/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://prodccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'https://prodccda.sitenv.org/directtransportmessagesender/sendmessagewithattachmentfilepath',
@@ -17,7 +18,7 @@ export const environment = {
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTable.md',
     ett_url: 'https://ttpedge.sitenv.org/ttp',
     host_url: 'sitenv.org',
-    
+
     fhir_server_url: 'https://fhir.sitenv.org/secure/',
     fhir_query_url: 'https://fhirprod.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhirprod.sitenv.org/fhirconformance/',

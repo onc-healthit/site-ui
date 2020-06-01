@@ -1,6 +1,7 @@
 export const environment = {
     production: true,
     ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://ccda.site.healthit.gov/referenceccdaservice/',
     trustanchor_upload_url: 'https://site.healthit.gov/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://site.healthit.gov/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'https://site.healthit.gov/directtransportmessagesender/sendmessagewithattachmentfilepath',
@@ -17,7 +18,7 @@ export const environment = {
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGOV.md',
     ett_url: 'https://ett.healthit.gov/ett',
     host_url: 'site.healthit.gov',
-    
+
     fhir_server_url: 'https://dcdt31.healthit.gov/secure/',
     fhir_query_url: 'https://dcdt31.healthit.gov/fhirclient/',
     fhir_conformance_url: 'https://dcdt31.healthit.gov/fhirconformance/',

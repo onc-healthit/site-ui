@@ -5,10 +5,15 @@ import {NgModule} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {CcdaR1ValidatorComponent} from "./ccda-r1-validator-component/ccda-r1-validator.component";
 import {CcdaR2ValidatorComponent} from "./ccda-r2-validator-component/ccda-r2-validator.component";
+import {CcdaR2CuresValidatorComponent} from "./ccda-r2-cures-validator-component/ccda-r2-cures-validator.component";
 import {CcdaValidatorLauncherComponent} from "./ccda-validator-launcher/ccda-validator-launcher.component";
 
 
 const routes: Routes = [
+  {
+    path: 'ccdar2curesvalidator',
+    component: CcdaR2CuresValidatorComponent
+  },
   {
     path: 'ccdar2validator',
     component: CcdaR2ValidatorComponent

@@ -5,9 +5,9 @@
 
 export const environment = {
     production: false,
-    // ccda_validation_url: 'https://ttpds.sitenv.org:8443/referenceccdaservice/', // old prod
-    ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/', // hhs dev james.dev.sitenv.org
-    scorecard_url: 'https://34.236.48.201/scorecard/', // this is AHRQ  TEST vs DEV for now (https://ccda.test.sitenv.org/scorecard/ vs https://ccda.dev.sitenv.org/scorecard/)
+    ccda_validation_url: 'https://james.test.sitenv.org/referenceccdaservice/', // hhs test james.test.sitenv.org
+    ccda_r2_cures_validation_url: 'https://ccda.test.sitenv.org/referenceccdaservice/', // hhs dev ccda.test.sitenv.org 34.236.48.201 ONCSITE-TEST-CCDA
+    scorecard_url: 'https://34.236.48.201/scorecard/', // hhs dev ccda.test.sitenv.org
     trustanchor_upload_url: 'https://devccda.sitenv.org/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://devccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'http://localhost:8080/directtransportmessagesender/sendmessagewithattachmentfilepath',

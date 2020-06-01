@@ -20,8 +20,9 @@ export const environment = {
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTable.md',
     ett_url: 'https://ttpedge.sitenv.org/ttp',
     host_url: 'sitenv.org',
-    
+
     ccda_validation_url: 'https://james.site.healthit.gov/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://ccda.site.healthit.gov/referenceccdaservice/',
     scorecard_url: 'https://ccda.site.healthit.gov/scorecard/',
 
     fhir_server_url: 'https://fhir.site.healthit.gov/open/',
