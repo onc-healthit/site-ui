@@ -19,6 +19,7 @@ export const environment = {
     site_xdr_wsdl_url: 'https://site.dev.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
 
     ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://ccda.test.sitenv.org/referenceccdaservice/', // not on dev due to artifactory and jenkins
     scorecard_url: 'https://ccda.dev.sitenv.org/scorecard/',
 
     fhir_server_url: 'https://fhir.sitenv.org/secure/', // temporary URL

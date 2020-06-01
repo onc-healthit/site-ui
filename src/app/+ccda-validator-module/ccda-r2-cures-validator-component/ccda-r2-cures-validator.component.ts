@@ -7,16 +7,17 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/publishReplay";
 import {environment} from "../../../environments/environment";
 
-const URL = environment.ccda_validation_url;
+const URL = environment.ccda_r2_cures_validation_url;
 const DEBUG_JSON_PATH = '/assets/jsonResults/refVal/r2/NT_CCDS_Sample1_r21_v4.json';
 const INFO_INDEX: number = 0;
+const CURES_UPDATE: boolean = true;
 
 @Component({
-  selector: 'ccda-r2-validator-component',
-  templateUrl: 'ccda-r2-validator.component.html',
-  styleUrls: ['ccda-r2-validator.component.css']
+  selector: 'ccda-r2-cures-validator-component',
+  templateUrl: 'ccda-r2-cures-validator.component.html',
+  styleUrls: ['ccda-r2-cures-validator.component.css']
 })
-export class CcdaR2ValidatorComponent implements OnInit {
+export class CcdaR2CuresValidatorComponent implements OnInit {
   @ViewChild('r2resultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal:ModalComponent;
   @Input() inDebugMode: boolean;
@@ -91,7 +92,7 @@ export class CcdaR2ValidatorComponent implements OnInit {
   onSubmit(form: any): void {
       this.blockModal.open().then(() => {
         this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective,
-          this.filesToUpload, this.severityLevelSelected).then((result: any) => {
+          this.filesToUpload, this.severityLevelSelected, CURES_UPDATE).then((result: any) => {
             this.validationResults = result;
             this.blockModal.close();
             this.modal.open();

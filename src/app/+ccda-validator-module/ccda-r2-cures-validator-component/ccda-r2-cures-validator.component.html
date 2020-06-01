@@ -1,0 +1,116 @@
+<div class="validation-form-group">
+  <form name="validationForm" #validationForm="ngForm"
+        (ngSubmit)="onSubmit(validationForm.value)"
+        class="form-horizontal">
+    <div class="form-group row">
+      <label for="messageTypeGroup">Select whether your system is a SENDER or RECEIVER of C-CDA's:</label>
+      <div id="messageTypeGroup">
+        <button class="btn btn-primary" type="button" (click)="setSelectedMessageType('sender', $event)">Sender</button>
+        <button class="btn btn-primary" type="button" (click)="setSelectedMessageType('receiver', $event)">Receiver
+        </button>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="validationObjectives">Select ONC 2015 Edition S&CC objective or other C-CDA IG
+        conformance criteria:</label>
+      <select id="validationObjectives" name="validationObjective" class="form-control"
+              (change)="getReferenceFilesForValidationObjective($event.target.value)" required
+              [(ngModel)]="validationObjective">
+        <option value="">--- select one ---</option>
+        <option *ngFor="let p of validationObjectives" [value]="p.name">{{p.name}}</option>
+      </select>
+    </div>
+    <div class="form-group row">
+      <label for="referenceFiles">Select the scenario file that you used to generate the C-CDA, if you are
+        testing a C-CDA generated without using any of the scenario files in the drop down, select "No
+        scenario File":</label>
+      <select id="referenceFiles" name="referenceFileName" class="form-control" required
+              [(ngModel)]="referenceFileName">
+        <option value="">--- select one ---</option>
+        <option *ngFor="let r of referenceFiles" [value]="r.name">{{r.name}}</option>
+        <option value="noscenariofile">No Scenario File</option>
+      </select>
+    </div>
+    <div class="form-group row">
+      <label for="severityLevels">Select the desired severity or severities. Selecting "Errors, Warnings, and Info"
+        processes all available result types and is the default setting. The remaining selections limit the results as stated
+        and should subsequently offer faster results.</label>
+        <select id="severityLevels" name="severityLevelimit" class="form-control"
+                [(ngModel)]="severityLevelSelected">
+          <option *ngFor="let severity of severityLevels" [value]="severity.value">{{severity.displayName}}</option>
+        </select>
+    </div>
+    <div class="form-group row">
+      <label for="fileUpload">Upload generated C-CDA file to validate:</label>
+      <input type="file" id="fileUpload" (change)="fileChangeEvent($event)" class="form-control" required/>
+    </div>
+    <div class="form-group row">
+      <label for="validationSubmit">Validate Document</label>
+      <div id="validationSubmit">
+        <button type="submit" class="btn btn-primary" [disabled]="!validationForm.form.valid" angulartics2On="click"
+                angularticsEvent="r2 validate" angularticsCategory="ccda validator">
+          Submit
+        </button>
+        <button (click)="loadDebugResults()" type="button" class="btn btn-warning" *ngIf="inDebugMode"
+                [disabled]="!inDebugMode">
+          Debug
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+  <modal #blockModal [keyboard]="false" [backdrop]="'static'">
+    <modal-body>
+      <div class="blockMsg" *ngIf="isServerUp">
+        <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
+        <div>
+          <h1>Validating file:</h1>
+          <h3>{{filesToUpload[0]?.name}}</h3>
+        </div>
+      </div>
+      <div class="blockMsg" *ngIf="!isServerUp">
+        <div>
+          <h1>The backend service may be down. Please try later</h1>
+        </div>
+      </div>
+    </modal-body>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </modal>
+
+<modal #r2resultsModal cssClass="validation-modal-dialog">
+  <modal-body>
+    <ul class="nav nav-tabs hidden-print" id="resultModalTabs">
+      <li><a (click)="canSave=true" href="#r2-results-group-tab" data-toggle="tab" class="nav active">Validation
+        Result</a></li>
+      <li><a (click)="canSave=false" href="#r2-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a></li>
+      <span class="pull-right">
+          <li *ngIf="canSave" class="pull-left" style="margin-right: 4px">
+            <button type="button" class="btn btn-primary" (click)="saveResults()">Save Results</button>
+          </li>
+          <li class="pull-right"><button type="button" class="btn btn-primary"
+                                         (click)="modal.close()">Close</button></li>
+        </span>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="r2-results-group-tab">
+          <span class="visible-print">
+            <site-logo></site-logo>
+            <h1>SITE C-CDA R2.1 Validator Results</h1>
+          </span>
+        <results-list [validationResults]="validationResults"></results-list>
+      </div>
+      <div role="tabpanel" class="tab-pane fade in" id="r2-results-xml-tab">
+        <xml-highlight [ccdaxml]="validationResults?.resultsMetaData.ccdaFileContents"
+                       [validationResults]="validationResults?.ccdaValidationResults"></xml-highlight>
+      </div>
+    </div>
+  </modal-body>
+  <modal-footer class="hidden-print">
+    <button type="button" class="btn btn-primary" (click)="modal.close()">Close</button>
+  </modal-footer>
+</modal>
+

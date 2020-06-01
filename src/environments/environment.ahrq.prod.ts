@@ -19,6 +19,7 @@ export const environment = {
     site_xdr_wsdl_url: 'https://sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
 
     ccda_validation_url: 'https://james.sitenv.org/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://ccda.sitenv.org/referenceccdaservice/',
     scorecard_url: 'https://ccda.sitenv.org/scorecard/',
 
     fhir_server_url: 'https://fhir.sitenv.org/open/',
