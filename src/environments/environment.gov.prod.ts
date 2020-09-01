@@ -1,7 +1,7 @@
 export const environment = {
     production: true,
     ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
-    ccda_r2_cures_validation_url: 'https://ccda.site.healthit.gov/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://ccda.healthit.gov/referenceccdaservice/',
     trustanchor_upload_url: 'https://site.healthit.gov/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://site.healthit.gov/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'https://site.healthit.gov/directtransportmessagesender/sendmessagewithattachmentfilepath',
