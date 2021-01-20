@@ -22,7 +22,7 @@ export const environment = {
     host_url: 'sitenv.org',
 
     ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
-    ccda_r2_cures_validation_url: 'https://ccda.test.sitenv.org/referenceccdaservice/', // not on dev due to artifactory and jenkins
+    ccda_r2_cures_validation_url: 'https://ccda.dev.sitenv.org/referenceccdaservice/',
     scorecard_url: 'https://ccda.dev.sitenv.org/scorecard/',
 
     fhir_server_url: 'https://fhir.sitenv.org/secure/', // temporary URL
