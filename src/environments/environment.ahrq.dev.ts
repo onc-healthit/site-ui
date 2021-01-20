@@ -18,7 +18,7 @@ export const environment = {
     search_message_logs_by_ip_address_url: 'https://site.dev.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'https://site.dev.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTable.md',
-    ett_url: 'https://ttpedge.sitenv.org/ttp',
+    ett_url: 'https://ett.dev.sitenv.org/ett',
     host_url: 'sitenv.org',
 
     ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
