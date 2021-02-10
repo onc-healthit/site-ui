@@ -11,7 +11,7 @@ export const environment = {
     xdr_send_precanned_message_url: 'https://site.healthit.gov/xdrmessagesender/sendmessagewithattachmentfilepath',
     xdr_send_uploaded_message_url: 'https://site.healthit.gov/xdrmessagesender/sendmessagewithattachmentfile',
     canned_ccda_filepaths_url: 'https://site.healthit.gov/directtransportmessagesender/listsampleccdafiles',
-    scorecard_url: 'https://site.healthit.gov/scorecard/',
+    scorecard_url: 'https://ccda.healthit.gov/scorecard/',
     search_message_logs_by_from_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'http://ccda.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
