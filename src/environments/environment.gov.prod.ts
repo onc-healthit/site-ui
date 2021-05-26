@@ -1,7 +1,5 @@
 export const environment = {
     production: true,
-    ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
-    ccda_r2_cures_validation_url: 'https://ccda.healthit.gov/referenceccdaservice/',
     trustanchor_upload_url: 'https://site.healthit.gov/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://site.healthit.gov/trustanchoruploader/downloadtrustbundle',
     direct_send_precanned_message_url: 'https://site.healthit.gov/directtransportmessagesender/sendmessagewithattachmentfilepath',
@@ -11,13 +9,16 @@ export const environment = {
     xdr_send_precanned_message_url: 'https://site.healthit.gov/xdrmessagesender/sendmessagewithattachmentfilepath',
     xdr_send_uploaded_message_url: 'https://site.healthit.gov/xdrmessagesender/sendmessagewithattachmentfile',
     canned_ccda_filepaths_url: 'https://site.healthit.gov/directtransportmessagesender/listsampleccdafiles',
-    scorecard_url: 'https://ccda.healthit.gov/scorecard/',
     search_message_logs_by_from_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://site.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'http://site.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
     featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGOV.md',
     ett_url: 'https://ett.healthit.gov/ett',
     host_url: 'site.healthit.gov',
+  
+    ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'https://ccda.healthit.gov/referenceccdaservice/',
+    scorecard_url: 'https://ccda.healthit.gov/scorecard/',
 
     fhir_server_url: 'https://fhirsandbox.healthit.gov/secure/',
     fhir_query_url: 'https://fhirsandbox.healthit.gov/fhirclient/',
