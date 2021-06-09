@@ -50,8 +50,12 @@
         <span>
             <ul>
                 <li class=""><b>Result Description:</b> {{r.description}}</li>
-                <li class=""><b>Document Xpath:</b> {{r.xPath}}</li>
-                <li class=""><b>Document Line Number:</b> {{r.documentLineNumber}}</li>
+                <span *ngIf="r.xPath">
+                  <li class=""><b>XPath:</b> {{r.xPath}}</li>
+                </span>
+                <span *ngIf="r.documentLineNumber && r.documentLineNumber !== '0'">
+                  <li class=""><b>Line Number:</b> {{r.documentLineNumber}}</li>
+                </span>
             </ul>
         </span>
     </span>
