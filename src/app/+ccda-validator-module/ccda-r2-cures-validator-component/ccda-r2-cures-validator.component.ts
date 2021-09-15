@@ -18,7 +18,7 @@ const CURES_UPDATE: boolean = true;
   styleUrls: ['ccda-r2-cures-validator.component.css']
 })
 export class CcdaR2CuresValidatorComponent implements OnInit {
-  @ViewChild('r2resultsModal') modal: ModalComponent;
+  @ViewChild('r2CuresresultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal:ModalComponent;
   @Input() inDebugMode: boolean;
 
