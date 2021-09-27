@@ -81,12 +81,12 @@
     </div>
   </modal>
 
-<modal #r2resultsModal cssClass="validation-modal-dialog">
+<modal #r2CuresResultsModal cssClass="validation-modal-dialog">
   <modal-body>
     <ul class="nav nav-tabs hidden-print" id="resultModalTabs">
-      <li><a (click)="canSave=true" href="#r2-results-group-tab" data-toggle="tab" class="nav active">Validation
+      <li><a (click)="canSave=true" href="#r2Cures-results-group-tab" data-toggle="tab" class="nav active">Validation
         Result</a></li>
-      <li><a (click)="canSave=false" href="#r2-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a></li>
+      <li><a (click)="canSave=false" href="#r2Cures-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a></li>
       <span class="pull-right">
           <li *ngIf="canSave" class="pull-left" style="margin-right: 4px">
             <button type="button" class="btn btn-primary" (click)="saveResults()">Save Results</button>
@@ -96,14 +96,14 @@
         </span>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade in active" id="r2-results-group-tab">
+      <div role="tabpanel" class="tab-pane fade in active" id="r2Cures-results-group-tab">
           <span class="visible-print">
             <site-logo></site-logo>
             <h1>SITE C-CDA R2.1 Validator Results</h1>
           </span>
         <results-list [validationResults]="validationResults"></results-list>
       </div>
-      <div role="tabpanel" class="tab-pane fade in" id="r2-results-xml-tab">
+      <div role="tabpanel" class="tab-pane fade in" id="r2Cures-results-xml-tab">
         <xml-highlight [ccdaxml]="validationResults?.resultsMetaData.ccdaFileContents"
                        [validationResults]="validationResults?.ccdaValidationResults"></xml-highlight>
       </div>
