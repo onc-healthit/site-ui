@@ -20,7 +20,7 @@ export const environment = {
     ccda_r2_cures_validation_url: 'https://ccda.healthit.gov/referenceccdaservice/',
     scorecard_url: 'https://ccda.healthit.gov/scorecard/',
 
-    fhir_server_url: 'https://fhirsandbox.healthit.gov/secure/',
+    fhir_server_url: 'https://fhirsandbox.healthit.gov/secure/r4',
     fhir_query_url: 'https://fhirsandbox.healthit.gov/fhirclient/',
     fhir_conformance_url: 'https://fhirsandbox.healthit.gov/fhirconformance/',
     fhir_bulk_data_url: 'https://fhirsandbox.healthit.gov/bulkdataclient/',
