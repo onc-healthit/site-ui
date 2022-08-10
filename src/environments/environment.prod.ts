@@ -22,6 +22,6 @@ export const environment = {
     fhir_server_url: 'https://fhir.sitenv.org/secure/',
     fhir_query_url: 'https://fhirprod.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhirprod.sitenv.org/fhirconformance/',
-    fhir_bulk_data_url: 'https://fhirprod.sitenv.org/bulkdataclient/',
+    fhir_bulk_data_url: 'https://fhirprod.sitenv.org/clientbulkr4/',
     fhir_inferno_data_url: 'https://inferno.healthit.gov/'
 };
