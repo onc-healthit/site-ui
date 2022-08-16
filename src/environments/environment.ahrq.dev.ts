@@ -25,9 +25,9 @@ export const environment = {
     ccda_r2_cures_validation_url: 'https://ccda.dev.sitenv.org/referenceccdaservice/',
     scorecard_url: 'https://ccda.dev.sitenv.org/scorecard/',
 
-    fhir_server_url: 'https://fhir.sitenv.org/secure/', // temporary URL
+    fhir_server_url: 'https://fhir.dev.sitenv.org/secure/', // temporary URL
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
-    fhir_bulk_data_url: 'https://fhirtest.sitenv.org/clientbulkr4/',
+    fhir_bulk_data_url: 'https://fhir.dev.sitenv.org/clientbulkr4',
     fhir_inferno_data_url: 'https://infernotest.sitenv.org' // temporary URL
 };
