@@ -8,6 +8,6 @@ export class MarkdownToHtmlPipe implements PipeTransform {
 
   public transform(markdown: string): string {
     if (markdown == null) return '';
-    return marked(markdown);
+    return marked.parse(markdown);
   }
 }
