@@ -12,7 +12,6 @@ export const environment = {
     search_message_logs_by_from_address_url: 'https://ccda.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
     search_message_logs_by_ip_address_url: 'https://ccda.healthit.gov/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
     site_xdr_wsdl_url: 'http://ccda.healthit.gov/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
-    featureTableMarkdownURL: 'https://raw.githubusercontent.com/onc-healthit/site-content/master/FeatureTableGov.md',
     ett_url: 'https://ett.healthit.gov/ett',
     host_url: 'site.healthit.gov',
 

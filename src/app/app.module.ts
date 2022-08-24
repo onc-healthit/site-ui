@@ -13,7 +13,6 @@ import {Ng2Bs3ModalModule} from "ng2-bs3-modal/ng2-bs3-modal";
 import {SiteReleaseNotesComponent} from "./site-release-notes-component/site-release-notes.component";
 import {SiteVersionComponent} from "./site-version-component/site-version.component";
 import {SiteNistToolsComponent} from "./site-nist-tools-component/site-nist-tools.component";
-import {SiteFeaturesTableComponent} from "./site-features-table-component/site-features-table.component";
 import {Angulartics2Module, Angulartics2GoogleAnalytics} from "angulartics2";
 import {SiteHeaderComponent} from "./site-header-component/site-header-component";
 import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.component";
@@ -42,7 +41,6 @@ import {SandboxFhirComponent} from "./sandbox-fhir-component/sandbox-fhir.compon
     SiteReleaseNotesComponent,
     SiteVersionComponent,
     SiteNistToolsComponent,
-    SiteFeaturesTableComponent,
     SiteHeaderComponent,
     SandboxDirectComponent,
     SandboxFhirComponent
