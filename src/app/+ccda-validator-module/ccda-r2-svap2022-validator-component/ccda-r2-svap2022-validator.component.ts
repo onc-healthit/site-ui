@@ -10,21 +10,24 @@ import { environment } from "../../../environments/environment";
 const URL = environment.ccda_r2_cures_validation_url;
 const DEBUG_JSON_PATH = '/assets/jsonResults/refVal/r2/NT_CCDS_Sample1_r21_v4.json';
 const INFO_INDEX: number = 0;
-const CURES_UPDATE: boolean = true;
-const SVAP_2022: boolean = false;
+const CURES_UPDATE: boolean = false;
+const SVAP_2022: boolean = true;
 
 @Component({
-  selector: 'ccda-r2-cures-validator-component',
-  templateUrl: 'ccda-r2-cures-validator.component.html',
-  styleUrls: ['ccda-r2-cures-validator.component.css']
+  selector: 'ccda-r2-svap2022-validator-component',
+  templateUrl: 'ccda-r2-svap2022-validator.component.html',
+  styleUrls: ['ccda-r2-svap2022-validator.component.css']
 })
-export class CcdaR2CuresValidatorComponent implements OnInit {
-  @ViewChild('r2CuresResultsModal') modal: ModalComponent;
+export class CcdaR2Svap2022ValidatorComponent implements OnInit {
+  @ViewChild('r2Svap2022ResultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal: ModalComponent;
   @Input() inDebugMode: boolean;
 
   private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-data/contents/Cures Update Sender SUT Test Data';
   private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-data/contents/Cures Update Receiver SUT Test Data';
+  // TODO: Update to the following when it exists/remove the former vars...
+  // private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/SVAP 2022 Sender SUT Test Data';
+  // private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/SVAP 2022 Update Receiver SUT Test Data';
   public validationObjectives: any;
   public referenceFiles: any;
   public isServerUp: boolean = true;

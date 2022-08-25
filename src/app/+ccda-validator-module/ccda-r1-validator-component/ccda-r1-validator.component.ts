@@ -1,12 +1,12 @@
-import {Component, Input, OnInit, ViewChild} from "@angular/core";
-import {CCDAValidatorService} from "../../shared/ccda-validator.service";
-import {Http} from "@angular/http";
-import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
+import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { CCDAValidatorService } from "../../shared/ccda-validator.service";
+import { Http } from "@angular/http";
+import { ModalComponent } from "ng2-bs3-modal/ng2-bs3-modal";
 import "rxjs/add/operator/toPromise";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import "rxjs/add/operator/publishReplay";
-import {environment} from "../../../environments/environment";
+import { environment } from "../../../environments/environment";
 
 const URL = environment.ccda_validation_url;
 const REFERENCE_FILE_NAME = 'noscenariofile';
@@ -36,18 +36,18 @@ export class CcdaR1ValidatorComponent implements OnInit {
   ngOnInit() {
   }
 
-  fileChangeEvent(fileInput: any){
-    this.filesToUpload = <Array<File>> fileInput.target.files;
+  fileChangeEvent(fileInput: any) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
       this.ccdaValidatorService.validateCCDA(URL, REFERENCE_FILE_NAME, this.validationObjective, this.filesToUpload,
-        DEFAULT_SEVERITY_LEVEL).then((result: any) => {
-        this.validationResults = result;
-        this.blockModal.close();
-        this.modal.open();
-      });
+        DEFAULT_SEVERITY_LEVEL, false, false).then((result: any) => {
+          this.validationResults = result;
+          this.blockModal.close();
+          this.modal.open();
+        });
     });
   }
 

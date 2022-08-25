@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="validationObjectives">Select ONC 2015 Edition S&CC objective or other C-CDA IG
+      <label for="validationObjectives">Select objective or other C-CDA IG
         conformance criteria:</label>
       <select id="validationObjectives" name="validationObjective" class="form-control"
         (change)="getReferenceFilesForValidationObjective($event.target.value)" required
@@ -80,12 +80,12 @@
   </div>
 </modal>
 
-<modal #r2CuresResultsModal cssClass="validation-modal-dialog">
+<modal #r2Svap2022ResultsModal cssClass="validation-modal-dialog">
   <modal-body>
     <ul class="nav nav-tabs hidden-print" id="resultModalTabs">
-      <li><a (click)="canSave=true" href="#r2Cures-results-group-tab" data-toggle="tab" class="nav active">Validation
+      <li><a (click)="canSave=true" href="#r2Svap2022-results-group-tab" data-toggle="tab" class="nav active">Validation
           Result</a></li>
-      <li><a (click)="canSave=false" href="#r2Cures-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a>
+      <li><a (click)="canSave=false" href="#r2Svap2022-results-xml-tab" data-toggle="tab" class="nav">Original C-CDA</a>
       </li>
       <span class="pull-right">
         <li *ngIf="canSave" class="pull-left" style="margin-right: 4px">
@@ -95,14 +95,14 @@
       </span>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade in active" id="r2Cures-results-group-tab">
+      <div role="tabpanel" class="tab-pane fade in active" id="r2Svap2022-results-group-tab">
         <span class="visible-print">
           <site-logo></site-logo>
-          <h1>SITE C-CDA R2.1 Cures Update Validator Results</h1>
+          <h1>SITE C-CDA R2.1 SVAP 2022 Validator Results</h1>
         </span>
         <results-list [validationResults]="validationResults"></results-list>
       </div>
-      <div role="tabpanel" class="tab-pane fade in" id="r2Cures-results-xml-tab">
+      <div role="tabpanel" class="tab-pane fade in" id="r2Svap2022-results-xml-tab">
         <xml-highlight [ccdaxml]="validationResults?.resultsMetaData.ccdaFileContents"
           [validationResults]="validationResults?.ccdaValidationResults"></xml-highlight>
       </div>

@@ -1,7 +1,9 @@
 <div class="container hidden-print">
   <div class="row">
     <div class="col-sm-12">
-      <page-overview-header title="C-CDA Validator" description="The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. It is a resource to validate the conformance of C-CDA documents to ONC 2014 and 2015 Certification Editions regulations and objectives, or the base HL7 C-CDA Implementation Guide."></page-overview-header>
+      <page-overview-header title="C-CDA Validator"
+        description="The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. It is a resource to validate the conformance of C-CDA documents to ONC 2014 and 2015 Certification Editions regulations and objectives, or the base HL7 C-CDA Implementation Guide.">
+      </page-overview-header>
     </div>
   </div>
   <div class="row">
@@ -18,8 +20,11 @@
         <accordion-group heading="R2.1 Validator">
           <ccda-r2-validator-component [inDebugMode]="inDebugMode"></ccda-r2-validator-component>
         </accordion-group>
-        <accordion-group heading="Cures Update R2.1 Validator (with USCDI Version 2 Beta)">
+        <accordion-group heading="Cures Update R2.1 Validator">
           <ccda-r2-cures-validator-component [inDebugMode]="inDebugMode"></ccda-r2-cures-validator-component>
+        </accordion-group>
+        <accordion-group heading="SVAP 2022 R2.1 Validator">
+          <ccda-r2-svap2022-validator-component [inDebugMode]="inDebugMode"></ccda-r2-svap2022-validator-component>
         </accordion-group>
       </accordion>
     </div>
@@ -28,21 +33,16 @@
     <div class="col-sm-12">
       <div class="well">
         <h3>Links to C-CDA Reference Information</h3>
-        <a class="btn btn-default link-button-nowrap" href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=408" style="width: 100%;" tabindex="1" target="_blank">C-CDA R2.1 Product
-          Page</a> <span class="external-page embedded"><a class="ext-icon"
-                                                           href="http://www.hhs.gov/disclaimer.html"
-                                                           tabindex="1" target="_blank"
-                                                           title="Web Site Disclaimers"><span
-        class="hiddenText">Web Site Disclaimers</span></a></span> <a class="btn btn-default"
-                                                                     href="{{ett_url}}/#/validators"
-                                                                     style="width: 100%;" tabindex="1"
-                                                                     target="_blank">C-CDA Validator</a><a class="btn btn-default"
-                                                                     href="{{scorecard_url}}"
-                                                                     style="width: 100%; " tabindex="1"
-                                                                     target="_blank">ONC
-        Scorecard</a>
+        <a class="btn btn-default link-button-nowrap"
+          href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=408" style="width: 100%;"
+          tabindex="1" target="_blank">C-CDA R2.1 Product
+          Page</a> <span class="external-page embedded"><a class="ext-icon" href="http://www.hhs.gov/disclaimer.html"
+            tabindex="1" target="_blank" title="Web Site Disclaimers"><span class="hiddenText">Web Site
+              Disclaimers</span></a></span> <a class="btn btn-default" href="{{ett_url}}/#/validators"
+          style="width: 100%;" tabindex="1" target="_blank">C-CDA Validator</a><a class="btn btn-default"
+          href="{{scorecard_url}}" style="width: 100%; " tabindex="1" target="_blank">ONC
+          Scorecard</a>
       </div>
     </div>
   </div>
 </div>
-
