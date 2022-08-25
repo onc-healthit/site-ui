@@ -34,6 +34,7 @@ import { Angulartics2Module } from "angulartics2";
     CcdaR1ValidatorComponent,
     CcdaR2ValidatorComponent,
     CcdaR2CuresValidatorComponent,
+    CcdaR2Svap2022ValidatorComponent,
     CcdaValidatorLauncherComponent,
     CcdaValidatorReleaseNotesComponent
   ],
