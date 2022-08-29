@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-12">
       <page-overview-header title="C-CDA Validator"
-        description="The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. It is a resource to validate the conformance of C-CDA documents to ONC 2014 and 2015 Certification Editions regulations and objectives, or the base HL7 C-CDA Implementation Guide.">
+        description="The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. This resource may be used to validate conformance of C-CDA documents to ONC Certification including 2014 Edition, 2015 Edition, 2015 Edition Cures Update, and the 2015 Edition Cures Update and SVAP 2022. All validators are based on the HL7 C-CDA Implementation Guide.">
       </page-overview-header>
     </div>
   </div>
@@ -14,16 +14,16 @@
   <div class="row">
     <div class="col-sm-12">
       <accordion [showArrows]="true" [closeOthers]="true" [expandAll]="inDebugMode">
-        <accordion-group heading="R1.1 Validator">
+        <accordion-group heading="R1.1 2014 Edition">
           <ccda-r1-validator-component [inDebugMode]="inDebugMode"></ccda-r1-validator-component>
         </accordion-group>
-        <accordion-group heading="R2.1 Validator">
+        <accordion-group heading="R2.1 2015 Edition">
           <ccda-r2-validator-component [inDebugMode]="inDebugMode"></ccda-r2-validator-component>
         </accordion-group>
-        <accordion-group heading="Cures Update R2.1 Validator">
+        <accordion-group heading="R2.1 2015 Edition Cures Update">
           <ccda-r2-cures-validator-component [inDebugMode]="inDebugMode"></ccda-r2-cures-validator-component>
         </accordion-group>
-        <accordion-group heading="SVAP 2022 R2.1 Validator">
+        <accordion-group heading="R2.1 2015 Edition Cures Update and SVAP 2022">
           <ccda-r2-svap2022-validator-component [inDebugMode]="inDebugMode"></ccda-r2-svap2022-validator-component>
         </accordion-group>
       </accordion>
