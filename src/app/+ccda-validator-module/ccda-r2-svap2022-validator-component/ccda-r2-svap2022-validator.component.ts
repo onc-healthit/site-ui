@@ -23,11 +23,9 @@ export class CcdaR2Svap2022ValidatorComponent implements OnInit {
   @ViewChild('blockModal') blockModal: ModalComponent;
   @Input() inDebugMode: boolean;
 
-  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-data/contents/Cures Update Sender SUT Test Data';
-  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-data/contents/Cures Update Receiver SUT Test Data';
-  // TODO: Update to the following when it exists/remove the former vars...
-  // private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/SVAP 2022 Sender SUT Test Data';
-  // private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/SVAP 2022 Update Receiver SUT Test Data';
+  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/Cures Update Svap Uscdiv2 Sender SUT Test Data';
+  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/Cures Update Svap Uscdiv2 Receiver SUT Test Data';
+
   public validationObjectives: any;
   public referenceFiles: any;
   public isServerUp: boolean = true;
