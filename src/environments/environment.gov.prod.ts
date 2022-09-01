@@ -22,6 +22,6 @@ export const environment = {
     fhir_server_url: 'https://fhirsandbox.healthit.gov/secure/r4',
     fhir_query_url: 'https://fhirsandbox.healthit.gov/fhirclient/',
     fhir_conformance_url: 'https://fhirsandbox.healthit.gov/fhirconformance/',
-    fhir_bulk_data_url: 'https://fhirsandbox.healthit.gov/bulkdataclient/',
+    fhir_bulk_data_url: 'https://fhirprod.sitenv.org/clientbulkr4/',
     fhir_inferno_data_url: 'https://inferno.healthit.gov/'
 };
