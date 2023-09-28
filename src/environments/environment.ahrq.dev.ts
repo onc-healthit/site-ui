@@ -23,7 +23,9 @@ export const environment = {
     ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
     ccda_r2_cures_validation_url: 'https://ccda.dev.sitenv.org/referenceccdaservice/',
     scorecard_url: 'https://ccda.dev.sitenv.org/scorecard/',
-
+    jwt_accesstoken_endpoint: 'http://34.197.16.179/auth/realms/sitenv/protocol/openid-connect/token',
+    jwt_accesstoken_client: 'ccda',
+    
     fhir_server_url: 'https://fhir.dev.sitenv.org/secure/', // temporary URL
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',

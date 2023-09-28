@@ -23,6 +23,8 @@ export const environment = {
     ccda_validation_url: 'https://james.site.healthit.gov/referenceccdaservice/',
     ccda_r2_cures_validation_url: 'https://ccda.site.healthit.gov/referenceccdaservice/',
     scorecard_url: 'https://ccda.site.healthit.gov/scorecard/',
+    jwt_accesstoken_endpoint: 'http://34.197.16.179/auth/realms/sitenv/protocol/openid-connect/token',
+    jwt_accesstoken_client: 'ccda',
 
     fhir_server_url: 'https://fhir.site.healthit.gov/open/',
     fhir_query_url: 'https://fhir.site.healthit.gov/fhirclient/',

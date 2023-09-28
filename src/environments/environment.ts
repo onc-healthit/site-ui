@@ -5,8 +5,8 @@
 
 export const environment = {
     production: false,
-    ccda_validation_url: 'https://james.test.sitenv.org/referenceccdaservice/', // hhs test james.test.sitenv.org
-    ccda_r2_cures_validation_url: 'https://ccda.test.sitenv.org/referenceccdaservice/', // hhs dev ccda.test.sitenv.org 34.236.48.201 ONCSITE-TEST-CCDA
+    ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
+    ccda_r2_cures_validation_url: 'http://ccda.dev.sitenv.org/referenceccdaservice/',
     scorecard_url: 'https://34.236.48.201/scorecard/', // hhs dev ccda.test.sitenv.org
     trustanchor_upload_url: 'https://devccda.sitenv.org/trustanchoruploader/uploadtrustanchor',
     trustbundle_download_url: 'https://devccda.sitenv.org/trustanchoruploader/downloadtrustbundle',
@@ -22,6 +22,8 @@ export const environment = {
     site_xdr_wsdl_url: 'http://devccda.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
     ett_url: 'https://ttpedge.sitenv.org/ttp',
     host_url: 'sitenv.org',
+    jwt_accesstoken_endpoint: 'http://34.197.16.179/auth/realms/sitenv/protocol/openid-connect/token',
+    jwt_accesstoken_client: 'ccda',
 
     fhir_server_url: 'https://fhir.dev.sitenv.org/open/',
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',

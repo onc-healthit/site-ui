@@ -93,8 +93,10 @@ export class CcdaR2Svap2022ValidatorComponent implements OnInit {
 
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
+      console.log("calling .....");
       this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective,
         this.filesToUpload, this.severityLevelSelected, CURES_UPDATE, SVAP_2022).then((result: any) => {
+          console.log("result test :::::::::"+result);
           this.validationResults = result;
           this.blockModal.close();
           this.modal.open();
