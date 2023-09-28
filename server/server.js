@@ -15,10 +15,6 @@ const api = require('./server/routes/api');
 const app = express();
 
 app.use(express);
-// Parsers for POST data
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser());
 
 app.use(bodyParser.json());
 app.use(forms.array()); 
@@ -27,16 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload({
     createParentPath: true
 }));
-
-  // app.use(upload.array()); 
-  // app.use(express.static('public'));
-
-// app.use( bodyParser.json({limit: '50mb'}) );
-// app.use(bodyParser.urlencoded({
-//   limit: '50mb',
-//   extended: true,
-//   parameterLimit:50000
-// }));
 
 // Point static path to dist
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -52,7 +38,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '80';
+const port = process.env.SITE_PORT || '80';
 app.set('port', port);
 
 /**
