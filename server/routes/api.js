@@ -4,13 +4,13 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const axios = require("axios")
 const FormData = require("form-data")
-const os = require('os');
 const fs = require("fs")
+const os = require("os")
 
 var upload = multer({ dest: os.tmpdir()});
 var type = upload.single('ccdaFile');
 const path = require('path')
-
+require('log-timestamp')(function() { return 'Date : "' + new Date().toISOString() + '" message : "%s"' });
 
 router.post('/', type, (req, res) => {
  console.log(" request body parameters formdata ......."+JSON.stringify(req.body));
