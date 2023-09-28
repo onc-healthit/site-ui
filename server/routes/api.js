@@ -48,7 +48,7 @@ console.log("client id ........"+clinetId);
                 // console.log("gettoken JSON.stringify( respdata access_token)  ::::::"+JSON.stringify(respdata.data.access_token) );
                 getData(respdata.data.access_token);
             } catch (err) {
-              console.log('Error getToken : ', JSON.stringify(err.message));
+              console.log('Error  : ', JSON.stringify(err));
             if (err.response) {
                 console.log('Error getToken response :');
             } else if (err.request) { 
