@@ -23,7 +23,7 @@ export const environment = {
     ett_url: 'https://ttpedge.sitenv.org/ttp',
     host_url: 'sitenv.org',
     jwt_accesstoken_endpoint: 'http://34.197.16.179/auth/realms/sitenv/protocol/openid-connect/token',
-    jwt_accesstoken_client: 'ccda',
+    jwt_accesstoken_client: 'siteui',
 
     fhir_server_url: 'https://fhir.dev.sitenv.org/open/',
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
