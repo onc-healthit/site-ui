@@ -14,16 +14,18 @@ export const environment = {
     xdr_send_precanned_message_url: 'https://site.dev.sitenv.org/xdrmessagesender/sendmessagewithattachmentfilepath',
     xdr_send_uploaded_message_url: 'https://site.dev.sitenv.org/xdrmessagesender/sendmessagewithattachmentfile',
     canned_ccda_filepaths_url: 'https://site.dev.sitenv.org/directtransportmessagesender/listsampleccdafiles',
-    search_message_logs_by_from_address_url: 'https://ccda.dev.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
-    search_message_logs_by_ip_address_url: 'https://ccda.dev.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
-    site_xdr_wsdl_url: 'https://ccda.dev.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
+    search_message_logs_by_from_address_url: 'http://ccda.dev.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyfromaddress?fromAddress=',
+    search_message_logs_by_ip_address_url: 'http://ccda.dev.sitenv.org/xdrmessagevalidator/messagelogs/getlogsbyipaddress?ipAddress=',
+    site_xdr_wsdl_url: 'http://ccda.dev.sitenv.org/xdrmessagevalidator/Dispatcher/XDRService.wsdl',
     ett_url: 'https://ett.dev.sitenv.org/ett',
     host_url: 'sitenv.org',
 
     ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
-    ccda_r2_cures_validation_url: 'https://ccda.dev.sitenv.org/referenceccdaservice/',
-    scorecard_url: 'https://ccda.dev.sitenv.org/scorecard/',
-
+    ccda_r2_cures_validation_url: 'http://ccda.dev.sitenv.org/referenceccdaservice/',
+    scorecard_url: 'http://ccda.dev.sitenv.org/scorecard/',
+    jwt_accesstoken_endpoint: 'http://34.197.16.179/auth/realms/sitenv/protocol/openid-connect/token',
+    jwt_accesstoken_client: 'siteui',
+    
     fhir_server_url: 'https://fhir.dev.sitenv.org/secure/', // temporary URL
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',

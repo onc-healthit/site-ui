@@ -19,6 +19,7 @@ import {SandboxDirectComponent} from "./sandbox-direct-component/sandbox-direct.
 import {Ng2BreadcrumbModule} from "ng2-breadcrumb/ng2-breadcrumb";
 import {HttpModule} from "@angular/http";
 import {SandboxFhirComponent} from "./sandbox-fhir-component/sandbox-fhir.component";
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import {SandboxFhirComponent} from "./sandbox-fhir-component/sandbox-fhir.compon
     BrowserModule,
     SharedModule,
     Ng2Bs3ModalModule,
+    HttpClientModule,
     HttpModule,
     Ng2PageScrollModule.forRoot(),
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
