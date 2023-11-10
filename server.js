@@ -21,7 +21,7 @@ app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  res.send(path.join(__dirname, 'dist/index.html'));
+  res.redirect('/index.html');
 });
 
 /**
