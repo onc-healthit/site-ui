@@ -12,6 +12,7 @@ import { CcdaValidatorReleaseNotesComponent } from "./ccda-validator-release-not
 import { CcdaR2ValidatorComponent } from "./ccda-r2-validator-component/ccda-r2-validator.component";
 import { CcdaR2CuresValidatorComponent } from "./ccda-r2-cures-validator-component/ccda-r2-cures-validator.component";
 import { CcdaR2Svap2022ValidatorComponent } from "./ccda-r2-svap2022-validator-component/ccda-r2-svap2022-validator.component";
+import { CcdaR2Svap2023ValidatorComponent } from "./ccda-r2-svap2023-validator-component/ccda-r2-svap2023-validator.component";
 import { CcdaValidatorLauncherComponent } from "./ccda-validator-launcher/ccda-validator-launcher.component";
 import { AccordionModule } from "ngx-accordion";
 import { Angulartics2Module } from "angulartics2";
@@ -35,6 +36,7 @@ import { Angulartics2Module } from "angulartics2";
     CcdaR2ValidatorComponent,
     CcdaR2CuresValidatorComponent,
     CcdaR2Svap2022ValidatorComponent,
+    CcdaR2Svap2023ValidatorComponent,
     CcdaValidatorLauncherComponent,
     CcdaValidatorReleaseNotesComponent
   ],

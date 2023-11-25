@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-12">
       <page-overview-header title="C-CDA Validator"
-        description="The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. This resource may be used to validate conformance of C-CDA documents to ONC Certification including 2014 Edition, 2015 Edition, 2015 Edition Cures Update, and the 2015 Edition Cures Update and SVAP 2022. All validators are based on the HL7 C-CDA Implementation Guide.">
+        description="The goal of the SITE C-CDA Validator is to validate conformance of C-CDA documents to the standard in order to promote interoperability. This resource may be used to validate conformance of C-CDA documents to ONC Certification including 2014 Edition, 2015 Edition, 2015 Edition Cures Update, 2015 Edition Cures Update, SVAP 2022 and SVAP 2023. All validators are based on the HL7 C-CDA Implementation Guide.">
       </page-overview-header>
     </div>
   </div>
@@ -25,6 +25,9 @@
         </accordion-group>
         <accordion-group heading="R2.1 2015 Edition Cures Update and SVAP 2022">
           <ccda-r2-svap2022-validator-component [inDebugMode]="inDebugMode"></ccda-r2-svap2022-validator-component>
+         </accordion-group>
+         <accordion-group heading="R2.1 2015 Edition Cures Update and SVAP 2023">
+          <ccda-r2-svap2023-validator-component [inDebugMode]="inDebugMode"></ccda-r2-svap2023-validator-component> 
         </accordion-group>
       </accordion>
     </div>

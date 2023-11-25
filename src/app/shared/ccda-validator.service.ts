@@ -16,7 +16,7 @@ export class CCDAValidatorService {
 constructor(private  http : HttpClient){}
 
   validateCCDA(url: string, referenceFileName: string, validationObjective: string, files: Array<File>,
-    severityLevelSelected: string, curesUpdate: boolean = false, svap2022: boolean = false): any {
+    severityLevelSelected: string, curesUpdate: boolean = false, svap2022: boolean = false,svap2023: boolean = false): any {
     return new Promise((resolve, reject) => {
       let formData: any = new FormData();
       // let xhr = new XMLHttpRequest();
@@ -28,6 +28,7 @@ constructor(private  http : HttpClient){}
       formData.append("validationObjective", validationObjective);
       formData.append("curesUpdate", curesUpdate);
       formData.append("svap2022", svap2022);
+      formData.append("svap2023", svap2023);
       formData.append("severityLevel", severityLevelSelected);
       formData.append("ccdaurl", url);
 
