@@ -38,7 +38,7 @@ console.log("client id ........"+clinetId);
         formData.append("validationObjective", req.body.validationObjective);
         formData.append("referenceFileName", req.body.referenceFileName);
         let stream   = fs.createReadStream(path.join(req.file.path))
-        formData.append("ccdaFile", stream, {filename: req.body.referenceFileName});
+        formData.append("ccdaFile", stream, {filename: req.body.ccdaFileName});
         
         fs.unlink(path.join(req.file.path),function(err){
         if(err) return console.log(err);

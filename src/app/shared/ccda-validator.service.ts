@@ -23,6 +23,7 @@ constructor(private  http : HttpClient){}
       for (let i = 0; i < files.length; i++) {
         console.log("form data append ccdaFile ....."+files[i].name);
         formData.append("ccdaFile", files[i], files[i].name);
+        formData.append("ccdaFileName", files[i].name);
       }
       formData.append("referenceFileName", referenceFileName);
       formData.append("validationObjective", validationObjective);
