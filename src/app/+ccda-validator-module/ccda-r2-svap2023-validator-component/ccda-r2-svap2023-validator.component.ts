@@ -24,8 +24,8 @@ export class CcdaR2Svap2023ValidatorComponent implements OnInit {
   @ViewChild('blockModal') blockModal: ModalComponent;
   @Input() inDebugMode: boolean;
 
-  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/Cures Update Svap Uscdiv2 Sender SUT Test Data';
-  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v2-testdata/contents/Cures Update Svap Uscdiv2 Receiver SUT Test Data';
+  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v3-testdata/contents/Cures Update Svap Uscdiv3 Sender SUT Test Data';
+  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v3-testdata/contents/Cures Update Svap Uscdiv3 Receiver SUT Test Data';
 
   public validationObjectives: any;
   public referenceFiles: any;
