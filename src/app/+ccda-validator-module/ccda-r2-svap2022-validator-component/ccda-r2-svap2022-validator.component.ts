@@ -12,6 +12,7 @@ const DEBUG_JSON_PATH = '/assets/jsonResults/refVal/r2/NT_CCDS_Sample1_r21_v4.js
 const INFO_INDEX: number = 0;
 const CURES_UPDATE: boolean = false;
 const SVAP_2022: boolean = true;
+const SVAP_2023: boolean = false;
 
 @Component({
   selector: 'ccda-r2-svap2022-validator-component',
@@ -95,7 +96,7 @@ export class CcdaR2Svap2022ValidatorComponent implements OnInit {
     this.blockModal.open().then(() => {
       console.log("calling .....");
       this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective,
-        this.filesToUpload, this.severityLevelSelected, CURES_UPDATE, SVAP_2022).then((result: any) => {
+        this.filesToUpload, this.severityLevelSelected, CURES_UPDATE, SVAP_2022, SVAP_2023).then((result: any) => {
           console.log("result test :::::::::"+result);
           this.validationResults = result;
           this.blockModal.close();

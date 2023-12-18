@@ -6,11 +6,22 @@ const axios = require("axios")
 const FormData = require("form-data")
 const fs = require("fs")
 const os = require("os")
-
+var util = require('util');
 var upload = multer({ dest: os.tmpdir()});
 var type = upload.single('ccdaFile');
 const path = require('path')
 require('log-timestamp')(function() { return 'Date : "' + new Date().toISOString() + '" message : "%s"' });
+
+var log_file = fs.createWriteStream('siteui_node.log', {flags : 'a'});
+var log_stdout = process.stdout;
+var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+console.log = function(...args) {
+    var localISOTime = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -1);
+
+    var output = args.join(' ');
+    log_file.write(localISOTime + ' '+  output + '\r\n');
+    log_stdout.write(localISOTime + ' '+ output + '\r\n');
+};
 
 router.post('/', type, (req, res) => {
  console.log(" request body parameters formdata ......."+JSON.stringify(req.body));
@@ -27,7 +38,7 @@ console.log("client id ........"+clinetId);
         formData.append("validationObjective", req.body.validationObjective);
         formData.append("referenceFileName", req.body.referenceFileName);
         let stream   = fs.createReadStream(path.join(req.file.path))
-        formData.append("ccdaFile", stream);
+        formData.append("ccdaFile", stream, {filename: req.body.ccdaFileName});
         
         fs.unlink(path.join(req.file.path),function(err){
         if(err) return console.log(err);

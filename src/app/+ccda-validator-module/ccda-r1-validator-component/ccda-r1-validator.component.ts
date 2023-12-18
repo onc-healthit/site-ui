@@ -43,7 +43,7 @@ export class CcdaR1ValidatorComponent implements OnInit {
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
       this.ccdaValidatorService.validateCCDA(URL, REFERENCE_FILE_NAME, this.validationObjective, this.filesToUpload,
-        DEFAULT_SEVERITY_LEVEL, false, false).then((result: any) => {
+        DEFAULT_SEVERITY_LEVEL, false, false,false).then((result: any) => {
           this.validationResults = result;
           this.blockModal.close();
           this.modal.open();

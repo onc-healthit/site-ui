@@ -10,22 +10,23 @@ import { environment } from "../../../environments/environment";
 const URL = environment.ccda_r2_cures_validation_url;
 const DEBUG_JSON_PATH = '/assets/jsonResults/refVal/r2/NT_CCDS_Sample1_r21_v4.json';
 const INFO_INDEX: number = 0;
-const CURES_UPDATE: boolean = true;
+const CURES_UPDATE: boolean = false;
 const SVAP_2022: boolean = false;
-const SVAP_2023: boolean = false;
+const SVAP_2023: boolean = true;
 
 @Component({
-  selector: 'ccda-r2-cures-validator-component',
-  templateUrl: 'ccda-r2-cures-validator.component.html',
-  styleUrls: ['ccda-r2-cures-validator.component.css']
+  selector: 'ccda-r2-svap2023-validator-component',
+  templateUrl: 'ccda-r2-svap2023-validator.component.html',
+  styleUrls: ['ccda-r2-svap2023-validator.component.css']
 })
-export class CcdaR2CuresValidatorComponent implements OnInit {
-  @ViewChild('r2CuresResultsModal') modal: ModalComponent;
+export class CcdaR2Svap2023ValidatorComponent implements OnInit {
+  @ViewChild('r2Svap2023ResultsModal') modal: ModalComponent;
   @ViewChild('blockModal') blockModal: ModalComponent;
   @Input() inDebugMode: boolean;
 
-  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-data/contents/Cures Update Sender SUT Test Data';
-  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-data/contents/Cures Update Receiver SUT Test Data';
+  private senderGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v3-testdata/contents/Cures Update Svap Uscdiv3 Sender SUT Test Data';
+  private receiverGitHubUrl = 'https://api.github.com/repos/onc-healthit/2015-edition-cures-update-uscdi-v3-testdata/contents/Cures Update Svap Uscdiv3 Receiver SUT Test Data';
+
   public validationObjectives: any;
   public referenceFiles: any;
   public isServerUp: boolean = true;
@@ -93,8 +94,10 @@ export class CcdaR2CuresValidatorComponent implements OnInit {
 
   onSubmit(form: any): void {
     this.blockModal.open().then(() => {
+      console.log("calling .....");
       this.ccdaValidatorService.validateCCDA(URL, this.referenceFileName, this.validationObjective,
         this.filesToUpload, this.severityLevelSelected, CURES_UPDATE, SVAP_2022, SVAP_2023).then((result: any) => {
+          console.log("result test :::::::::"+result);
           this.validationResults = result;
           this.blockModal.close();
           this.modal.open();
