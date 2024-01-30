@@ -1,7 +1,8 @@
 // Get dependencies
 const express = require('express');
 const path = require('path');
-const http = require('http');
+const https = require('https');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 
 // Get our API routes
@@ -27,15 +28,21 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.SITE_PORT || '80';
+const port = process.env.SITE_PORT || '443';
 app.set('port', port);
+
+
+// SSL Setup
+const privateKey = fs.readFileSync(process.env.SITE_PRIVATE_KEY);
+const certificate = fs.readFileSync(process.env.SITE_CERTIFICATE);
+const sslSetup = {key: privateKey, cert: certificate};
 
 /**
  * Create HTTP server.
  */
-const server = http.createServer(app);
+const httpsServer = https.createServer(sslSetup, app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on port:${port}`));
+httpsServer.listen(port, () => console.log(`API running on port:${port}`));
