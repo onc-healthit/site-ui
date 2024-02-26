@@ -13,10 +13,10 @@ const keyClientID = environment.jwt_accesstoken_client;
 @Injectable()
 export class CCDAValidatorService {
 
-constructor(private  http : HttpClient){}
+  constructor(private  http : HttpClient){}
 
   validateCCDA(url: string, referenceFileName: string, validationObjective: string, files: Array<File>,
-    severityLevelSelected: string, curesUpdate: boolean = false, svap2022: boolean = false,svap2023: boolean = false): any {
+               severityLevelSelected: string, curesUpdate: boolean = false, svap2022: boolean = false,svap2023: boolean = false): any {
     return new Promise((resolve, reject) => {
       let formData: any = new FormData();
       let xhr = new XMLHttpRequest(); // comment this for node to run
@@ -34,43 +34,43 @@ constructor(private  http : HttpClient){}
 
 
       // uncomment this for node to run
-      // formData.append("ccdaurl", url);
+      formData.append("ccdaurl", url);
 
-      // formData.append("keycloakurl", keyCloakURL);
-      // formData.append("clientid", keyClientID);
+      formData.append("keycloakurl", keyCloakURL);
+      formData.append("clientid", keyClientID);
 
-      // this.http.post("/api",formData).subscribe(response => {
-      //   console.log(" response ::::"+response);
-      //   resolve(response);
-      // },(error ) =>{
-      //   console.log("with httpOptions JSON.stringify ::::::"+JSON.stringify(error));
-      //   reject("ERROR_CCDA");
-      // }
-      // );
+      this.http.post("/api",formData).subscribe(response => {
+          console.log(" response ::::"+response);
+          resolve(response);
+        },(error ) =>{
+          console.log("with httpOptions JSON.stringify ::::::"+JSON.stringify(error));
+          reject("ERROR_CCDA");
+        }
+      );
 
 // comment this for node to run
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-          if (xhr.status == 200) {
-            resolve(JSON.parse(xhr.response));
-          } else {
-            reject(xhr.response);
-          }
-        }
-      }
-      xhr.open("POST", url, true);
-      xhr.send(formData);
-      // till here 
+//       xhr.onreadystatechange = function () {
+//         if (xhr.readyState == 4) {
+//           if (xhr.status == 200) {
+//             resolve(JSON.parse(xhr.response));
+//           } else {
+//             reject(xhr.response);
+//           }
+//         }
+//       }
+//       xhr.open("POST", url, true);
+//       xhr.send(formData);
+      // till here
     })
   }
 
   getLocalJsonResults(filenameAndPath: string, http: Http): Observable<any> {
     return http.get(filenameAndPath)
       .map((response: Response) => {
-        console.log(response.json());
-        console.log("response json:::::"+response.json());
-        return response.json();
-      }
+          console.log(response.json());
+          console.log("response json:::::"+response.json());
+          return response.json();
+        }
       )
   }
 

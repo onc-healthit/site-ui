@@ -20,12 +20,12 @@ export const environment = {
     ett_url: 'https://ett.dev.sitenv.org/ett',
     host_url: 'sitenv.org',
 
-    ccda_validation_url: 'https://james.dev.sitenv.org/referenceccdaservice/',
+    ccda_validation_url: 'https://james.healthit.gov/referenceccdaservice/',
     ccda_r2_cures_validation_url: 'http://ccda.dev.sitenv.org/referenceccdaservice/',
     scorecard_url: 'http://ccda.dev.sitenv.org/scorecard/',
     jwt_accesstoken_endpoint: 'http://34.197.16.179/auth/realms/sitenv/protocol/openid-connect/token',
     jwt_accesstoken_client: 'siteui',
-    
+
     fhir_server_url: 'https://fhir.dev.sitenv.org/secure/', // temporary URL
     fhir_query_url: 'https://fhir.dev.sitenv.org/fhirclient/',
     fhir_conformance_url: 'https://fhir.dev.sitenv.org/fhirconformance/',
