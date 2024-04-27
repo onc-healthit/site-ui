@@ -11,8 +11,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="validationObjectives">Select ONC 2015 Edition S&CC objective or other C-CDA IG
-        conformance criteria:</label>
+      <label for="validationObjectives">Select objective or other C-CDA IG conformance criteria:</label>
       <select id="validationObjectives" name="validationObjective" class="form-control"
               (change)="getReferenceFilesForValidationObjective($event.target.value)" required
               [(ngModel)]="validationObjective">
