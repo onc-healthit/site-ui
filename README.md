@@ -1,3 +1,7 @@
+**Support**
+
+GitHub Issues are not used to manage issues for this repository. Please report any issues you may have on the [ETT Google Group](https://groups.google.com/g/edge-test-tool). Our technical team will address all questions there. Thank you.
+
 # SiteUi
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
